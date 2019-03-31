@@ -2,7 +2,7 @@
   %table.recipes_table
     %caption
       Recipe details for
-      %span.recipe= @recipe.title
+      %span.recipe= @recipe.name
 
     %tr.recipe_header
       %th Description
@@ -10,8 +10,8 @@
       %th Price
 
     %tr.product
-      %td.recipedesc= @recipe.description
-      %td.recipetime= @recipe.time
-      %td.productprice= number_to_currency(@recipe.price)
+      %td.recipedesc= @recipe.directons
+      %td.recipetime= @recipe.cuisine
+      %td.productprice= r@ecipe.calories
 
   =link_to("Back to recipe list", recipes_path)
