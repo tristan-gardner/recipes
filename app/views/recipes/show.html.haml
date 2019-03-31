@@ -1,0 +1,17 @@
+#main
+  %table.recipes_table
+    %caption
+      Recipe details for
+      %span.recipe= @recipe.title
+
+    %tr.recipe_header
+      %th Description
+      %th Time
+      %th Price
+
+    %tr.product
+      %td.recipedesc= @recipe.description
+      %td.recipetime= @recipe.time
+      %td.productprice= number_to_currency(@recipe.price)
+
+  =link_to("Back to recipe list", recipes_path)
