@@ -1816,3 +1816,52 @@ Processing by RecipesController#new as HTML
 Completed 200 OK in 41ms (Views: 39.8ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/recipes/" for ::1 at 2019-03-31 18:54:58 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.haml within layouts/application
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.haml:12
+  Rendered recipes/index.html.haml within layouts/application (17.9ms)
+Completed 200 OK in 297ms (Views: 271.9ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/recipes/new" for ::1 at 2019-03-31 18:55:00 -0400
+Processing by RecipesController#new as HTML
+  Rendering recipes/new.html.haml within layouts/application
+  Rendered recipes/_create_update_form.html.haml (7.2ms)
+  Rendered recipes/new.html.haml within layouts/application (13.5ms)
+Completed 200 OK in 43ms (Views: 40.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/recipes/" for ::1 at 2019-03-31 18:56:03 -0400
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.haml within layouts/application
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.haml:12
+  Rendered recipes/index.html.haml within layouts/application (7.2ms)
+Completed 200 OK in 29ms (Views: 26.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/recipes/1" for ::1 at 2019-03-31 18:56:04 -0400
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:9
+  Rendering recipes/show.html.haml within layouts/application
+  Rendered recipes/show.html.haml within layouts/application (3.7ms)
+Completed 200 OK in 68ms (Views: 47.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/recipes/1/edit" for ::1 at 2019-03-31 18:56:05 -0400
+Processing by RecipesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:34
+  Rendering recipes/edit.html.haml within layouts/application
+  Rendered recipes/_create_update_form.html.haml (4.5ms)
+  Rendered recipes/edit.html.haml within layouts/application (9.1ms)
+Completed 200 OK in 32ms (Views: 26.5ms | ActiveRecord: 0.3ms)
+
+

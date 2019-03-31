@@ -8,6 +8,7 @@
       %th Time
       %th Picture
 
+    %p= link_to "Create New Recipe", new_recipe_path
     -@recipes.each do |r|
       %tr.recipe
         %td.recipename= link_to "#{r.name}", recipe_path(r)
