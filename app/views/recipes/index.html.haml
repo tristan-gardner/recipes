@@ -11,6 +11,5 @@
     -@recipes.each do |r|
       %tr.recipe
         %td.recipename= link_to "#{r.name}", recipe_path(r)
-        %td.recipedesc= r.description
-        %td.recipetime= "#{r.time} mins"
-        %td.recipepic= "#{number_to_currency(r.price)}"
+        %td.recipedesc= r.directions
+        %td.recipetime= "#{r.calories} calories"

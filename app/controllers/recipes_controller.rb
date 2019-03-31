@@ -1,6 +1,6 @@
 class RecipesController < ApplicationController
   def index
-    @recipes = Recipes.all
+    @recipes = Recipe.all
   end
 
   def show
@@ -13,9 +13,12 @@ class RecipesController < ApplicationController
     end
   end
 
+  def new
+  end
+
   def create
     begin
-      r = Recipes.new(create_update_params)
+      r = Recipe.new(create_update_params)
       r.save
       flash[:notice] = "Recipe successfully added"
       redirect_to(recipes_path)
