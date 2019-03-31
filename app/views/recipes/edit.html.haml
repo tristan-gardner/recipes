@@ -1,0 +1,4 @@
+%h2 Edit Recipe
+= form_tag recipe_path(@recipe), :method => :put do
+  = render :partial => "create_update_form"
+  = submit_tag "Update Recipe"

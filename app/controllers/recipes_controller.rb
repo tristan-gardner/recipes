@@ -30,8 +30,26 @@ class RecipesController < ApplicationController
     end
   end
 
+  def edit
+    @recipe = Recipe.find(params[:id])
+  end
+
+  def update
+    recipe = Recipe.find(params[:id])
+    begin
+      recipe.update(create_update_params)
+      flash[:notice] = "#{recipe.name} succesfully updated"
+      redirect_to recipes_path
+      return
+    rescue
+      flash[:warning] = "Unable to update #{recipe.name}"
+      redirect_to edit_recipe_path
+      return
+    end
+  end
+
   private
   def create_update_params
-    params.require(:recipe).permit(:name,:directions,:cuisine,:calories)
+    params.require(:recipe).permit(:name, :directions, :cuisine, :calories)
   end
 end

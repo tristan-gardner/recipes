@@ -1,0 +1,15 @@
+!!! 5
+%html{ lang: 'en' }
+  %head
+    %meta{ charset: 'utf-8' }
+    %title Reci
+    = csrf_meta_tags
+    = stylesheet_link_tag 'application', media: 'all'
+    = javascript_include_tag 'application'
+
+  %body.background
+    %p= flash[:notice]
+    %p= flash[:warning]
+    #header
+      %h1.main_title Reci
+    = yield

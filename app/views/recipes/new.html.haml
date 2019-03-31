@@ -1,0 +1,6 @@
+#main
+  %h2 Create New Recipe
+
+  = form_tag "/recipes", :method => :post do
+    = render :partial => "create_update_form"
+    = submit_tag "Create Recipe"
