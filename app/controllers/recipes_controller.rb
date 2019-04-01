@@ -50,6 +50,6 @@ class RecipesController < ApplicationController
 
   private
   def create_update_params
-    params.require(:recipe).permit(:name, :directions, :cuisine, :calories)
+    params.require(:recipe).permit(:name, :directions, :cuisine, :calories, :images)
   end
 end

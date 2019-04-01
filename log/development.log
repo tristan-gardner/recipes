@@ -1865,3 +1865,1537 @@ Processing by RecipesController#edit as HTML
 Completed 200 OK in 32ms (Views: 26.5ms | ActiveRecord: 0.3ms)
 
 
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/mwinters/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /home/mwinters/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/mwinters/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/mwinters/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/mwinters/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Started GET "/" for ::1 at 2019-03-31 19:47:12 -0400
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/mwinters/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.haml within layouts/application
+  [1m[36mRecipe Load (1.7ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.haml:14
+  Rendered recipes/index.html.haml within layouts/application (235.5ms)
+Completed 500 Internal Server Error in 415ms (ActiveRecord: 3.6ms)
+
+
+  
+ActionView::Template::Error (Could not find table 'active_storage_attachments'):
+    13:     %p= link_to "Create New Recipe", new_recipe_path
+    14:     -@recipes.each do |r|
+    15:       %tr.recipe
+    16:         - r.images.each do |img|
+    17:           =image_tag(img, height: '100', width: '150')
+    18:         %td.recipename= link_to "#{r.name}", recipe_path(r)
+    19:         %td.recipedesc= r.directions
+  
+app/views/recipes/index.html.haml:16:in `block in _app_views_recipes_index_html_haml___3075921006226535087_70368551397360'
+app/views/recipes/index.html.haml:14:in `_app_views_recipes_index_html_haml___3075921006226535087_70368551397360'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/mwinters/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateActiveStorageTables (20190331234848)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/mwinters/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20190331234848_create_active_storage_tables.active_storage.rb:4
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "key" varchar NOT NULL, "filename" varchar NOT NULL, "content_type" varchar, "metadata" text, "byte_size" bigint NOT NULL, "checksum" varchar NOT NULL, "created_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190331234848_create_active_storage_tables.active_storage.rb:4
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_blobs_on_key" ON "active_storage_blobs" ("key")[0m
+  ↳ db/migrate/20190331234848_create_active_storage_tables.active_storage.rb:4
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar NOT NULL, "record_type" varchar NOT NULL, "record_id" integer NOT NULL, "blob_id" integer NOT NULL, "created_at" datetime NOT NULL, CONSTRAINT "fk_rails_c3b3935057"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+)[0m
+  ↳ db/migrate/20190331234848_create_active_storage_tables.active_storage.rb:16
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments" ("blob_id")[0m
+  ↳ db/migrate/20190331234848_create_active_storage_tables.active_storage.rb:16
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_attachments_uniqueness" ON "active_storage_attachments" ("record_type", "record_id", "name", "blob_id")[0m
+  ↳ db/migrate/20190331234848_create_active_storage_tables.active_storage.rb:16
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190331234848"]]
+  ↳ /home/mwinters/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (23.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/mwinters/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /home/mwinters/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/mwinters/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/mwinters/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/mwinters/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Started GET "/" for ::1 at 2019-03-31 19:49:20 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/mwinters/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.haml within layouts/application
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.haml:14
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 1], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:16
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 2], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:16
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 3], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:16
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 4], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:16
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 5], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:16
+  Rendered recipes/index.html.haml within layouts/application (84.5ms)
+Completed 200 OK in 1081ms (Views: 1061.4ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/recipes/new" for ::1 at 2019-03-31 19:49:27 -0400
+Processing by RecipesController#new as HTML
+  Rendering recipes/new.html.haml within layouts/application
+  Rendered recipes/_create_update_form.html.haml (29.8ms)
+  Rendered recipes/new.html.haml within layouts/application (39.3ms)
+Completed 200 OK in 105ms (Views: 93.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-03-31 19:49:33 -0400
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.haml within layouts/application
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.haml:14
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 1], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:16
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 2], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:16
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 3], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:16
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 4], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:16
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 5], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:16
+  Rendered recipes/index.html.haml within layouts/application (48.5ms)
+Completed 200 OK in 128ms (Views: 117.3ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/recipes/new" for ::1 at 2019-03-31 19:51:07 -0400
+Processing by RecipesController#new as HTML
+  Rendering recipes/new.html.haml within layouts/application
+  Rendered recipes/_create_update_form.html.haml (267.0ms)
+  Rendered recipes/new.html.haml within layouts/application (274.9ms)
+Completed 500 Internal Server Error in 299ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `f' for #<#<Class:0x00007fefe08612f8>:0x00007fefe401fc58>):
+     6: = text_field :recipe, "cuisine"
+     7: = label :recipe, :calories, "Calories"
+     8: = number_field :recipe, "calories"
+     9: =f.label "Image"
+    10: =f.file_field :images
+  
+app/views/recipes/_create_update_form.html.haml:9:in `_app_views_recipes__create_update_form_html_haml___3327707234498827890_70334149720440'
+app/views/recipes/new.html.haml:5:in `block in _app_views_recipes_new_html_haml___2099551529136777361_70334149599840'
+app/views/recipes/new.html.haml:4:in `_app_views_recipes_new_html_haml___2099551529136777361_70334149599840'
+Started GET "/recipes/new" for ::1 at 2019-03-31 19:51:34 -0400
+Processing by RecipesController#new as HTML
+  Rendering recipes/new.html.haml within layouts/application
+  Rendered recipes/_create_update_form.html.haml (9.7ms)
+  Rendered recipes/new.html.haml within layouts/application (19.4ms)
+Completed 500 Internal Server Error in 49ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 1, expected 2..4)):
+     6: = text_field :recipe, "cuisine"
+     7: = label :recipe, :calories, "Calories"
+     8: = number_field :recipe, "calories"
+     9: =label "Image"
+    10: =file_field :images
+  
+app/views/recipes/_create_update_form.html.haml:9:in `_app_views_recipes__create_update_form_html_haml___3327707234498827890_70334131503860'
+app/views/recipes/new.html.haml:5:in `block in _app_views_recipes_new_html_haml___2099551529136777361_70334130245800'
+app/views/recipes/new.html.haml:4:in `_app_views_recipes_new_html_haml___2099551529136777361_70334130245800'
+Started GET "/recipes/new" for ::1 at 2019-03-31 19:53:35 -0400
+Processing by RecipesController#new as HTML
+  Rendering recipes/new.html.haml within layouts/application
+  Rendered recipes/_create_update_form.html.haml (130.0ms)
+  Rendered recipes/new.html.haml within layouts/application (139.6ms)
+Completed 200 OK in 213ms (Views: 205.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/recipes" for ::1 at 2019-03-31 19:53:44 -0400
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Rm/JE8xTfw484EcZM9DgeQTXxLj7Yj+8p7gZIMHnBh5b/OJsKapby0+58v9yyFcn+es1acyYlNCtMDc9cqCvcg==", "recipe"=>{"name"=>"", "directions"=>"", "cuisine"=>"", "calories"=>""}, "images"=>{"images"=>"IMG_6218.jpg"}, "commit"=>"Create Recipe"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/recipes_controller.rb:22
+  [1m[36mRecipe Create (4.1ms)[0m  [1m[32mINSERT INTO "recipes" ("name", "directions", "cuisine", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", ""], ["directions", ""], ["cuisine", ""], ["created_at", "2019-03-31 23:53:44.049510"], ["updated_at", "2019-03-31 23:53:44.049510"]]
+  ↳ app/controllers/recipes_controller.rb:22
+  [1m[35m (29.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/recipes_controller.rb:22
+Redirected to http://localhost:3000/recipes
+Completed 302 Found in 42ms (ActiveRecord: 33.5ms)
+
+
+Started GET "/recipes" for ::1 at 2019-03-31 19:53:44 -0400
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.haml within layouts/application
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.haml:14
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 1], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:17
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 2], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:17
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 3], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:17
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 4], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:17
+  [1m[36mActiveStorage::Attachment Load (0.8ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 5], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:17
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 6], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:17
+  Rendered recipes/index.html.haml within layouts/application (37.4ms)
+Completed 200 OK in 124ms (Views: 111.8ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/recipes/new" for ::1 at 2019-03-31 19:53:53 -0400
+Processing by RecipesController#new as HTML
+  Rendering recipes/new.html.haml within layouts/application
+  Rendered recipes/_create_update_form.html.haml (1.5ms)
+  Rendered recipes/new.html.haml within layouts/application (6.9ms)
+Completed 200 OK in 49ms (Views: 44.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/recipes" for ::1 at 2019-03-31 19:54:06 -0400
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eyPlEm2Pfn7f79Ie8P+Bo1zj7jO5UI8bw2FX4Um1waae7b25zGHhqWBMBLEOYDNiYPzINxr8ug7WfAdR53qPvA==", "recipe"=>{"name"=>"asdfasdasdfasdf", "directions"=>"23rvqwe fasf ", "cuisine"=>"thai", "calories"=>"23"}, "images"=>{"images"=>"IMG_6218.jpg"}, "commit"=>"Create Recipe"}
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/recipes_controller.rb:22
+  [1m[36mRecipe Create (5.9ms)[0m  [1m[32mINSERT INTO "recipes" ("name", "directions", "cuisine", "calories", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "asdfasdasdfasdf"], ["directions", "23rvqwe fasf "], ["cuisine", "thai"], ["calories", 23], ["created_at", "2019-03-31 23:54:06.772982"], ["updated_at", "2019-03-31 23:54:06.772982"]]
+  ↳ app/controllers/recipes_controller.rb:22
+  [1m[35m (18.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/recipes_controller.rb:22
+Redirected to http://localhost:3000/recipes
+Completed 302 Found in 40ms (ActiveRecord: 25.1ms)
+
+
+Started GET "/recipes" for ::1 at 2019-03-31 19:54:06 -0400
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.haml within layouts/application
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.haml:14
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 1], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:17
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 2], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:17
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 3], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:17
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 4], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:17
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 5], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:17
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 6], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:17
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 7], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:17
+  Rendered recipes/index.html.haml within layouts/application (42.4ms)
+Completed 200 OK in 107ms (Views: 95.8ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/recipes/7" for ::1 at 2019-03-31 19:54:15 -0400
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:9
+  Rendering recipes/show.html.haml within layouts/application
+  Rendered recipes/show.html.haml within layouts/application (2.6ms)
+Completed 200 OK in 57ms (Views: 41.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/recipes" for ::1 at 2019-03-31 19:54:17 -0400
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.haml within layouts/application
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.haml:14
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 1], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:17
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 2], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:17
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 3], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:17
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 4], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:17
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 5], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:17
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 6], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:17
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 7], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:17
+  Rendered recipes/index.html.haml within layouts/application (36.4ms)
+Completed 200 OK in 94ms (Views: 83.7ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/recipes" for ::1 at 2019-03-31 19:59:10 -0400
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.haml within layouts/application
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.haml:13
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 1], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 2], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 3], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 4], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 5], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 6], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 7], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:19
+  Rendered recipes/index.html.haml within layouts/application (41.0ms)
+Completed 200 OK in 115ms (Views: 102.3ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/recipes" for ::1 at 2019-03-31 20:01:19 -0400
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.haml within layouts/application
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.haml:13
+  Rendered recipes/index.html.haml within layouts/application (30.7ms)
+Completed 500 Internal Server Error in 58ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `image' for #<Recipe:0x00007fefe77f4638>
+Did you mean?  images
+               images=):
+    16:         %td.recipedesc= r.directions
+    17:         %td.recipetime= "#{r.calories} calories"
+    18:         %td
+    19:           - if r.image.attached?
+    20:             "here"
+    21:           - r.images.each do |img|
+    22:             =image_tag(img, height: '100', width: '150')
+  
+app/views/recipes/index.html.haml:19:in `block in _app_views_recipes_index_html_haml___1956507927092511123_70334178662420'
+app/views/recipes/index.html.haml:13:in `_app_views_recipes_index_html_haml___1956507927092511123_70334178662420'
+Started GET "/recipes" for ::1 at 2019-03-31 20:01:35 -0400
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.haml within layouts/application
+  [1m[36mRecipe Load (0.5ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.haml:13
+  [1m[36mActiveStorage::Attachment Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Recipe"], ["name", "images"], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 1], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:21
+  [1m[36mActiveStorage::Attachment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Recipe"], ["name", "images"], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 2], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:21
+  [1m[36mActiveStorage::Attachment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "Recipe"], ["name", "images"], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 3], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:21
+  [1m[36mActiveStorage::Attachment Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 4], ["record_type", "Recipe"], ["name", "images"], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 4], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:21
+  [1m[36mActiveStorage::Attachment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 5], ["record_type", "Recipe"], ["name", "images"], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 5], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:21
+  [1m[36mActiveStorage::Attachment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 6], ["record_type", "Recipe"], ["name", "images"], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 6], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:21
+  [1m[36mActiveStorage::Attachment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 7], ["record_type", "Recipe"], ["name", "images"], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 7], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:21
+  Rendered recipes/index.html.haml within layouts/application (66.1ms)
+Completed 200 OK in 123ms (Views: 110.1ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/recipes" for ::1 at 2019-03-31 20:02:00 -0400
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.haml within layouts/application
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.haml:13
+  [1m[36mActiveStorage::Attachment Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Recipe"], ["name", "images"], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 1], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:23
+  [1m[36mActiveStorage::Attachment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Recipe"], ["name", "images"], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.8ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 2], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:23
+  [1m[36mActiveStorage::Attachment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "Recipe"], ["name", "images"], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 3], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:23
+  [1m[36mActiveStorage::Attachment Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 4], ["record_type", "Recipe"], ["name", "images"], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 4], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:23
+  [1m[36mActiveStorage::Attachment Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 5], ["record_type", "Recipe"], ["name", "images"], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 5], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:23
+  [1m[36mActiveStorage::Attachment Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 6], ["record_type", "Recipe"], ["name", "images"], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 6], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:23
+  [1m[36mActiveStorage::Attachment Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 7], ["record_type", "Recipe"], ["name", "images"], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 7], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:23
+  Rendered recipes/index.html.haml within layouts/application (70.7ms)
+Completed 200 OK in 146ms (Views: 130.7ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/recipes/new" for ::1 at 2019-03-31 20:02:23 -0400
+Processing by RecipesController#new as HTML
+  Rendering recipes/new.html.haml within layouts/application
+  Rendered recipes/_create_update_form.html.haml (1.7ms)
+  Rendered recipes/new.html.haml within layouts/application (7.1ms)
+Completed 200 OK in 56ms (Views: 49.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/recipes" for ::1 at 2019-03-31 20:02:33 -0400
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OEOyIWUZDwnsrvK70kOvNEbvrH1VuKr25ApLTPYIlfXdjeqKxPeQ3lMNJBQs3B31evCKefYUn+PxFxv8WMfb7w==", "recipe"=>{"name"=>"asdfasd", "directions"=>"asdf", "cuisine"=>"asdf", "calories"=>"324"}, "images"=>{"images"=>"IMG_6218.jpg"}, "commit"=>"Create Recipe"}
+  [1m[35m (0.6ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/recipes_controller.rb:22
+  [1m[36mRecipe Create (4.1ms)[0m  [1m[32mINSERT INTO "recipes" ("name", "directions", "cuisine", "calories", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "asdfasd"], ["directions", "asdf"], ["cuisine", "asdf"], ["calories", 324], ["created_at", "2019-04-01 00:02:33.953560"], ["updated_at", "2019-04-01 00:02:33.953560"]]
+  ↳ app/controllers/recipes_controller.rb:22
+  [1m[35m (16.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/recipes_controller.rb:22
+Redirected to http://localhost:3000/recipes
+Completed 302 Found in 36ms (ActiveRecord: 21.2ms)
+
+
+Started GET "/recipes" for ::1 at 2019-03-31 20:02:33 -0400
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.haml within layouts/application
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.haml:13
+  [1m[36mActiveStorage::Attachment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Recipe"], ["name", "images"], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 1], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:23
+  [1m[36mActiveStorage::Attachment Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Recipe"], ["name", "images"], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 2], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:23
+  [1m[36mActiveStorage::Attachment Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "Recipe"], ["name", "images"], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 3], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:23
+  [1m[36mActiveStorage::Attachment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 4], ["record_type", "Recipe"], ["name", "images"], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 4], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:23
+  [1m[36mActiveStorage::Attachment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 5], ["record_type", "Recipe"], ["name", "images"], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 5], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:23
+  [1m[36mActiveStorage::Attachment Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 6], ["record_type", "Recipe"], ["name", "images"], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 6], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:23
+  [1m[36mActiveStorage::Attachment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 7], ["record_type", "Recipe"], ["name", "images"], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 7], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:23
+  [1m[36mActiveStorage::Attachment Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 8], ["record_type", "Recipe"], ["name", "images"], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 8], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:23
+  Rendered recipes/index.html.haml within layouts/application (68.3ms)
+Completed 200 OK in 128ms (Views: 114.2ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/recipes" for ::1 at 2019-03-31 20:03:53 -0400
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.haml within layouts/application
+  [1m[36mRecipe Load (0.6ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.haml:13
+  [1m[36mActiveStorage::Attachment Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Recipe"], ["name", "images"], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 1], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:23
+  [1m[36mActiveStorage::Attachment Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Recipe"], ["name", "images"], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 2], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:23
+  [1m[36mActiveStorage::Attachment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "Recipe"], ["name", "images"], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 3], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:23
+  [1m[36mActiveStorage::Attachment Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 4], ["record_type", "Recipe"], ["name", "images"], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 4], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:23
+  [1m[36mActiveStorage::Attachment Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 5], ["record_type", "Recipe"], ["name", "images"], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 5], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:23
+  [1m[36mActiveStorage::Attachment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 6], ["record_type", "Recipe"], ["name", "images"], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 6], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:23
+  [1m[36mActiveStorage::Attachment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 7], ["record_type", "Recipe"], ["name", "images"], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 7], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:23
+  [1m[36mActiveStorage::Attachment Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 8], ["record_type", "Recipe"], ["name", "images"], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 8], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:23
+  Rendered recipes/index.html.haml within layouts/application (94.0ms)
+Completed 200 OK in 155ms (Views: 140.0ms | ActiveRecord: 7.1ms)
+
+
+Started GET "/recipes/7" for ::1 at 2019-03-31 20:03:57 -0400
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:9
+  Rendering recipes/show.html.haml within layouts/application
+  Rendered recipes/show.html.haml within layouts/application (2.4ms)
+Completed 200 OK in 48ms (Views: 38.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/recipes/7/edit" for ::1 at 2019-03-31 20:04:00 -0400
+Processing by RecipesController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mRecipe Load (0.7ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:34
+  Rendering recipes/edit.html.haml within layouts/application
+  Rendered recipes/_create_update_form.html.haml (1.9ms)
+  Rendered recipes/edit.html.haml within layouts/application (7.0ms)
+Completed 200 OK in 57ms (Views: 50.7ms | ActiveRecord: 0.7ms)
+
+
+Started PUT "/recipes/7" for ::1 at 2019-03-31 20:04:03 -0400
+Processing by RecipesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2BcKSlnlovGbz7bFjkO/mHtfTOIrVRenAyC2+OrP5w7bEi5dNu4VK3xibrlegBkRcxb51xDr/yLZXtzrDGxkpg==", "recipe"=>{"name"=>"asdfasdasdfasdf", "directions"=>"23rvqwe fasf ", "cuisine"=>"thai", "calories"=>"23"}, "images"=>{"images"=>"IMG_6218.jpg"}, "commit"=>"Update Recipe", "id"=>"7"}
+  [1m[36mRecipe Load (0.5ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:38
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/recipes_controller.rb:40
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/recipes_controller.rb:40
+Redirected to http://localhost:3000/recipes
+Completed 302 Found in 16ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/recipes" for ::1 at 2019-03-31 20:04:04 -0400
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.haml within layouts/application
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.haml:13
+  [1m[36mActiveStorage::Attachment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Recipe"], ["name", "images"], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 1], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:23
+  [1m[36mActiveStorage::Attachment Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Recipe"], ["name", "images"], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 2], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:23
+  [1m[36mActiveStorage::Attachment Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "Recipe"], ["name", "images"], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 3], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:23
+  [1m[36mActiveStorage::Attachment Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 4], ["record_type", "Recipe"], ["name", "images"], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 4], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:23
+  [1m[36mActiveStorage::Attachment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 5], ["record_type", "Recipe"], ["name", "images"], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 5], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:23
+  [1m[36mActiveStorage::Attachment Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 6], ["record_type", "Recipe"], ["name", "images"], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 6], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:23
+  [1m[36mActiveStorage::Attachment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 7], ["record_type", "Recipe"], ["name", "images"], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 7], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:23
+  [1m[36mActiveStorage::Attachment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 8], ["record_type", "Recipe"], ["name", "images"], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 8], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:23
+  Rendered recipes/index.html.haml within layouts/application (47.6ms)
+Completed 200 OK in 88ms (Views: 79.6ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/recipes" for ::1 at 2019-03-31 20:06:16 -0400
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.haml within layouts/application
+  [1m[36mRecipe Load (0.5ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.haml:13
+  [1m[36mActiveStorage::Attachment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Recipe"], ["name", "images"], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 1], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:23
+  [1m[36mActiveStorage::Attachment Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Recipe"], ["name", "images"], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 2], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:23
+  [1m[36mActiveStorage::Attachment Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "Recipe"], ["name", "images"], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 3], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:23
+  [1m[36mActiveStorage::Attachment Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 4], ["record_type", "Recipe"], ["name", "images"], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.8ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 4], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:23
+  [1m[36mActiveStorage::Attachment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 5], ["record_type", "Recipe"], ["name", "images"], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 5], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:23
+  [1m[36mActiveStorage::Attachment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 6], ["record_type", "Recipe"], ["name", "images"], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 6], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:23
+  [1m[36mActiveStorage::Attachment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 7], ["record_type", "Recipe"], ["name", "images"], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 7], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:23
+  [1m[36mActiveStorage::Attachment Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 8], ["record_type", "Recipe"], ["name", "images"], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 8], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:23
+  Rendered recipes/index.html.haml within layouts/application (48.4ms)
+Completed 200 OK in 108ms (Views: 96.2ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/recipes/7" for ::1 at 2019-03-31 20:06:18 -0400
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:9
+  Rendering recipes/show.html.haml within layouts/application
+  Rendered recipes/show.html.haml within layouts/application (2.2ms)
+Completed 200 OK in 57ms (Views: 45.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/recipes/7" for ::1 at 2019-03-31 20:06:23 -0400
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:9
+  Rendering recipes/show.html.haml within layouts/application
+  Rendered recipes/show.html.haml within layouts/application (2.8ms)
+Completed 200 OK in 53ms (Views: 41.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/recipes/7/edit" for ::1 at 2019-03-31 20:06:25 -0400
+Processing by RecipesController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mRecipe Load (0.5ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:34
+  Rendering recipes/edit.html.haml within layouts/application
+  Rendered recipes/_create_update_form.html.haml (7.0ms)
+  Rendered recipes/edit.html.haml within layouts/application (13.2ms)
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `merge' for "images":String):
+     7: = label :recipe, :calories, "Calories"
+     8: = number_field :recipe, "calories"
+     9: = label :images, "Images"
+    10: = file_field_tag :images, "images"
+  
+app/views/recipes/_create_update_form.html.haml:10:in `_app_views_recipes__create_update_form_html_haml___3327707234498827890_70334149836740'
+app/views/recipes/edit.html.haml:3:in `block in _app_views_recipes_edit_html_haml___1414606477083216308_70334149684480'
+app/views/recipes/edit.html.haml:2:in `_app_views_recipes_edit_html_haml___1414606477083216308_70334149684480'
+Started GET "/recipes/7/edit" for ::1 at 2019-03-31 20:06:44 -0400
+Processing by RecipesController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mRecipe Load (0.5ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:34
+  Rendering recipes/edit.html.haml within layouts/application
+  Rendered recipes/_create_update_form.html.haml (1.7ms)
+  Rendered recipes/edit.html.haml within layouts/application (10.3ms)
+Completed 200 OK in 71ms (Views: 60.7ms | ActiveRecord: 0.5ms)
+
+
+Started PUT "/recipes/7" for ::1 at 2019-03-31 20:06:48 -0400
+Processing by RecipesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7FuyeMtVxTWe3yJadlE2MFFyVc2TvmbSYs4soNbiPgPxyJkHLqzh8O2Gl7w3SYFurE6kHKREzb5oRgK9ZaWXbw==", "recipe"=>{"name"=>"asdfasdasdfasdf", "directions"=>"23rvqwe fasf ", "cuisine"=>"thai", "calories"=>"23"}, "images"=>"IMG_6218.jpg", "commit"=>"Update Recipe", "id"=>"7"}
+  [1m[36mRecipe Load (1.2ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:38
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/recipes_controller.rb:40
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/recipes_controller.rb:40
+Redirected to http://localhost:3000/recipes
+Completed 302 Found in 13ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/recipes" for ::1 at 2019-03-31 20:06:48 -0400
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.haml within layouts/application
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.haml:13
+  [1m[36mActiveStorage::Attachment Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Recipe"], ["name", "images"], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 1], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:23
+  [1m[36mActiveStorage::Attachment Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Recipe"], ["name", "images"], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 2], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:23
+  [1m[36mActiveStorage::Attachment Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "Recipe"], ["name", "images"], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 3], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:23
+  [1m[36mActiveStorage::Attachment Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 4], ["record_type", "Recipe"], ["name", "images"], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 4], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:23
+  [1m[36mActiveStorage::Attachment Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 5], ["record_type", "Recipe"], ["name", "images"], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 5], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:23
+  [1m[36mActiveStorage::Attachment Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 6], ["record_type", "Recipe"], ["name", "images"], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 6], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:23
+  [1m[36mActiveStorage::Attachment Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 7], ["record_type", "Recipe"], ["name", "images"], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 7], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:23
+  [1m[36mActiveStorage::Attachment Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 8], ["record_type", "Recipe"], ["name", "images"], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 8], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:23
+  Rendered recipes/index.html.haml within layouts/application (43.3ms)
+Completed 200 OK in 87ms (Views: 79.5ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/recipes/2" for ::1 at 2019-03-31 20:06:57 -0400
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:9
+  Rendering recipes/show.html.haml within layouts/application
+  Rendered recipes/show.html.haml within layouts/application (3.0ms)
+Completed 200 OK in 49ms (Views: 38.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/recipes/2/edit" for ::1 at 2019-03-31 20:06:58 -0400
+Processing by RecipesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:34
+  Rendering recipes/edit.html.haml within layouts/application
+  Rendered recipes/_create_update_form.html.haml (2.4ms)
+  Rendered recipes/edit.html.haml within layouts/application (7.7ms)
+Completed 200 OK in 57ms (Views: 49.4ms | ActiveRecord: 0.4ms)
+
+
+Started PUT "/recipes/2" for ::1 at 2019-03-31 20:07:03 -0400
+Processing by RecipesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ybDzvXubgLrqRDD9c5YCtsw8TBzvcAIBc8Ws4zMrHs+9Cop1OaZHt48QZtsm5g7gjCgX7B2S1m9RmB8OPQsAqw==", "recipe"=>{"name"=>"SHrimp Scampi", "directions"=>"", "cuisine"=>"Italian", "calories"=>"500"}, "images"=>"IMG_6218.jpg", "commit"=>"Update Recipe", "id"=>"2"}
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:38
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/recipes_controller.rb:40
+  [1m[36mRecipe Update (6.7ms)[0m  [1m[33mUPDATE "recipes" SET "directions" = ?, "updated_at" = ? WHERE "recipes"."id" = ?[0m  [["directions", ""], ["updated_at", "2019-04-01 00:07:03.253494"], ["id", 2]]
+  ↳ app/controllers/recipes_controller.rb:40
+  [1m[35m (13.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/recipes_controller.rb:40
+Redirected to http://localhost:3000/recipes
+Completed 302 Found in 45ms (ActiveRecord: 21.0ms)
+
+
+Started GET "/recipes" for ::1 at 2019-03-31 20:07:03 -0400
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.haml within layouts/application
+  [1m[36mRecipe Load (0.5ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.haml:13
+  [1m[36mActiveStorage::Attachment Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Recipe"], ["name", "images"], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 1], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:23
+  [1m[36mActiveStorage::Attachment Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Recipe"], ["name", "images"], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 2], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:23
+  [1m[36mActiveStorage::Attachment Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "Recipe"], ["name", "images"], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 3], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:23
+  [1m[36mActiveStorage::Attachment Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 4], ["record_type", "Recipe"], ["name", "images"], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 4], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:23
+  [1m[36mActiveStorage::Attachment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 5], ["record_type", "Recipe"], ["name", "images"], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 5], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:23
+  [1m[36mActiveStorage::Attachment Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 6], ["record_type", "Recipe"], ["name", "images"], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 6], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:23
+  [1m[36mActiveStorage::Attachment Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 7], ["record_type", "Recipe"], ["name", "images"], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 7], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:23
+  [1m[36mActiveStorage::Attachment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 8], ["record_type", "Recipe"], ["name", "images"], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 8], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:23
+  Rendered recipes/index.html.haml within layouts/application (68.4ms)
+Completed 200 OK in 124ms (Views: 109.4ms | ActiveRecord: 6.3ms)
+
+
+Started GET "/recipes" for ::1 at 2019-03-31 20:09:35 -0400
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.haml within layouts/application
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.haml:13
+  [1m[36mActiveStorage::Attachment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Recipe"], ["name", "images"], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 1], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:23
+  [1m[36mActiveStorage::Attachment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Recipe"], ["name", "images"], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 2], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:23
+  [1m[36mActiveStorage::Attachment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "Recipe"], ["name", "images"], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 3], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:23
+  [1m[36mActiveStorage::Attachment Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 4], ["record_type", "Recipe"], ["name", "images"], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 4], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:23
+  [1m[36mActiveStorage::Attachment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 5], ["record_type", "Recipe"], ["name", "images"], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 5], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:23
+  [1m[36mActiveStorage::Attachment Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 6], ["record_type", "Recipe"], ["name", "images"], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 6], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:23
+  [1m[36mActiveStorage::Attachment Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 7], ["record_type", "Recipe"], ["name", "images"], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 7], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:23
+  [1m[36mActiveStorage::Attachment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 8], ["record_type", "Recipe"], ["name", "images"], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 8], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:23
+  Rendered recipes/index.html.haml within layouts/application (60.5ms)
+Completed 200 OK in 112ms (Views: 98.2ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/recipes/new" for ::1 at 2019-03-31 20:09:39 -0400
+Processing by RecipesController#new as HTML
+  Rendering recipes/new.html.haml within layouts/application
+  Rendered recipes/_create_update_form.html.haml (155.2ms)
+  Rendered recipes/new.html.haml within layouts/application (161.9ms)
+Completed 500 Internal Server Error in 176ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `f' for #<#<Class:0x00007fefe08612f8>:0x00007fffd2d03c00>):
+    1: = f.label :recipe, :name, "Name"
+    2: = f.text_field :recipe, "name"
+    3: = f.label :recipe, :directions, "Directions"
+    4: = f.text_field :recipe, "directions"
+  
+app/views/recipes/_create_update_form.html.haml:1:in `_app_views_recipes__create_update_form_html_haml___3327707234498827890_70334120274880'
+app/views/recipes/new.html.haml:5:in `block in _app_views_recipes_new_html_haml___2099551529136777361_70368364383620'
+app/views/recipes/new.html.haml:4:in `_app_views_recipes_new_html_haml___2099551529136777361_70368364383620'
+Started GET "/recipes/new" for ::1 at 2019-03-31 20:10:26 -0400
+Processing by RecipesController#new as HTML
+  Rendering recipes/new.html.haml within layouts/application
+  Rendered recipes/new.html.haml within layouts/application (7.7ms)
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `merge' for "Name":String):
+    3: 
+    4:   = form_for Recipe.new do |f|
+    5:     -# = render :partial => "create_update_form"
+    6:     = f.label :recipe, :name, "Name"
+    7:     = f.text_field :recipe, "name"
+    8:     = f.label :recipe, :directions, "Directions"
+    9:     = f.text_field :recipe, "directions"
+  
+app/views/recipes/new.html.haml:6:in `block in _app_views_recipes_new_html_haml___2099551529136777361_70334150219420'
+app/views/recipes/new.html.haml:4:in `_app_views_recipes_new_html_haml___2099551529136777361_70334150219420'
+Started GET "/recipes/new" for ::1 at 2019-03-31 20:11:13 -0400
+Processing by RecipesController#new as HTML
+  Rendering recipes/new.html.haml within layouts/application
+  Rendered recipes/new.html.haml within layouts/application (9.9ms)
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `recipe' for #<Recipe:0x00007fefe1ae12c0>):
+    4:   = form_for Recipe.new do |f|
+    5:     -# = render :partial => "create_update_form"
+    6:     = f.label :recipe, :name
+    7:     = f.text_field :recipe
+    8:     = f.label :recipe, :directions
+    9:     = f.text_field :recipe
+   10:     = f.label :recipe, :cuisine
+  
+app/views/recipes/new.html.haml:7:in `block in _app_views_recipes_new_html_haml___2099551529136777361_70334129995080'
+app/views/recipes/new.html.haml:4:in `_app_views_recipes_new_html_haml___2099551529136777361_70334129995080'
+Started GET "/recipes/new" for ::1 at 2019-03-31 20:13:02 -0400
+Processing by RecipesController#new as HTML
+  Rendering recipes/new.html.haml within layouts/application
+  Rendered recipes/new.html.haml within layouts/application (4.0ms)
+Completed 200 OK in 64ms (Views: 54.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/recipes" for ::1 at 2019-03-31 20:13:11 -0400
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VdIcWHv4BiAej6wc+SyUq/rkxGQe8Dz5qHW2hex4soBIQTcnngEi5W3WGfq4NCP1B9g1tSkKl5Wi/ZiYXz8b7A==", "recipe"=>{"name"=>"sdfg", "directions"=>"sdfg", "cuisine"=>"asdf", "calories"=>"234", "images"=>#<ActionDispatch::Http::UploadedFile:0x00007fefe20567a0 @tempfile=#<Tempfile:/tmp/RackMultipart20190331-2918-1j55ghu.jpg>, @original_filename="IMG_6218.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"recipe[images]\"; filename=\"IMG_6218.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Create Recipe"}
+Unpermitted parameter: :images
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/recipes_controller.rb:22
+  [1m[36mRecipe Create (3.3ms)[0m  [1m[32mINSERT INTO "recipes" ("name", "directions", "cuisine", "calories", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "sdfg"], ["directions", "sdfg"], ["cuisine", "asdf"], ["calories", 234], ["created_at", "2019-04-01 00:13:11.703960"], ["updated_at", "2019-04-01 00:13:11.703960"]]
+  ↳ app/controllers/recipes_controller.rb:22
+  [1m[35m (18.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/recipes_controller.rb:22
+Redirected to http://localhost:3000/recipes
+Completed 302 Found in 28ms (ActiveRecord: 21.6ms)
+
+
+Started GET "/recipes" for ::1 at 2019-03-31 20:13:11 -0400
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.haml within layouts/application
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.haml:13
+  [1m[36mActiveStorage::Attachment Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Recipe"], ["name", "images"], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 1], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:23
+  [1m[36mActiveStorage::Attachment Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Recipe"], ["name", "images"], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 2], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:23
+  [1m[36mActiveStorage::Attachment Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "Recipe"], ["name", "images"], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 3], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:23
+  [1m[36mActiveStorage::Attachment Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 4], ["record_type", "Recipe"], ["name", "images"], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 4], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:23
+  [1m[36mActiveStorage::Attachment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 5], ["record_type", "Recipe"], ["name", "images"], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 5], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:23
+  [1m[36mActiveStorage::Attachment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 6], ["record_type", "Recipe"], ["name", "images"], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 6], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:23
+  [1m[36mActiveStorage::Attachment Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 7], ["record_type", "Recipe"], ["name", "images"], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 7], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:23
+  [1m[36mActiveStorage::Attachment Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 8], ["record_type", "Recipe"], ["name", "images"], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 8], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:23
+  [1m[36mActiveStorage::Attachment Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 9], ["record_type", "Recipe"], ["name", "images"], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 9], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:23
+  Rendered recipes/index.html.haml within layouts/application (68.2ms)
+Completed 200 OK in 116ms (Views: 101.2ms | ActiveRecord: 8.3ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/mwinters/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /home/mwinters/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/mwinters/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/mwinters/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/mwinters/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/mwinters/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mRecipe Destroy (16.6ms)[0m  [1m[31mDELETE FROM "recipes"[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mRecipe Create (2.4ms)[0m  [1m[32mINSERT INTO "recipes" ("name", "directions", "cuisine", "calories", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Pizza"], ["directions", "make a pizza"], ["cuisine", "Italian"], ["calories", 800], ["created_at", "2019-04-01 00:13:57.250677"], ["updated_at", "2019-04-01 00:13:57.250677"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (18.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+Started GET "/recipes" for ::1 at 2019-03-31 20:14:12 -0400
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/mwinters/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.haml within layouts/application
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.haml:13
+  [1m[36mActiveStorage::Attachment Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 10], ["record_type", "Recipe"], ["name", "images"], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 10], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:23
+  Rendered recipes/index.html.haml within layouts/application (43.5ms)
+Completed 200 OK in 623ms (Views: 603.0ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/recipes/new" for ::1 at 2019-03-31 20:14:15 -0400
+Processing by RecipesController#new as HTML
+  Rendering recipes/new.html.haml within layouts/application
+  Rendered recipes/new.html.haml within layouts/application (14.4ms)
+Completed 200 OK in 66ms (Views: 61.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/recipes" for ::1 at 2019-03-31 20:14:25 -0400
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TmN8RvFjoVEVzyeZpDSclFD0Vv1RQkMXBui2icRcJgWrrSTtUI0+hqps8TZaqy5VbOtw+fLudgIT9eY5apNoHw==", "recipe"=>{"name"=>",vnh", "directions"=>"asdf", "cuisine"=>"234", "calories"=>"234", "images"=>#<ActionDispatch::Http::UploadedFile:0x00007f1be445be40 @tempfile=#<Tempfile:/tmp/RackMultipart20190331-2961-mhw8p6.jpg>, @original_filename="IMG_6218.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"recipe[images]\"; filename=\"IMG_6218.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Create Recipe"}
+Unpermitted parameter: :images
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/recipes_controller.rb:22
+  [1m[36mRecipe Create (3.0ms)[0m  [1m[32mINSERT INTO "recipes" ("name", "directions", "cuisine", "calories", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", ",vnh"], ["directions", "asdf"], ["cuisine", "234"], ["calories", 234], ["created_at", "2019-04-01 00:14:25.507545"], ["updated_at", "2019-04-01 00:14:25.507545"]]
+  ↳ app/controllers/recipes_controller.rb:22
+  [1m[35m (14.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/recipes_controller.rb:22
+Redirected to http://localhost:3000/recipes
+Completed 302 Found in 29ms (ActiveRecord: 17.4ms)
+
+
+Started GET "/recipes" for ::1 at 2019-03-31 20:14:25 -0400
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.haml within layouts/application
+  [1m[36mRecipe Load (0.5ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.haml:13
+  [1m[36mActiveStorage::Attachment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 10], ["record_type", "Recipe"], ["name", "images"], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 10], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:23
+  [1m[36mActiveStorage::Attachment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 11], ["record_type", "Recipe"], ["name", "images"], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 11], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:23
+  Rendered recipes/index.html.haml within layouts/application (21.7ms)
+Completed 200 OK in 81ms (Views: 73.5ms | ActiveRecord: 1.9ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/mwinters/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /home/mwinters/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/mwinters/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/mwinters/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/mwinters/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/mwinters/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mRecipe Destroy (20.1ms)[0m  [1m[31mDELETE FROM "recipes"[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mRecipe Create (7.8ms)[0m  [1m[32mINSERT INTO "recipes" ("name", "directions", "cuisine", "calories", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Pizza"], ["directions", "make a pizza"], ["cuisine", "Italian"], ["calories", 800], ["created_at", "2019-04-01 00:16:36.960213"], ["updated_at", "2019-04-01 00:16:36.960213"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (16.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+Started GET "/recipes" for ::1 at 2019-03-31 20:16:44 -0400
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/mwinters/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.haml within layouts/application
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.haml:13
+  [1m[36mActiveStorage::Attachment Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 12], ["record_type", "Recipe"], ["name", "images"], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 12], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:23
+  Rendered recipes/index.html.haml within layouts/application (48.9ms)
+Completed 200 OK in 400ms (Views: 381.4ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/recipes/new" for ::1 at 2019-03-31 20:16:46 -0400
+Processing by RecipesController#new as HTML
+  Rendering recipes/new.html.haml within layouts/application
+  Rendered recipes/new.html.haml within layouts/application (11.3ms)
+Completed 200 OK in 71ms (Views: 67.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/recipes" for ::1 at 2019-03-31 20:16:53 -0400
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Y651j9KVEeWJvV026EM8N+p3ey6FtaRB6xhdSaNo5I6GYC0kc3uOMjYei5kW3I721mhdKiYZkVT+BQ35DaeqlA==", "recipe"=>{"name"=>"zxv", "directions"=>"zxcv", "cuisine"=>"xzcv", "calories"=>"234", "images"=>#<ActionDispatch::Http::UploadedFile:0x00007f2a7c455210 @tempfile=#<Tempfile:/tmp/RackMultipart20190331-2989-3jba5v.jpg>, @original_filename="IMG_6218.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"recipe[images]\"; filename=\"IMG_6218.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Create Recipe"}
+Unpermitted parameter: :images
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/recipes_controller.rb:22
+  [1m[36mRecipe Create (2.6ms)[0m  [1m[32mINSERT INTO "recipes" ("name", "directions", "cuisine", "calories", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "zxv"], ["directions", "zxcv"], ["cuisine", "xzcv"], ["calories", 234], ["created_at", "2019-04-01 00:16:53.407709"], ["updated_at", "2019-04-01 00:16:53.407709"]]
+  ↳ app/controllers/recipes_controller.rb:22
+  [1m[35m (14.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/recipes_controller.rb:22
+Redirected to http://localhost:3000/recipes
+Completed 302 Found in 30ms (ActiveRecord: 17.0ms)
+
+
+Started GET "/recipes" for ::1 at 2019-03-31 20:16:53 -0400
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.haml within layouts/application
+  [1m[36mRecipe Load (0.9ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.haml:13
+  [1m[36mActiveStorage::Attachment Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 12], ["record_type", "Recipe"], ["name", "images"], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 12], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:23
+  [1m[36mActiveStorage::Attachment Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 13], ["record_type", "Recipe"], ["name", "images"], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 13], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:23
+  Rendered recipes/index.html.haml within layouts/application (27.3ms)
+Completed 200 OK in 88ms (Views: 81.2ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/recipes/new" for ::1 at 2019-03-31 20:18:09 -0400
+Processing by RecipesController#new as HTML
+  Rendering recipes/new.html.haml within layouts/application
+  Rendered recipes/new.html.haml within layouts/application (27.8ms)
+Completed 200 OK in 77ms (Views: 71.1ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/recipes" for ::1 at 2019-03-31 20:18:16 -0400
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7puYokLLMXdG38qtN651pc+Miv3IzEacNi31p7CeseILVcAJ4yWuoPl8HALJMcdk85Os+Wtgc4kjMKUXHlH/+A==", "recipe"=>{"name"=>"mcv", "directions"=>"sdf", "cuisine"=>"13", "calories"=>"224", "images"=>#<ActionDispatch::Http::UploadedFile:0x00007ffff8923a10 @tempfile=#<Tempfile:/tmp/RackMultipart20190331-2989-1wc3a3w.jpg>, @original_filename="IMG_6218.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"recipe[images]\"; filename=\"IMG_6218.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Create Recipe"}
+[36m  Disk Storage (10.8ms) [0m[32mUploaded file to key: 4tYvQFuskvX6i5F4evUUPYvR (checksum: 4cSHmbqTfjxqVXC4rRwxMg==)[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/recipes_controller.rb:21
+  [1m[36mActiveStorage::Blob Create (2.4ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["key", "4tYvQFuskvX6i5F4evUUPYvR"], ["filename", "IMG_6218.jpg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 1056896], ["checksum", "4cSHmbqTfjxqVXC4rRwxMg=="], ["created_at", "2019-04-01 00:18:17.105826"]]
+  ↳ app/controllers/recipes_controller.rb:21
+  [1m[35m (15.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/recipes_controller.rb:21
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/recipes_controller.rb:22
+  [1m[36mRecipe Create (2.5ms)[0m  [1m[32mINSERT INTO "recipes" ("name", "directions", "cuisine", "calories", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "mcv"], ["directions", "sdf"], ["cuisine", "13"], ["calories", 224], ["created_at", "2019-04-01 00:18:17.194154"], ["updated_at", "2019-04-01 00:18:17.194154"]]
+  ↳ app/controllers/recipes_controller.rb:22
+  [1m[36mActiveStorage::Attachment Create (0.4ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "images"], ["record_type", "Recipe"], ["record_id", 14], ["blob_id", 1], ["created_at", "2019-04-01 00:18:17.199010"]]
+  ↳ app/controllers/recipes_controller.rb:22
+  [1m[36mRecipe Update (0.2ms)[0m  [1m[33mUPDATE "recipes" SET "updated_at" = ? WHERE "recipes"."id" = ?[0m  [["updated_at", "2019-04-01 00:18:17.202191"], ["id", 14]]
+  ↳ app/controllers/recipes_controller.rb:22
+  [1m[35m (25.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/recipes_controller.rb:22
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: f31fee2c-1814-417f-beb8-2d8989f79462) to Async(default) with arguments: #<GlobalID:0x00007ffff8cbf430 @uri=#<URI::GID gid://reci/ActiveStorage::Blob/1>>
+Redirected to http://localhost:3000/recipes
+Completed 302 Found in 673ms (ActiveRecord: 49.6ms)
+
+
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/mwinters/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [f31fee2c-1814-417f-beb8-2d8989f79462] Performing ActiveStorage::AnalyzeJob (Job ID: f31fee2c-1814-417f-beb8-2d8989f79462) from Async(default) with arguments: #<GlobalID:0x00007f2a84c5b628 @uri=#<URI::GID gid://reci/ActiveStorage::Blob/1>>
+Started GET "/recipes" for ::1 at 2019-03-31 20:18:17 -0400
+Processing by RecipesController#index as HTML
+[ActiveJob] [ActiveStorage::AnalyzeJob] [f31fee2c-1814-417f-beb8-2d8989f79462] [36m  Disk Storage (15.5ms) [0m[34mDownloaded file from key: 4tYvQFuskvX6i5F4evUUPYvR[0m
+  Rendering recipes/index.html.haml within layouts/application
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.haml:13
+  [1m[36mActiveStorage::Attachment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 12], ["record_type", "Recipe"], ["name", "images"], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 12], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:23
+  [1m[36mActiveStorage::Attachment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 13], ["record_type", "Recipe"], ["name", "images"], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 13], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:23
+  [1m[36mActiveStorage::Attachment Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 14], ["record_type", "Recipe"], ["name", "images"], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 14], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:23
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:24
+  Rendered recipes/index.html.haml within layouts/application (189.1ms)
+Completed 200 OK in 428ms (Views: 419.3ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--e405897397db5d16fa5caf04b59b9c20ed8d2af9/IMG_6218.jpg" for ::1 at 2019-03-31 20:18:17 -0400
+[ActiveJob] [ActiveStorage::AnalyzeJob] [f31fee2c-1814-417f-beb8-2d8989f79462]   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [f31fee2c-1814-417f-beb8-2d8989f79462]   ↳ /home/mwinters/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [f31fee2c-1814-417f-beb8-2d8989f79462]   [1m[36mActiveStorage::Blob Update (2.4ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = ? WHERE "active_storage_blobs"."id" = ?[0m  [["metadata", "{\"identified\":true,\"width\":2416,\"height\":2230,\"analyzed\":true}"], ["id", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [f31fee2c-1814-417f-beb8-2d8989f79462]   ↳ /home/mwinters/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [f31fee2c-1814-417f-beb8-2d8989f79462]   [1m[35m (11.8ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [f31fee2c-1814-417f-beb8-2d8989f79462]   ↳ /home/mwinters/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [f31fee2c-1814-417f-beb8-2d8989f79462] Performed ActiveStorage::AnalyzeJob (Job ID: f31fee2c-1814-417f-beb8-2d8989f79462) from Async(default) in 877.45ms
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--e405897397db5d16fa5caf04b59b9c20ed8d2af9", "filename"=>"IMG_6218"}
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/mwinters/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[36m  Disk Storage (3.2ms) [0m[34mGenerated URL for file at key: 4tYvQFuskvX6i5F4evUUPYvR (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWROSFJaZGxGR2RYTnJkbGcyYVRWR05HVjJWVlZRV1haU0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkRhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlTVTFIWHpZeU1UZ3VhbkJuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkSlRVZGZOakl4T0M1cWNHY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDE5LTA0LTAxVDAwOjIzOjE4LjQ0OVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--29e36dbcdfeee27e75724ecff01b313b1239ff5a/IMG_6218.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22IMG_6218.jpg%22%3B+filename%2A%3DUTF-8%27%27IMG_6218.jpg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWROSFJaZGxGR2RYTnJkbGcyYVRWR05HVjJWVlZRV1haU0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkRhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlTVTFIWHpZeU1UZ3VhbkJuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkSlRVZGZOakl4T0M1cWNHY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDE5LTA0LTAxVDAwOjIzOjE4LjQ0OVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--29e36dbcdfeee27e75724ecff01b313b1239ff5a/IMG_6218.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22IMG_6218.jpg%22%3B+filename%2A%3DUTF-8%27%27IMG_6218.jpg
+Completed 302 Found in 22ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWROSFJaZGxGR2RYTnJkbGcyYVRWR05HVjJWVlZRV1haU0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkRhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlTVTFIWHpZeU1UZ3VhbkJuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkSlRVZGZOakl4T0M1cWNHY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDE5LTA0LTAxVDAwOjIzOjE4LjQ0OVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--29e36dbcdfeee27e75724ecff01b313b1239ff5a/IMG_6218.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22IMG_6218.jpg%22%3B+filename%2A%3DUTF-8%27%27IMG_6218.jpg" for ::1 at 2019-03-31 20:18:18 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"IMG_6218.jpg\"; filename*=UTF-8''IMG_6218.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWROSFJaZGxGR2RYTnJkbGcyYVRWR05HVjJWVlZRV1haU0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkRhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlTVTFIWHpZeU1UZ3VhbkJuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkSlRVZGZOakl4T0M1cWNHY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDE5LTA0LTAxVDAwOjIzOjE4LjQ0OVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--29e36dbcdfeee27e75724ecff01b313b1239ff5a", "filename"=>"IMG_6218"}
+Completed 200 OK in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/recipes/12" for ::1 at 2019-03-31 20:19:02 -0400
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mRecipe Load (0.6ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:9
+  Rendering recipes/show.html.haml within layouts/application
+  Rendered recipes/show.html.haml within layouts/application (5.4ms)
+Completed 200 OK in 68ms (Views: 60.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/recipes/12/edit" for ::1 at 2019-03-31 20:19:04 -0400
+Processing by RecipesController#edit as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:34
+  Rendering recipes/edit.html.haml within layouts/application
+  Rendered recipes/_create_update_form.html.haml (1.8ms)
+  Rendered recipes/edit.html.haml within layouts/application (22.7ms)
+Completed 200 OK in 79ms (Views: 67.9ms | ActiveRecord: 0.3ms)
+
+
+Started PUT "/recipes/12" for ::1 at 2019-03-31 20:19:07 -0400
+Processing by RecipesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"s455lvH18AX7pYkyf9tyYHBNadVnLbnmoPZa0VVfS0feQXc/0Bj7lBWMdtWuiTz6jsGRacSdxReG1uzydxsLww==", "recipe"=>{"name"=>"Pizza", "directions"=>"make a pizza", "cuisine"=>"Italian", "calories"=>"800"}, "images"=>{"images"=>"IMG_6218.jpg"}, "commit"=>"Update Recipe", "id"=>"12"}
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:38
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/recipes_controller.rb:40
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/recipes_controller.rb:40
+Redirected to http://localhost:3000/recipes
+Completed 302 Found in 17ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/recipes" for ::1 at 2019-03-31 20:19:07 -0400
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.haml within layouts/application
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.haml:13
+  [1m[36mActiveStorage::Attachment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 12], ["record_type", "Recipe"], ["name", "images"], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 12], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:23
+  [1m[36mActiveStorage::Attachment Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 13], ["record_type", "Recipe"], ["name", "images"], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 13], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:23
+  [1m[36mActiveStorage::Attachment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 14], ["record_type", "Recipe"], ["name", "images"], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 14], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:23
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:24
+  Rendered recipes/index.html.haml within layouts/application (21.7ms)
+Completed 200 OK in 65ms (Views: 59.6ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWROSFJaZGxGR2RYTnJkbGcyYVRWR05HVjJWVlZRV1haU0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkRhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlTVTFIWHpZeU1UZ3VhbkJuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkSlRVZGZOakl4T0M1cWNHY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDE5LTA0LTAxVDAwOjIzOjE4LjQ0OVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--29e36dbcdfeee27e75724ecff01b313b1239ff5a/IMG_6218.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22IMG_6218.jpg%22%3B+filename%2A%3DUTF-8%27%27IMG_6218.jpg" for ::1 at 2019-03-31 20:19:07 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"IMG_6218.jpg\"; filename*=UTF-8''IMG_6218.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWROSFJaZGxGR2RYTnJkbGcyYVRWR05HVjJWVlZRV1haU0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkRhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlTVTFIWHpZeU1UZ3VhbkJuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkSlRVZGZOakl4T0M1cWNHY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDE5LTA0LTAxVDAwOjIzOjE4LjQ0OVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--29e36dbcdfeee27e75724ecff01b313b1239ff5a", "filename"=>"IMG_6218"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/recipes/new" for ::1 at 2019-03-31 20:19:52 -0400
+Processing by RecipesController#new as HTML
+  Rendering recipes/new.html.haml within layouts/application
+  Rendered recipes/_create_update_form.html.haml (2.2ms)
+  Rendered recipes/new.html.haml within layouts/application (8.2ms)
+Completed 200 OK in 56ms (Views: 49.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/recipes" for ::1 at 2019-03-31 20:20:01 -0400
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NcBbASU7R+iGFg7gRbsbUlHKmYQfkeaE/kmr0c7NUHvQDgOqhNXYPzm12E+7JKmTbdW/gLw905HrVPthYAIeYQ==", "recipe"=>{"name"=>"XCdfasdf", "directions"=>"asdfas", "cuisine"=>"asdfas", "calories"=>"1343"}, "images"=>{"images"=>"IMG_6218.jpg"}, "commit"=>"Create Recipe"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/recipes_controller.rb:22
+  [1m[36mRecipe Create (4.0ms)[0m  [1m[32mINSERT INTO "recipes" ("name", "directions", "cuisine", "calories", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "XCdfasdf"], ["directions", "asdfas"], ["cuisine", "asdfas"], ["calories", 1343], ["created_at", "2019-04-01 00:20:01.222427"], ["updated_at", "2019-04-01 00:20:01.222427"]]
+  ↳ app/controllers/recipes_controller.rb:22
+  [1m[35m (16.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/recipes_controller.rb:22
+Redirected to http://localhost:3000/recipes
+Completed 302 Found in 41ms (ActiveRecord: 20.1ms)
+
+
+Started GET "/recipes" for ::1 at 2019-03-31 20:20:01 -0400
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.haml within layouts/application
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.haml:13
+  [1m[36mActiveStorage::Attachment Load (0.8ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 12], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 13], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 14], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:20
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 15], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:19
+  Rendered recipes/index.html.haml within layouts/application (26.7ms)
+Completed 200 OK in 79ms (Views: 69.6ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWROSFJaZGxGR2RYTnJkbGcyYVRWR05HVjJWVlZRV1haU0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkRhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlTVTFIWHpZeU1UZ3VhbkJuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkSlRVZGZOakl4T0M1cWNHY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDE5LTA0LTAxVDAwOjIzOjE4LjQ0OVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--29e36dbcdfeee27e75724ecff01b313b1239ff5a/IMG_6218.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22IMG_6218.jpg%22%3B+filename%2A%3DUTF-8%27%27IMG_6218.jpg" for ::1 at 2019-03-31 20:20:01 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"IMG_6218.jpg\"; filename*=UTF-8''IMG_6218.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWROSFJaZGxGR2RYTnJkbGcyYVRWR05HVjJWVlZRV1haU0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkRhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlTVTFIWHpZeU1UZ3VhbkJuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkSlRVZGZOakl4T0M1cWNHY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDE5LTA0LTAxVDAwOjIzOjE4LjQ0OVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--29e36dbcdfeee27e75724ecff01b313b1239ff5a", "filename"=>"IMG_6218"}
+Completed 304 Not Modified in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/recipes/12" for ::1 at 2019-03-31 20:20:43 -0400
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mRecipe Load (0.5ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:9
+  Rendering recipes/show.html.haml within layouts/application
+  Rendered recipes/show.html.haml within layouts/application (3.0ms)
+Completed 200 OK in 64ms (Views: 48.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/recipes/12/edit" for ::1 at 2019-03-31 20:20:44 -0400
+Processing by RecipesController#edit as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:34
+  Rendering recipes/edit.html.haml within layouts/application
+  Rendered recipes/edit.html.haml within layouts/application (207.1ms)
+Completed 500 Internal Server Error in 227ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `f' for #<#<Class:0x00007f2a8c14b640>:0x00007f2a881d2bf8>):
+    1: %h2 Edit Recipe
+    2: = form_tag recipe_path(@recipe), :method => :put do
+    3:   -# = render :partial => "create_update_form"
+    4:   = f.label :name
+    5:   = f.text_field :name
+    6: 
+    7:   = f.label :directions
+  
+app/views/recipes/edit.html.haml:4:in `block in _app_views_recipes_edit_html_haml___1835591406623261620_69910324484640'
+app/views/recipes/edit.html.haml:2:in `_app_views_recipes_edit_html_haml___1835591406623261620_69910324484640'
+Started GET "/recipes/12/edit" for ::1 at 2019-03-31 20:22:28 -0400
+Processing by RecipesController#edit as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mRecipe Load (0.6ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:34
+  Rendering recipes/edit.html.haml within layouts/application
+  Rendered recipes/edit.html.haml within layouts/application (289.5ms)
+Completed 500 Internal Server Error in 317ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `f' for #<#<Class:0x00007f2a8c14b640>:0x00007f2aa00530d0>):
+    1: %h2 Edit Recipe
+    2: = form_tag recipe_path(@recipe), :method => :put do
+    3:   -# = render :partial => "create_update_form"
+    4:   = f.label :name
+    5:   = f.text_field :name
+    6: 
+    7:   = f.label :directions
+  
+app/views/recipes/edit.html.haml:4:in `block in _app_views_recipes_edit_html_haml___1835591406623261620_69910525025420'
+app/views/recipes/edit.html.haml:2:in `_app_views_recipes_edit_html_haml___1835591406623261620_69910525025420'
+Started GET "/" for ::1 at 2019-03-31 20:22:32 -0400
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.haml within layouts/application
+  [1m[36mRecipe Load (0.7ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.haml:13
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 12], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.8ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 13], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 14], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Blob Load (1.0ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:20
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 15], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:19
+  Rendered recipes/index.html.haml within layouts/application (47.7ms)
+Completed 200 OK in 127ms (Views: 116.4ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWROSFJaZGxGR2RYTnJkbGcyYVRWR05HVjJWVlZRV1haU0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkRhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlTVTFIWHpZeU1UZ3VhbkJuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkSlRVZGZOakl4T0M1cWNHY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDE5LTA0LTAxVDAwOjIzOjE4LjQ0OVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--29e36dbcdfeee27e75724ecff01b313b1239ff5a/IMG_6218.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22IMG_6218.jpg%22%3B+filename%2A%3DUTF-8%27%27IMG_6218.jpg" for ::1 at 2019-03-31 20:22:32 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"IMG_6218.jpg\"; filename*=UTF-8''IMG_6218.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWROSFJaZGxGR2RYTnJkbGcyYVRWR05HVjJWVlZRV1haU0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkRhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlTVTFIWHpZeU1UZ3VhbkJuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkSlRVZGZOakl4T0M1cWNHY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDE5LTA0LTAxVDAwOjIzOjE4LjQ0OVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--29e36dbcdfeee27e75724ecff01b313b1239ff5a", "filename"=>"IMG_6218"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/recipes/new" for ::1 at 2019-03-31 20:22:33 -0400
+Processing by RecipesController#new as HTML
+  Rendering recipes/new.html.haml within layouts/application
+  Rendered recipes/_create_update_form.html.haml (1.6ms)
+  Rendered recipes/new.html.haml within layouts/application (6.8ms)
+Completed 200 OK in 55ms (Views: 51.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/recipes/new" for ::1 at 2019-03-31 20:23:01 -0400
+Processing by RecipesController#new as HTML
+  Rendering recipes/new.html.haml within layouts/application
+  Rendered recipes/_create_update_form.html.haml (2.2ms)
+  Rendered recipes/new.html.haml within layouts/application (11.2ms)
+Completed 200 OK in 67ms (Views: 60.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/recipes" for ::1 at 2019-03-31 20:23:08 -0400
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dK9sIt1lmkLTa7MvMWsk8aOkoHS9qJY2cch8pNfj2H5pPEddOJy+h6AyBslwc5OvXphRpYpSPVp7QFK5ZKRxEg==", "recipe"=>{"name"=>"SDf", "directions"=>"asdf", "cuisine"=>"asdf", "calories"=>"234"}, "images"=>{"images"=>"IMG_6218.jpg"}, "commit"=>"Create Recipe"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/recipes_controller.rb:22
+  [1m[36mRecipe Create (4.8ms)[0m  [1m[32mINSERT INTO "recipes" ("name", "directions", "cuisine", "calories", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "SDf"], ["directions", "asdf"], ["cuisine", "asdf"], ["calories", 234], ["created_at", "2019-04-01 00:23:08.128815"], ["updated_at", "2019-04-01 00:23:08.128815"]]
+  ↳ app/controllers/recipes_controller.rb:22
+  [1m[35m (17.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/recipes_controller.rb:22
+Redirected to http://localhost:3000/recipes
+Completed 302 Found in 35ms (ActiveRecord: 22.6ms)
+
+
+Started GET "/recipes" for ::1 at 2019-03-31 20:23:08 -0400
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.haml within layouts/application
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.haml:13
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 12], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 13], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 14], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:20
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 15], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 16], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:19
+  Rendered recipes/index.html.haml within layouts/application (32.9ms)
+Completed 200 OK in 82ms (Views: 75.0ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWROSFJaZGxGR2RYTnJkbGcyYVRWR05HVjJWVlZRV1haU0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkRhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlTVTFIWHpZeU1UZ3VhbkJuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkSlRVZGZOakl4T0M1cWNHY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDE5LTA0LTAxVDAwOjIzOjE4LjQ0OVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--29e36dbcdfeee27e75724ecff01b313b1239ff5a/IMG_6218.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22IMG_6218.jpg%22%3B+filename%2A%3DUTF-8%27%27IMG_6218.jpg" for ::1 at 2019-03-31 20:23:08 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"IMG_6218.jpg\"; filename*=UTF-8''IMG_6218.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWROSFJaZGxGR2RYTnJkbGcyYVRWR05HVjJWVlZRV1haU0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkRhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlTVTFIWHpZeU1UZ3VhbkJuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkSlRVZGZOakl4T0M1cWNHY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDE5LTA0LTAxVDAwOjIzOjE4LjQ0OVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--29e36dbcdfeee27e75724ecff01b313b1239ff5a", "filename"=>"IMG_6218"}
+Completed 304 Not Modified in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/recipes/12" for ::1 at 2019-03-31 20:24:59 -0400
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mRecipe Load (1.0ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:9
+  Rendering recipes/show.html.haml within layouts/application
+  Rendered recipes/show.html.haml within layouts/application (2.8ms)
+Completed 200 OK in 70ms (Views: 61.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/recipes/12/edit" for ::1 at 2019-03-31 20:25:00 -0400
+Processing by RecipesController#edit as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:34
+  Rendering recipes/edit.html.haml within layouts/application
+  Rendered recipes/edit.html.haml within layouts/application (3.3ms)
+Completed 200 OK in 58ms (Views: 48.8ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/recipes/12" for ::1 at 2019-03-31 20:25:04 -0400
+Processing by RecipesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"G+C+D28N/bo1mTdQJjcmlLtBGUuBMfZ9AjDTRdKAdssB9B8tkDvrv0SGcOacgYqPE2DZo4nqbsYPCycfPlSVgQ==", "recipe"=>{"name"=>"Pizza", "directions"=>"make a pizza", "cuisine"=>"Italian", "calories"=>"800", "images"=>#<ActionDispatch::Http::UploadedFile:0x00007f2a85bbe340 @tempfile=#<Tempfile:/tmp/RackMultipart20190331-2989-1ga81tw.jpg>, @original_filename="IMG_6218.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"recipe[images]\"; filename=\"IMG_6218.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Update Recipe", "id"=>"12"}
+  [1m[36mRecipe Load (0.6ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:38
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/recipes_controller.rb:40
+[36m  Disk Storage (12.0ms) [0m[32mUploaded file to key: GeHZJmDgfknoZUz18X76xo7S (checksum: 4cSHmbqTfjxqVXC4rRwxMg==)[0m
+  [1m[36mActiveStorage::Blob Create (7.4ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["key", "GeHZJmDgfknoZUz18X76xo7S"], ["filename", "IMG_6218.jpg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 1056896], ["checksum", "4cSHmbqTfjxqVXC4rRwxMg=="], ["created_at", "2019-04-01 00:25:04.393559"]]
+  ↳ app/controllers/recipes_controller.rb:40
+  [1m[36mActiveStorage::Attachment Create (0.6ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "images"], ["record_type", "Recipe"], ["record_id", 12], ["blob_id", 2], ["created_at", "2019-04-01 00:25:04.407153"]]
+  ↳ app/controllers/recipes_controller.rb:40
+  [1m[36mRecipe Update (0.5ms)[0m  [1m[33mUPDATE "recipes" SET "updated_at" = ? WHERE "recipes"."id" = ?[0m  [["updated_at", "2019-04-01 00:25:04.410758"], ["id", 12]]
+  ↳ app/controllers/recipes_controller.rb:40
+  [1m[35m (24.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/recipes_controller.rb:40
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: d9fe22a8-d9ca-4bd9-8763-4c0a74102a2c) to Async(default) with arguments: #<GlobalID:0x00007f2a85d3d298 @uri=#<URI::GID gid://reci/ActiveStorage::Blob/2>>
+Redirected to http://localhost:3000/recipes
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 302 Found in 91ms (ActiveRecord: 33.7ms)
+
+
+  ↳ /home/mwinters/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d9fe22a8-d9ca-4bd9-8763-4c0a74102a2c] Performing ActiveStorage::AnalyzeJob (Job ID: d9fe22a8-d9ca-4bd9-8763-4c0a74102a2c) from Async(default) with arguments: #<GlobalID:0x00007f2a85d5d818 @uri=#<URI::GID gid://reci/ActiveStorage::Blob/2>>
+Started GET "/recipes" for ::1 at 2019-03-31 20:25:04 -0400
+Processing by RecipesController#index as HTML
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d9fe22a8-d9ca-4bd9-8763-4c0a74102a2c] [36m  Disk Storage (18.2ms) [0m[34mDownloaded file from key: GeHZJmDgfknoZUz18X76xo7S[0m
+  Rendering recipes/index.html.haml within layouts/application
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.haml:13
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 12], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:20
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 13], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 14], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:20
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 15], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 16], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:19
+  Rendered recipes/index.html.haml within layouts/application (25.7ms)
+Completed 200 OK in 95ms (Views: 85.6ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--6f38db7e4af2418e1c77244c6185c5462ee70245/IMG_6218.jpg" for ::1 at 2019-03-31 20:25:04 -0400
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--e405897397db5d16fa5caf04b59b9c20ed8d2af9/IMG_6218.jpg" for ::1 at 2019-03-31 20:25:04 -0400
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--6f38db7e4af2418e1c77244c6185c5462ee70245", "filename"=>"IMG_6218"}
+  [1m[36mActiveStorage::Blob Load (4.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/mwinters/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[36m  Disk Storage (0.9ms) [0m[34mGenerated URL for file at key: GeHZJmDgfknoZUz18X76xo7S (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRSMlZJV2twdFJHZG1hMjV2V2xWNk1UaFlOelo0YnpkVEJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkRhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlTVTFIWHpZeU1UZ3VhbkJuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkSlRVZGZOakl4T0M1cWNHY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDE5LTA0LTAxVDAwOjMwOjA0LjYyNloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--18d6a492fecf5a3188f9c88f10001b74bec91a49/IMG_6218.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22IMG_6218.jpg%22%3B+filename%2A%3DUTF-8%27%27IMG_6218.jpg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRSMlZJV2twdFJHZG1hMjV2V2xWNk1UaFlOelo0YnpkVEJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkRhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlTVTFIWHpZeU1UZ3VhbkJuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkSlRVZGZOakl4T0M1cWNHY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDE5LTA0LTAxVDAwOjMwOjA0LjYyNloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--18d6a492fecf5a3188f9c88f10001b74bec91a49/IMG_6218.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22IMG_6218.jpg%22%3B+filename%2A%3DUTF-8%27%27IMG_6218.jpg
+Completed 302 Found in 37ms (ActiveRecord: 4.5ms)
+
+
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--e405897397db5d16fa5caf04b59b9c20ed8d2af9", "filename"=>"IMG_6218"}
+  [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/mwinters/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[36m  Disk Storage (0.9ms) [0m[34mGenerated URL for file at key: 4tYvQFuskvX6i5F4evUUPYvR (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWROSFJaZGxGR2RYTnJkbGcyYVRWR05HVjJWVlZRV1haU0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkRhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlTVTFIWHpZeU1UZ3VhbkJuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkSlRVZGZOakl4T0M1cWNHY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDE5LTA0LTAxVDAwOjMwOjA0LjY2NFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--25a88495b6ccb0a46744a4fff4bb530f892fff27/IMG_6218.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22IMG_6218.jpg%22%3B+filename%2A%3DUTF-8%27%27IMG_6218.jpg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWROSFJaZGxGR2RYTnJkbGcyYVRWR05HVjJWVlZRV1haU0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkRhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlTVTFIWHpZeU1UZ3VhbkJuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkSlRVZGZOakl4T0M1cWNHY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDE5LTA0LTAxVDAwOjMwOjA0LjY2NFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--25a88495b6ccb0a46744a4fff4bb530f892fff27/IMG_6218.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22IMG_6218.jpg%22%3B+filename%2A%3DUTF-8%27%27IMG_6218.jpg
+Completed 302 Found in 12ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRSMlZJV2twdFJHZG1hMjV2V2xWNk1UaFlOelo0YnpkVEJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkRhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlTVTFIWHpZeU1UZ3VhbkJuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkSlRVZGZOakl4T0M1cWNHY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDE5LTA0LTAxVDAwOjMwOjA0LjYyNloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--18d6a492fecf5a3188f9c88f10001b74bec91a49/IMG_6218.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22IMG_6218.jpg%22%3B+filename%2A%3DUTF-8%27%27IMG_6218.jpg" for ::1 at 2019-03-31 20:25:04 -0400
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWROSFJaZGxGR2RYTnJkbGcyYVRWR05HVjJWVlZRV1haU0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkRhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlTVTFIWHpZeU1UZ3VhbkJuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkSlRVZGZOakl4T0M1cWNHY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDE5LTA0LTAxVDAwOjMwOjA0LjY2NFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--25a88495b6ccb0a46744a4fff4bb530f892fff27/IMG_6218.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22IMG_6218.jpg%22%3B+filename%2A%3DUTF-8%27%27IMG_6218.jpg" for ::1 at 2019-03-31 20:25:04 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"IMG_6218.jpg\"; filename*=UTF-8''IMG_6218.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRSMlZJV2twdFJHZG1hMjV2V2xWNk1UaFlOelo0YnpkVEJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkRhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlTVTFIWHpZeU1UZ3VhbkJuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkSlRVZGZOakl4T0M1cWNHY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDE5LTA0LTAxVDAwOjMwOjA0LjYyNloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--18d6a492fecf5a3188f9c88f10001b74bec91a49", "filename"=>"IMG_6218"}
+Processing by ActiveStorage::DiskController#show as JPEG
+Completed 200 OK in 2ms (ActiveRecord: 0.0ms)
+
+
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"IMG_6218.jpg\"; filename*=UTF-8''IMG_6218.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWROSFJaZGxGR2RYTnJkbGcyYVRWR05HVjJWVlZRV1haU0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkRhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlTVTFIWHpZeU1UZ3VhbkJuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkSlRVZGZOakl4T0M1cWNHY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDE5LTA0LTAxVDAwOjMwOjA0LjY2NFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--25a88495b6ccb0a46744a4fff4bb530f892fff27", "filename"=>"IMG_6218"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms)
+
+
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d9fe22a8-d9ca-4bd9-8763-4c0a74102a2c]   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d9fe22a8-d9ca-4bd9-8763-4c0a74102a2c]   ↳ /home/mwinters/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d9fe22a8-d9ca-4bd9-8763-4c0a74102a2c]   [1m[36mActiveStorage::Blob Update (4.9ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = ? WHERE "active_storage_blobs"."id" = ?[0m  [["metadata", "{\"identified\":true,\"width\":2416,\"height\":2230,\"analyzed\":true}"], ["id", 2]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d9fe22a8-d9ca-4bd9-8763-4c0a74102a2c]   ↳ /home/mwinters/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d9fe22a8-d9ca-4bd9-8763-4c0a74102a2c]   [1m[35m (22.4ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d9fe22a8-d9ca-4bd9-8763-4c0a74102a2c]   ↳ /home/mwinters/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d9fe22a8-d9ca-4bd9-8763-4c0a74102a2c] Performed ActiveStorage::AnalyzeJob (Job ID: d9fe22a8-d9ca-4bd9-8763-4c0a74102a2c) from Async(default) in 335.66ms

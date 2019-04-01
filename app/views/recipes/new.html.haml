@@ -1,6 +1,26 @@
 #main
   %h2 Create New Recipe
 
-  = form_tag "/recipes", :method => :post do
-    = render :partial => "create_update_form"
+  -# = form_tag "/recipes", :method => :post do
+  -#   = render :partial => "create_update_form"
+  -#   = submit_tag "Create Recipe"
+
+
+  -# I commented out the partial because I couldn't get the picture to attach without form_for -Winters
+  = form_for Recipe.new do |f|
+    = f.label :name
+    = f.text_field :name
+
+    = f.label :directions
+    = f.text_field :directions
+
+    = f.label :cuisine
+    = f.text_field :cuisine
+
+    = f.label :calories
+    = f.number_field :calories
+
+    = f.label :images
+    = f.file_field :images
+
     = submit_tag "Create Recipe"

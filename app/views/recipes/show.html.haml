@@ -1,3 +1,5 @@
+-# We should change the show layout so that it isn't a table, Looks bad
+
 #main
   %table.recipes_table
     %caption
@@ -8,11 +10,20 @@
       %th Description
       %th Time
       %th Price
+      %th Pictures
 
     %tr.product
       %td.recipedesc= @recipe.directions
       %td.recipetime= @recipe.cuisine
       %td.productprice= @recipe.calories
+      %td
+        - count = 0
+        - @recipe.images.each do |p|
+          - count +=1
+          .show_image
+            =image_tag(p, height: '125', width: '175')
+          - if count % 3 == 0
+            %br
 
   =link_to("Edit Recipe", edit_recipe_path)
   =link_to("Back to recipe list", recipes_path)
