@@ -3564,3 +3564,406 @@ Processing by RecipesController#new as HTML
 Completed 200 OK in 89ms (Views: 83.5ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for ::1 at 2019-04-04 12:20:55 -0400
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.haml within layouts/application
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.haml:13
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 12], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Blob Load (1.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:20
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 13], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 14], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:20
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 15], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 16], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:19
+  Rendered recipes/index.html.haml within layouts/application (226.1ms)
+Completed 200 OK in 570ms (Views: 537.7ms | ActiveRecord: 6.3ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--6f38db7e4af2418e1c77244c6185c5462ee70245/IMG_6218.jpg" for ::1 at 2019-04-04 12:20:56 -0400
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--6f38db7e4af2418e1c77244c6185c5462ee70245", "filename"=>"IMG_6218"}
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--e405897397db5d16fa5caf04b59b9c20ed8d2af9/IMG_6218.jpg" for ::1 at 2019-04-04 12:20:56 -0400
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--e405897397db5d16fa5caf04b59b9c20ed8d2af9", "filename"=>"IMG_6218"}
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[36m  Disk Storage (76.9ms) [0m[34mGenerated URL for file at key: 4tYvQFuskvX6i5F4evUUPYvR (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWROSFJaZGxGR2RYTnJkbGcyYVRWR05HVjJWVlZRV1haU0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkRhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlTVTFIWHpZeU1UZ3VhbkJuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkSlRVZGZOakl4T0M1cWNHY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDE5LTA0LTA0VDE2OjI1OjU2LjIxNVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--36d592afaf68998280f56da2b36cd6993c659d4b/IMG_6218.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22IMG_6218.jpg%22%3B+filename%2A%3DUTF-8%27%27IMG_6218.jpg)[0m
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWROSFJaZGxGR2RYTnJkbGcyYVRWR05HVjJWVlZRV1haU0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkRhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlTVTFIWHpZeU1UZ3VhbkJuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkSlRVZGZOakl4T0M1cWNHY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDE5LTA0LTA0VDE2OjI1OjU2LjIxNVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--36d592afaf68998280f56da2b36cd6993c659d4b/IMG_6218.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22IMG_6218.jpg%22%3B+filename%2A%3DUTF-8%27%27IMG_6218.jpg
+Completed 302 Found in 108ms (ActiveRecord: 0.3ms)
+
+
+[36m  Disk Storage (0.6ms) [0m[34mGenerated URL for file at key: GeHZJmDgfknoZUz18X76xo7S (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRSMlZJV2twdFJHZG1hMjV2V2xWNk1UaFlOelo0YnpkVEJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkRhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlTVTFIWHpZeU1UZ3VhbkJuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkSlRVZGZOakl4T0M1cWNHY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDE5LTA0LTA0VDE2OjI1OjU2LjIxN1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--38fd1d893ed3489c7c382181cfb9cdcd39794d37/IMG_6218.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22IMG_6218.jpg%22%3B+filename%2A%3DUTF-8%27%27IMG_6218.jpg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRSMlZJV2twdFJHZG1hMjV2V2xWNk1UaFlOelo0YnpkVEJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkRhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlTVTFIWHpZeU1UZ3VhbkJuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkSlRVZGZOakl4T0M1cWNHY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDE5LTA0LTA0VDE2OjI1OjU2LjIxN1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--38fd1d893ed3489c7c382181cfb9cdcd39794d37/IMG_6218.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22IMG_6218.jpg%22%3B+filename%2A%3DUTF-8%27%27IMG_6218.jpg
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWROSFJaZGxGR2RYTnJkbGcyYVRWR05HVjJWVlZRV1haU0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkRhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlTVTFIWHpZeU1UZ3VhbkJuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkSlRVZGZOakl4T0M1cWNHY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDE5LTA0LTA0VDE2OjI1OjU2LjIxNVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--36d592afaf68998280f56da2b36cd6993c659d4b/IMG_6218.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22IMG_6218.jpg%22%3B+filename%2A%3DUTF-8%27%27IMG_6218.jpg" for ::1 at 2019-04-04 12:20:56 -0400
+Completed 302 Found in 141ms (ActiveRecord: 0.2ms)
+
+
+Processing by ActiveStorage::DiskController#show as JPEG
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRSMlZJV2twdFJHZG1hMjV2V2xWNk1UaFlOelo0YnpkVEJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkRhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlTVTFIWHpZeU1UZ3VhbkJuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkSlRVZGZOakl4T0M1cWNHY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDE5LTA0LTA0VDE2OjI1OjU2LjIxN1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--38fd1d893ed3489c7c382181cfb9cdcd39794d37/IMG_6218.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22IMG_6218.jpg%22%3B+filename%2A%3DUTF-8%27%27IMG_6218.jpg" for ::1 at 2019-04-04 12:20:56 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"IMG_6218.jpg\"; filename*=UTF-8''IMG_6218.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRSMlZJV2twdFJHZG1hMjV2V2xWNk1UaFlOelo0YnpkVEJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkRhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlTVTFIWHpZeU1UZ3VhbkJuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkSlRVZGZOakl4T0M1cWNHY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDE5LTA0LTA0VDE2OjI1OjU2LjIxN1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--38fd1d893ed3489c7c382181cfb9cdcd39794d37", "filename"=>"IMG_6218"}
+Completed 200 OK in 2ms (ActiveRecord: 0.0ms)
+
+
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"IMG_6218.jpg\"; filename*=UTF-8''IMG_6218.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWROSFJaZGxGR2RYTnJkbGcyYVRWR05HVjJWVlZRV1haU0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkRhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlTVTFIWHpZeU1UZ3VhbkJuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkSlRVZGZOakl4T0M1cWNHY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDE5LTA0LTA0VDE2OjI1OjU2LjIxNVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--36d592afaf68998280f56da2b36cd6993c659d4b", "filename"=>"IMG_6218"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/recipes/12" for ::1 at 2019-04-04 12:21:07 -0400
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:9
+  Rendering recipes/show.html.haml within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 12], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/show.html.haml:21
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/recipes/show.html.haml:24
+  Rendered recipes/show.html.haml within layouts/application (12.9ms)
+Completed 200 OK in 45ms (Views: 36.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/recipes/12" for ::1 at 2019-04-04 12:21:32 -0400
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:9
+  Rendering recipes/show.html.haml within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 12], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/show.html.haml:21
+  [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/recipes/show.html.haml:24
+  Rendered recipes/show.html.haml within layouts/application (21.7ms)
+Completed 200 OK in 60ms (Views: 53.6ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/recipes/12/edit" for ::1 at 2019-04-04 12:21:39 -0400
+Processing by RecipesController#edit as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:34
+  Rendering recipes/edit.html.haml within layouts/application
+  Rendered recipes/edit.html.haml within layouts/application (25.0ms)
+Completed 200 OK in 57ms (Views: 53.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/recipes/new" for ::1 at 2019-04-04 12:21:42 -0400
+Processing by RecipesController#new as HTML
+  Rendering recipes/new.html.haml within layouts/application
+  Rendered recipes/new.html.haml within layouts/application (14.8ms)
+Completed 200 OK in 53ms (Views: 50.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/recipes" for ::1 at 2019-04-04 12:21:48 -0400
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"q1dRW8WfH1KqwboyRr2ze3VYk57XM7ub+pjpTd+z7zzxq+uTYb5VHG58THCDUMg6vTQHzeqeI3Bq7G7Lb0f9lA==", "recipe"=>{"name"=>"afdsf", "directions"=>"asdfsda", "cuisine"=>"asdf", "calories"=>"2"}, "commit"=>"Create Recipe"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/recipes_controller.rb:22
+  [1m[36mRecipe Create (1.1ms)[0m  [1m[32mINSERT INTO "recipes" ("name", "directions", "cuisine", "calories", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "afdsf"], ["directions", "asdfsda"], ["cuisine", "asdf"], ["calories", 2], ["created_at", "2019-04-04 16:21:48.770882"], ["updated_at", "2019-04-04 16:21:48.770882"]]
+  ↳ app/controllers/recipes_controller.rb:22
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/recipes_controller.rb:22
+Redirected to http://localhost:3000/recipes
+Completed 302 Found in 11ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/recipes" for ::1 at 2019-04-04 12:21:48 -0400
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.haml within layouts/application
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.haml:13
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 12], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:20
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 13], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 14], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:20
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 15], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 16], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 17], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:19
+  Rendered recipes/index.html.haml within layouts/application (17.4ms)
+Completed 200 OK in 57ms (Views: 53.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWROSFJaZGxGR2RYTnJkbGcyYVRWR05HVjJWVlZRV1haU0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkRhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlTVTFIWHpZeU1UZ3VhbkJuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkSlRVZGZOakl4T0M1cWNHY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDE5LTA0LTA0VDE2OjI1OjU2LjIxNVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--36d592afaf68998280f56da2b36cd6993c659d4b/IMG_6218.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22IMG_6218.jpg%22%3B+filename%2A%3DUTF-8%27%27IMG_6218.jpg" for ::1 at 2019-04-04 12:21:48 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"IMG_6218.jpg\"; filename*=UTF-8''IMG_6218.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWROSFJaZGxGR2RYTnJkbGcyYVRWR05HVjJWVlZRV1haU0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkRhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlTVTFIWHpZeU1UZ3VhbkJuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkSlRVZGZOakl4T0M1cWNHY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDE5LTA0LTA0VDE2OjI1OjU2LjIxNVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--36d592afaf68998280f56da2b36cd6993c659d4b", "filename"=>"IMG_6218"}
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRSMlZJV2twdFJHZG1hMjV2V2xWNk1UaFlOelo0YnpkVEJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkRhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlTVTFIWHpZeU1UZ3VhbkJuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkSlRVZGZOakl4T0M1cWNHY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDE5LTA0LTA0VDE2OjI1OjU2LjIxN1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--38fd1d893ed3489c7c382181cfb9cdcd39794d37/IMG_6218.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22IMG_6218.jpg%22%3B+filename%2A%3DUTF-8%27%27IMG_6218.jpg" for ::1 at 2019-04-04 12:21:48 -0400
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms)
+
+
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"IMG_6218.jpg\"; filename*=UTF-8''IMG_6218.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRSMlZJV2twdFJHZG1hMjV2V2xWNk1UaFlOelo0YnpkVEJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkRhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlTVTFIWHpZeU1UZ3VhbkJuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkSlRVZGZOakl4T0M1cWNHY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDE5LTA0LTA0VDE2OjI1OjU2LjIxN1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--38fd1d893ed3489c7c382181cfb9cdcd39794d37", "filename"=>"IMG_6218"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/recipes/12" for ::1 at 2019-04-04 12:22:02 -0400
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:9
+  Rendering recipes/show.html.haml within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 12], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/show.html.haml:21
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/recipes/show.html.haml:24
+  Rendered recipes/show.html.haml within layouts/application (15.1ms)
+Completed 200 OK in 42ms (Views: 36.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/recipes" for ::1 at 2019-04-04 12:22:04 -0400
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.haml within layouts/application
+  [1m[36mRecipe Load (0.9ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.haml:13
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 12], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:20
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 13], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 14], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:20
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 15], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 16], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 17], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:19
+  Rendered recipes/index.html.haml within layouts/application (37.6ms)
+Completed 200 OK in 64ms (Views: 60.3ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/recipes/new" for ::1 at 2019-04-04 12:22:27 -0400
+Processing by RecipesController#new as HTML
+  Rendering recipes/new.html.haml within layouts/application
+  Rendered recipes/new.html.haml within layouts/application (11.6ms)
+Completed 200 OK in 47ms (Views: 44.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/recipes" for ::1 at 2019-04-04 12:40:59 -0400
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.haml within layouts/application
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.haml:13
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 12], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:20
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 13], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 14], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:20
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 15], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 16], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 17], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:19
+  Rendered recipes/index.html.haml within layouts/application (44.9ms)
+Completed 200 OK in 188ms (Views: 179.0ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--6f38db7e4af2418e1c77244c6185c5462ee70245/IMG_6218.jpg" for ::1 at 2019-04-04 12:40:59 -0400
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--6f38db7e4af2418e1c77244c6185c5462ee70245", "filename"=>"IMG_6218"}
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[36m  Disk Storage (5.5ms) [0m[34mGenerated URL for file at key: GeHZJmDgfknoZUz18X76xo7S (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRSMlZJV2twdFJHZG1hMjV2V2xWNk1UaFlOelo0YnpkVEJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkRhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlTVTFIWHpZeU1UZ3VhbkJuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkSlRVZGZOakl4T0M1cWNHY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDE5LTA0LTA0VDE2OjQ1OjU5Ljk0M1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--39d659c792d746434f35398c09409f969ccb90b9/IMG_6218.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22IMG_6218.jpg%22%3B+filename%2A%3DUTF-8%27%27IMG_6218.jpg)[0m
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--e405897397db5d16fa5caf04b59b9c20ed8d2af9/IMG_6218.jpg" for ::1 at 2019-04-04 12:40:59 -0400
+Processing by ActiveStorage::BlobsController#show as JPEG
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRSMlZJV2twdFJHZG1hMjV2V2xWNk1UaFlOelo0YnpkVEJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkRhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlTVTFIWHpZeU1UZ3VhbkJuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkSlRVZGZOakl4T0M1cWNHY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDE5LTA0LTA0VDE2OjQ1OjU5Ljk0M1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--39d659c792d746434f35398c09409f969ccb90b9/IMG_6218.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22IMG_6218.jpg%22%3B+filename%2A%3DUTF-8%27%27IMG_6218.jpg
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--e405897397db5d16fa5caf04b59b9c20ed8d2af9", "filename"=>"IMG_6218"}
+  [1m[36mActiveStorage::Blob Load (0.9ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 302 Found in 39ms (ActiveRecord: 0.3ms)
+
+
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[36m  Disk Storage (2.8ms) [0m[34mGenerated URL for file at key: 4tYvQFuskvX6i5F4evUUPYvR (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWROSFJaZGxGR2RYTnJkbGcyYVRWR05HVjJWVlZRV1haU0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkRhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlTVTFIWHpZeU1UZ3VhbkJuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkSlRVZGZOakl4T0M1cWNHY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDE5LTA0LTA0VDE2OjQ1OjU5Ljk3N1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--ac3d56cbe5b6a57c8f5cefb92d9173cc20c64d86/IMG_6218.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22IMG_6218.jpg%22%3B+filename%2A%3DUTF-8%27%27IMG_6218.jpg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWROSFJaZGxGR2RYTnJkbGcyYVRWR05HVjJWVlZRV1haU0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkRhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlTVTFIWHpZeU1UZ3VhbkJuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkSlRVZGZOakl4T0M1cWNHY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDE5LTA0LTA0VDE2OjQ1OjU5Ljk3N1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--ac3d56cbe5b6a57c8f5cefb92d9173cc20c64d86/IMG_6218.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22IMG_6218.jpg%22%3B+filename%2A%3DUTF-8%27%27IMG_6218.jpg
+Completed 302 Found in 17ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRSMlZJV2twdFJHZG1hMjV2V2xWNk1UaFlOelo0YnpkVEJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkRhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlTVTFIWHpZeU1UZ3VhbkJuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkSlRVZGZOakl4T0M1cWNHY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDE5LTA0LTA0VDE2OjQ1OjU5Ljk0M1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--39d659c792d746434f35398c09409f969ccb90b9/IMG_6218.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22IMG_6218.jpg%22%3B+filename%2A%3DUTF-8%27%27IMG_6218.jpg" for ::1 at 2019-04-04 12:40:59 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWROSFJaZGxGR2RYTnJkbGcyYVRWR05HVjJWVlZRV1haU0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkRhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlTVTFIWHpZeU1UZ3VhbkJuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkSlRVZGZOakl4T0M1cWNHY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDE5LTA0LTA0VDE2OjQ1OjU5Ljk3N1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--ac3d56cbe5b6a57c8f5cefb92d9173cc20c64d86/IMG_6218.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22IMG_6218.jpg%22%3B+filename%2A%3DUTF-8%27%27IMG_6218.jpg" for ::1 at 2019-04-04 12:40:59 -0400
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"IMG_6218.jpg\"; filename*=UTF-8''IMG_6218.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRSMlZJV2twdFJHZG1hMjV2V2xWNk1UaFlOelo0YnpkVEJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkRhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlTVTFIWHpZeU1UZ3VhbkJuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkSlRVZGZOakl4T0M1cWNHY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDE5LTA0LTA0VDE2OjQ1OjU5Ljk0M1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--39d659c792d746434f35398c09409f969ccb90b9", "filename"=>"IMG_6218"}
+Processing by ActiveStorage::DiskController#show as JPEG
+Completed 200 OK in 3ms (ActiveRecord: 0.0ms)
+
+
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"IMG_6218.jpg\"; filename*=UTF-8''IMG_6218.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWROSFJaZGxGR2RYTnJkbGcyYVRWR05HVjJWVlZRV1haU0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkRhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlTVTFIWHpZeU1UZ3VhbkJuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkSlRVZGZOakl4T0M1cWNHY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDE5LTA0LTA0VDE2OjQ1OjU5Ljk3N1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--ac3d56cbe5b6a57c8f5cefb92d9173cc20c64d86", "filename"=>"IMG_6218"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/recipes" for ::1 at 2019-04-04 12:41:07 -0400
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.haml within layouts/application
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.haml:13
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 12], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:20
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 13], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 14], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:20
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 15], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 16], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 17], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:19
+  Rendered recipes/index.html.haml within layouts/application (26.8ms)
+Completed 200 OK in 120ms (Views: 115.1ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWROSFJaZGxGR2RYTnJkbGcyYVRWR05HVjJWVlZRV1haU0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkRhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlTVTFIWHpZeU1UZ3VhbkJuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkSlRVZGZOakl4T0M1cWNHY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDE5LTA0LTA0VDE2OjQ1OjU5Ljk3N1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--ac3d56cbe5b6a57c8f5cefb92d9173cc20c64d86/IMG_6218.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22IMG_6218.jpg%22%3B+filename%2A%3DUTF-8%27%27IMG_6218.jpg" for ::1 at 2019-04-04 12:41:07 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"IMG_6218.jpg\"; filename*=UTF-8''IMG_6218.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWROSFJaZGxGR2RYTnJkbGcyYVRWR05HVjJWVlZRV1haU0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkRhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlTVTFIWHpZeU1UZ3VhbkJuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkSlRVZGZOakl4T0M1cWNHY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDE5LTA0LTA0VDE2OjQ1OjU5Ljk3N1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--ac3d56cbe5b6a57c8f5cefb92d9173cc20c64d86", "filename"=>"IMG_6218"}
+Completed 304 Not Modified in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRSMlZJV2twdFJHZG1hMjV2V2xWNk1UaFlOelo0YnpkVEJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkRhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlTVTFIWHpZeU1UZ3VhbkJuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkSlRVZGZOakl4T0M1cWNHY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDE5LTA0LTA0VDE2OjQ1OjU5Ljk0M1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--39d659c792d746434f35398c09409f969ccb90b9/IMG_6218.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22IMG_6218.jpg%22%3B+filename%2A%3DUTF-8%27%27IMG_6218.jpg" for ::1 at 2019-04-04 12:41:07 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"IMG_6218.jpg\"; filename*=UTF-8''IMG_6218.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRSMlZJV2twdFJHZG1hMjV2V2xWNk1UaFlOelo0YnpkVEJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkRhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlTVTFIWHpZeU1UZ3VhbkJuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkSlRVZGZOakl4T0M1cWNHY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDE5LTA0LTA0VDE2OjQ1OjU5Ljk0M1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--39d659c792d746434f35398c09409f969ccb90b9", "filename"=>"IMG_6218"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/recipes" for ::1 at 2019-04-04 12:41:16 -0400
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.haml within layouts/application
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.haml:13
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 12], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:20
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 13], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 14], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:20
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 15], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 16], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 17], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:19
+  Rendered recipes/index.html.haml within layouts/application (23.3ms)
+Completed 200 OK in 47ms (Views: 43.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRSMlZJV2twdFJHZG1hMjV2V2xWNk1UaFlOelo0YnpkVEJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkRhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlTVTFIWHpZeU1UZ3VhbkJuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkSlRVZGZOakl4T0M1cWNHY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDE5LTA0LTA0VDE2OjQ1OjU5Ljk0M1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--39d659c792d746434f35398c09409f969ccb90b9/IMG_6218.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22IMG_6218.jpg%22%3B+filename%2A%3DUTF-8%27%27IMG_6218.jpg" for ::1 at 2019-04-04 12:41:16 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"IMG_6218.jpg\"; filename*=UTF-8''IMG_6218.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRSMlZJV2twdFJHZG1hMjV2V2xWNk1UaFlOelo0YnpkVEJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkRhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlTVTFIWHpZeU1UZ3VhbkJuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkSlRVZGZOakl4T0M1cWNHY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDE5LTA0LTA0VDE2OjQ1OjU5Ljk0M1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--39d659c792d746434f35398c09409f969ccb90b9", "filename"=>"IMG_6218"}
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWROSFJaZGxGR2RYTnJkbGcyYVRWR05HVjJWVlZRV1haU0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkRhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlTVTFIWHpZeU1UZ3VhbkJuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkSlRVZGZOakl4T0M1cWNHY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDE5LTA0LTA0VDE2OjQ1OjU5Ljk3N1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--ac3d56cbe5b6a57c8f5cefb92d9173cc20c64d86/IMG_6218.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22IMG_6218.jpg%22%3B+filename%2A%3DUTF-8%27%27IMG_6218.jpg" for ::1 at 2019-04-04 12:41:16 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"IMG_6218.jpg\"; filename*=UTF-8''IMG_6218.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWROSFJaZGxGR2RYTnJkbGcyYVRWR05HVjJWVlZRV1haU0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkRhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlTVTFIWHpZeU1UZ3VhbkJuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkSlRVZGZOakl4T0M1cWNHY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDE5LTA0LTA0VDE2OjQ1OjU5Ljk3N1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--ac3d56cbe5b6a57c8f5cefb92d9173cc20c64d86", "filename"=>"IMG_6218"}
+Completed 304 Not Modified in 4ms (ActiveRecord: 0.0ms)
+
+
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/recipes" for ::1 at 2019-04-04 12:41:20 -0400
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.haml within layouts/application
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.haml:13
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 12], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:20
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 13], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (2.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 14], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:20
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 15], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 16], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 17], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:19
+  Rendered recipes/index.html.haml within layouts/application (54.7ms)
+Completed 200 OK in 146ms (Views: 140.8ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWROSFJaZGxGR2RYTnJkbGcyYVRWR05HVjJWVlZRV1haU0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkRhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlTVTFIWHpZeU1UZ3VhbkJuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkSlRVZGZOakl4T0M1cWNHY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDE5LTA0LTA0VDE2OjQ1OjU5Ljk3N1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--ac3d56cbe5b6a57c8f5cefb92d9173cc20c64d86/IMG_6218.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22IMG_6218.jpg%22%3B+filename%2A%3DUTF-8%27%27IMG_6218.jpg" for ::1 at 2019-04-04 12:41:20 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"IMG_6218.jpg\"; filename*=UTF-8''IMG_6218.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWROSFJaZGxGR2RYTnJkbGcyYVRWR05HVjJWVlZRV1haU0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkRhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlTVTFIWHpZeU1UZ3VhbkJuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkSlRVZGZOakl4T0M1cWNHY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDE5LTA0LTA0VDE2OjQ1OjU5Ljk3N1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--ac3d56cbe5b6a57c8f5cefb92d9173cc20c64d86", "filename"=>"IMG_6218"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRSMlZJV2twdFJHZG1hMjV2V2xWNk1UaFlOelo0YnpkVEJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkRhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlTVTFIWHpZeU1UZ3VhbkJuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkSlRVZGZOakl4T0M1cWNHY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDE5LTA0LTA0VDE2OjQ1OjU5Ljk0M1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--39d659c792d746434f35398c09409f969ccb90b9/IMG_6218.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22IMG_6218.jpg%22%3B+filename%2A%3DUTF-8%27%27IMG_6218.jpg" for ::1 at 2019-04-04 12:41:20 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"IMG_6218.jpg\"; filename*=UTF-8''IMG_6218.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRSMlZJV2twdFJHZG1hMjV2V2xWNk1UaFlOelo0YnpkVEJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkRhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlTVTFIWHpZeU1UZ3VhbkJuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkSlRVZGZOakl4T0M1cWNHY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDE5LTA0LTA0VDE2OjQ1OjU5Ljk0M1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--39d659c792d746434f35398c09409f969ccb90b9", "filename"=>"IMG_6218"}
+Completed 304 Not Modified in 11ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/recipes" for ::1 at 2019-04-04 12:45:15 -0400
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.haml within layouts/application
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.haml:13
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 12], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:20
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 13], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 14], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:20
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 15], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 16], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 17], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:19
+  Rendered recipes/index.html.haml within layouts/application (39.9ms)
+Completed 200 OK in 159ms (Views: 153.6ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRSMlZJV2twdFJHZG1hMjV2V2xWNk1UaFlOelo0YnpkVEJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkRhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlTVTFIWHpZeU1UZ3VhbkJuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkSlRVZGZOakl4T0M1cWNHY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDE5LTA0LTA0VDE2OjQ1OjU5Ljk0M1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--39d659c792d746434f35398c09409f969ccb90b9/IMG_6218.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22IMG_6218.jpg%22%3B+filename%2A%3DUTF-8%27%27IMG_6218.jpg" for ::1 at 2019-04-04 12:45:15 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"IMG_6218.jpg\"; filename*=UTF-8''IMG_6218.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRSMlZJV2twdFJHZG1hMjV2V2xWNk1UaFlOelo0YnpkVEJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkRhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlTVTFIWHpZeU1UZ3VhbkJuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkSlRVZGZOakl4T0M1cWNHY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDE5LTA0LTA0VDE2OjQ1OjU5Ljk0M1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--39d659c792d746434f35398c09409f969ccb90b9", "filename"=>"IMG_6218"}
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWROSFJaZGxGR2RYTnJkbGcyYVRWR05HVjJWVlZRV1haU0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkRhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlTVTFIWHpZeU1UZ3VhbkJuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkSlRVZGZOakl4T0M1cWNHY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDE5LTA0LTA0VDE2OjQ1OjU5Ljk3N1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--ac3d56cbe5b6a57c8f5cefb92d9173cc20c64d86/IMG_6218.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22IMG_6218.jpg%22%3B+filename%2A%3DUTF-8%27%27IMG_6218.jpg" for ::1 at 2019-04-04 12:45:15 -0400
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms)
+
+
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"IMG_6218.jpg\"; filename*=UTF-8''IMG_6218.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWROSFJaZGxGR2RYTnJkbGcyYVRWR05HVjJWVlZRV1haU0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkRhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlTVTFIWHpZeU1UZ3VhbkJuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkSlRVZGZOakl4T0M1cWNHY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDE5LTA0LTA0VDE2OjQ1OjU5Ljk3N1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--ac3d56cbe5b6a57c8f5cefb92d9173cc20c64d86", "filename"=>"IMG_6218"}
+Completed 304 Not Modified in 2ms (ActiveRecord: 0.0ms)
+
+
