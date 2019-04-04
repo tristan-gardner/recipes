@@ -51,16 +51,15 @@ Rspec.describe RecipeController do
       expect(response).to redirect_to(new)
     end
   end
-  describe "UDPATE PAGE" do
+  describe "UDPATE ID" do
     before(:each) do
-      r = Recipe.create!(name: "Bacon Burger", directions: "Blended up burger with bacon bits sprinkled on top", author: "JFS", calories: 2000, cuisine: "Druggie Lunch")
-    end
-    after(:each) do
-      r.destroy
+      
     end
     it "should properly update a model object"do
+
     end
     it "should redirect to the index page following a proper update" do
+
     end
     it "should remain on the update page when improper values are given" do
     end
