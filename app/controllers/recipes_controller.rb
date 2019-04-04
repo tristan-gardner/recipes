@@ -48,6 +48,18 @@ class RecipesController < ApplicationController
     end
   end
 
+  def destroy
+      recipe = Recipe.find(params[:id])
+      begin
+          recipe.destroy
+          flash[:notice] = "#{recipe.name} succesfully destroyed"
+          redirect_to recipes_path
+      rescue
+          flash[:warning] = "Unable to destroy #{recipe.name}"
+          redirect_to recipe_path
+      end
+  end
+
   private
   def create_update_params
     params.require(:recipe).permit(:name, :directions, :cuisine, :calories, :images)

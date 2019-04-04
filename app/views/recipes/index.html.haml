@@ -1,20 +1,18 @@
 #main
-  %h1 Recipes List
-
-  %table.recipes_table
-    %tr.recipes_header
-      %th Title
-      %th Instructions
-      %th Time
-      %th Picture
-
+  %div.main_container
+    %h1 Recipes List
 
     %p= link_to "Create New Recipe", new_recipe_path
-    -@recipes.each do |r|
-      %tr.recipe
-        %td.recipename= link_to "#{r.name}", recipe_path(r)
-        %td.recipedesc= r.directions
-        %td.recipetime= "#{r.calories} calories"
-        %td
-          - r.images.each do |img|
-            =image_tag(img, height: '100', width: '150')
+    %div.flexbox
+      %div.recipes
+        -@recipes.each do |r|
+          %div.recipe_container
+            %div.title= link_to "#{r.name}", recipe_path(r)
+            -r.images.each do |img|
+              %div.image= image_tag(img, height: '400')
+            %div.directions= "Directions: #{r.directions}"
+            %div.calories= "Calories: #{r.calories}"
+            %br
+
+      %div.search_box
+        search box goes here
