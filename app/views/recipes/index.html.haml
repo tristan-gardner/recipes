@@ -1,8 +1,9 @@
 #main
+  %header
+    %link{:rel => :stylesheet, :type => :"text/css", :href => "/assets/stylesheets/bootstrap.min.css"}
   %div.main_container
     %h1 Recipes List
-
-    %p= link_to "Create New Recipe", new_recipe_path
+    %p= link_to 'Create New Recipe', new_recipe_path, :class => 'btn btn-info'
     %div.flexbox
       %div.recipes
         -@recipes.each do |r|
@@ -15,4 +16,3 @@
             %br
 
       %div.search_box
-        search box goes here
