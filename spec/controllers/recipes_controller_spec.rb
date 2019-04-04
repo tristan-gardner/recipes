@@ -13,7 +13,12 @@ Rspec.describe RecipeController do
 
   describe "SHOW PAGE" do
     before(:each) do
-      r = Recipe.create!(name: "Dumpster Burger", directions: "You woudn't believe me if I told you", author: "JFS"))
+      FactoryBot.define do
+        factory :recipe do
+          name {"Dumpster Burger"}
+          directions {"You woudn't believe me if I told you"}
+        end
+      end
     end
     it "has a 200 response code" do
       get :show, :id 1
@@ -53,19 +58,38 @@ Rspec.describe RecipeController do
   end
   describe "UDPATE ID" do
     before(:each) do
-      
+      r = Recipe.create!(id: 50, name: "Bacony Burgers", description: "Totally Burgerlicous!")
+      get :update 50
     end
-    it "should properly update a model object"do
-
+    it "should properly update a model object" do
+      fill_in "Name", with: "Baconery Burgers"
+      fill_in "Description", with: "Awful food"
+      fill_in "Cuisine", with: "American"
+      fill_in "Calories", with: 100000
+      click_button "Update Recipe"
+      expect(r.name).to eq("Baconery Burgers")
+      expect(r.description).to eq("Awful food")
+      expect(r.cuisine).to eq("American")
+      expect(r.calories).to eq(100000)
     end
     it "should redirect to the index page following a proper update" do
-
+      fill_in "Name", with: "Burgery Bacon"
+      click_button "Update Recipe"
+      expect(response).to render_template('index')
     end
     it "should remain on the update page when improper values are given" do
+      fill_in "Name", with: 123
+      click_button "Update Recipe"
+      expect(response).to render_template('update')
     end
     it "should not update an objects values when new values are invalid" do
+      fill_in "Name", with: 123
+      click_button "Update Recipe"
+      expect(r.name).to eq("Bacony Burger")
     end
     it "should not update an objects values when no new values are given" do
+      click_button "Update Recipe"
+      expect(r.name).to eq("Bacony Burger")
     end
   end
 end
