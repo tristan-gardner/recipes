@@ -4,8 +4,14 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: {}
-# column: value
-#
-two: {}
-# column: value
+# one: {}
+# # column: value
+# #
+# two: {}
+# # column: value
+Bacon Burger:
+  name: Bacon Burger
+  description: Two of three patties, bacon grease, bacon, chocolate, fried bread, dirty pots and pans for flavor
+Cheesy Noodles:
+  name: Cheesy Pasta
+  description: Three cups of Noodles, a lump of cheese I found in the fridge, a pot that hasn't been cleaned for a week, some spices.
