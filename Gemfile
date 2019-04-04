@@ -42,6 +42,12 @@ gem 'image_processing', '~> 1.2'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  #Cucumber and cucumber helpers
+  gem 'cucumber-rails', :require => false
+  gem 'cucumber-rails-training-wheels'
+  # Adds support for Capybara system testing and selenium driver
+  gem 'capybara', '>= 2.13'
+  gem 'selenium-webdriver'
 end
 
 group :development do
@@ -56,10 +62,13 @@ end
 group :test do
   # Adds support for Capybara system testing and selenium driver
   gem "factory_bot_rails"
-  gem 'capybara', '>= 2.15'
-  gem 'selenium-webdriver'
+  # gem 'capybara', '>= 2.15'
+  # gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
+  #Simplecov gem to help with C0 coverage numbers
+  gem 'simplecov', :require => false
+
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
