@@ -27,7 +27,12 @@ Rspec.describe RecipeController do
       assert_response 302
       expect(response).to redirect_to(index)
     end
+    it "should display a button to edit a recipe" do
+    end
+    it "should display an objects title, description and vote counts" do
+    end
   end
+
   describe "CREATE PAGE" do
     before(:each) do
       visit :new_recipe_path
