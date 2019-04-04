@@ -82,6 +82,7 @@ Rspec.describe RecipeController do
       click_button "Update Recipe"
       expect(response).to render_template('update')
     end
+    
     it "should not update an objects values when new values are invalid" do
       fill_in "Name", with: 123
       click_button "Update Recipe"
