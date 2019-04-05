@@ -65,7 +65,12 @@ When /^(.*) within (.*[^:]):$/ do |step, parent, table_or_string|
 end
 
 Given /^(?:|I )am on (.+)$/ do |page_name|
-  visit path_to(page_name)
+  case
+  when page_name.include?("create")
+    visit new_recipe_path
+  else
+    visit path_to(page_name)
+  end
 end
 
 When /^(?:|I )go to (.+)$/ do |page_name|
@@ -101,7 +106,7 @@ end
 #
 When /^(?:|I )fill in the following:$/ do |fields|
   fields.rows_hash.each do |name, value|
-    When %{I fill in "#{name}" with "#{value}"}
+    fill_in(name, :with => value)
   end
 end
 
@@ -270,6 +275,31 @@ Then /^(?:|I )should have the following query string:$/ do |expected_pairs|
   else
     assert_equal expected_params, actual_params
   end
+end
+
+Then("I should see that {string} has an image {string}") do |title, image_name|
+  val = nil
+
+  page.all("tr").each do |line|
+    if line.has_content? title
+      if line.has_content? image_name
+        val = expect line.has_content? image_name
+      end
+    end
+  end
+  expect(!val.nil?)
+end
+
+Then("I should see that {string} has a calorie count of {string}") do |title, cal|
+  val = nil
+  page.all("tr").each do |line|
+    if line.has_content? title
+      if line.has_content? cal
+        val = expect line.has_content? cal
+      end
+    end
+  end
+  expect(!val.nil?)
 end
 
 Then /^show me the page$/ do

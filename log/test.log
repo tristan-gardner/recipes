@@ -820,3 +820,221 @@ Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms)
   [1m[36mRecipe Create (0.2ms)[0m  [1m[32mINSERT INTO "recipes" ("name", "directions", "cuisine", "calories", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Pizza"], ["directions", "Infested"], ["cuisine", "Italian"], ["calories", 500], ["created_at", "2019-04-05 20:06:21.015063"], ["updated_at", "2019-04-05 20:06:21.015063"]]
   [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
   [1m[35m (1.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRecipe Create (1.6ms)[0m  [1m[32mINSERT INTO "recipes" ("name", "directions", "cuisine", "calories", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Burger"], ["directions", "Infected"], ["cuisine", "American"], ["calories", 300], ["created_at", "2019-04-05 20:08:41.447197"], ["updated_at", "2019-04-05 20:08:41.447197"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRecipe Create (0.1ms)[0m  [1m[32mINSERT INTO "recipes" ("name", "directions", "cuisine", "calories", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Pizza"], ["directions", "Infested"], ["cuisine", "Italian"], ["calories", 500], ["created_at", "2019-04-05 20:08:41.450466"], ["updated_at", "2019-04-05 20:08:41.450466"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/recipes/new" for 127.0.0.1 at 2019-04-05 16:08:41 -0400
+Processing by RecipesController#new as HTML
+  Rendering recipes/new.html.haml within layouts/application
+  Rendered recipes/_create_update_form.html.haml (17.5ms)
+  Rendered recipes/new.html.haml within layouts/application (29.3ms)
+Completed 200 OK in 1946ms (Views: 1939.9ms | ActiveRecord: 0.0ms)
+  [1m[35m (1.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRecipe Create (0.7ms)[0m  [1m[32mINSERT INTO "recipes" ("name", "directions", "cuisine", "calories", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Burger"], ["directions", "Infected"], ["cuisine", "American"], ["calories", 300], ["created_at", "2019-04-05 20:08:43.439302"], ["updated_at", "2019-04-05 20:08:43.439302"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRecipe Create (0.2ms)[0m  [1m[32mINSERT INTO "recipes" ("name", "directions", "cuisine", "calories", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Pizza"], ["directions", "Infested"], ["cuisine", "Italian"], ["calories", 500], ["created_at", "2019-04-05 20:08:43.442320"], ["updated_at", "2019-04-05 20:08:43.442320"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/recipes/new" for 127.0.0.1 at 2019-04-05 16:08:43 -0400
+Processing by RecipesController#new as HTML
+  Rendering recipes/new.html.haml within layouts/application
+  Rendered recipes/_create_update_form.html.haml (2.7ms)
+  Rendered recipes/new.html.haml within layouts/application (3.9ms)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.0ms)
+  [1m[35m (1.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRecipe Create (1.8ms)[0m  [1m[32mINSERT INTO "recipes" ("name", "directions", "cuisine", "calories", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Burger"], ["directions", "Infected"], ["cuisine", "American"], ["calories", 300], ["created_at", "2019-04-05 20:09:48.342534"], ["updated_at", "2019-04-05 20:09:48.342534"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRecipe Create (0.2ms)[0m  [1m[32mINSERT INTO "recipes" ("name", "directions", "cuisine", "calories", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Pizza"], ["directions", "Infested"], ["cuisine", "Italian"], ["calories", 500], ["created_at", "2019-04-05 20:09:48.346685"], ["updated_at", "2019-04-05 20:09:48.346685"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/recipes/new" for 127.0.0.1 at 2019-04-05 16:09:48 -0400
+Processing by RecipesController#new as HTML
+  Rendering recipes/new.html.haml within layouts/application
+  Rendered recipes/_create_update_form.html.haml (38.7ms)
+  Rendered recipes/new.html.haml within layouts/application (49.1ms)
+Completed 200 OK in 342ms (Views: 335.2ms | ActiveRecord: 0.0ms)
+  [1m[35m (32.7ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRecipe Create (0.8ms)[0m  [1m[32mINSERT INTO "recipes" ("name", "directions", "cuisine", "calories", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Burger"], ["directions", "Infected"], ["cuisine", "American"], ["calories", 300], ["created_at", "2019-04-05 20:09:48.764715"], ["updated_at", "2019-04-05 20:09:48.764715"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRecipe Create (0.2ms)[0m  [1m[32mINSERT INTO "recipes" ("name", "directions", "cuisine", "calories", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Pizza"], ["directions", "Infested"], ["cuisine", "Italian"], ["calories", 500], ["created_at", "2019-04-05 20:09:48.768223"], ["updated_at", "2019-04-05 20:09:48.768223"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/recipes/new" for 127.0.0.1 at 2019-04-05 16:09:48 -0400
+Processing by RecipesController#new as HTML
+  Rendering recipes/new.html.haml within layouts/application
+  Rendered recipes/_create_update_form.html.haml (4.1ms)
+  Rendered recipes/new.html.haml within layouts/application (5.1ms)
+Completed 200 OK in 7ms (Views: 6.7ms | ActiveRecord: 0.0ms)
+  [1m[35m (1.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRecipe Create (2.3ms)[0m  [1m[32mINSERT INTO "recipes" ("name", "directions", "cuisine", "calories", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Burger"], ["directions", "Infected"], ["cuisine", "American"], ["calories", 300], ["created_at", "2019-04-05 20:11:57.819140"], ["updated_at", "2019-04-05 20:11:57.819140"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRecipe Create (0.1ms)[0m  [1m[32mINSERT INTO "recipes" ("name", "directions", "cuisine", "calories", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Pizza"], ["directions", "Infested"], ["cuisine", "Italian"], ["calories", 500], ["created_at", "2019-04-05 20:11:57.823316"], ["updated_at", "2019-04-05 20:11:57.823316"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/recipes/new" for 127.0.0.1 at 2019-04-05 16:11:57 -0400
+Processing by RecipesController#new as HTML
+  Rendering recipes/new.html.haml within layouts/application
+  Rendered recipes/_create_update_form.html.haml (5.2ms)
+  Rendered recipes/new.html.haml within layouts/application (10.6ms)
+Completed 200 OK in 409ms (Views: 404.1ms | ActiveRecord: 0.0ms)
+Started POST "/recipes" for 127.0.0.1 at 2019-04-05 16:11:58 -0400
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "recipe"=>{"name"=>"Fried Burger Bacon", "directions"=>"Fry it up", "cuisine"=>"Druggie Lunch", "calories"=>"1000"}, "commit"=>"Create Recipe"}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRecipe Create (0.2ms)[0m  [1m[32mINSERT INTO "recipes" ("name", "directions", "cuisine", "calories", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Fried Burger Bacon"], ["directions", "Fry it up"], ["cuisine", "Druggie Lunch"], ["calories", 1000], ["created_at", "2019-04-05 20:11:58.285445"], ["updated_at", "2019-04-05 20:11:58.285445"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/recipes
+Completed 302 Found in 4ms (ActiveRecord: 0.5ms)
+Started GET "/recipes" for 127.0.0.1 at 2019-04-05 16:11:58 -0400
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.haml within layouts/application
+  [1m[36mRecipe Load (0.8ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  [1m[36mActiveStorage::Attachment Load (1.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 1], ["record_type", "Recipe"], ["name", "images"]]
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 2], ["record_type", "Recipe"], ["name", "images"]]
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 3], ["record_type", "Recipe"], ["name", "images"]]
+  Rendered recipes/index.html.haml within layouts/application (36.4ms)
+Completed 200 OK in 41ms (Views: 35.9ms | ActiveRecord: 2.5ms)
+  [1m[35m (1.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRecipe Create (0.6ms)[0m  [1m[32mINSERT INTO "recipes" ("name", "directions", "cuisine", "calories", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Burger"], ["directions", "Infected"], ["cuisine", "American"], ["calories", 300], ["created_at", "2019-04-05 20:11:58.424042"], ["updated_at", "2019-04-05 20:11:58.424042"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRecipe Create (0.2ms)[0m  [1m[32mINSERT INTO "recipes" ("name", "directions", "cuisine", "calories", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Pizza"], ["directions", "Infested"], ["cuisine", "Italian"], ["calories", 500], ["created_at", "2019-04-05 20:11:58.426544"], ["updated_at", "2019-04-05 20:11:58.426544"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/recipes/new" for 127.0.0.1 at 2019-04-05 16:11:58 -0400
+Processing by RecipesController#new as HTML
+  Rendering recipes/new.html.haml within layouts/application
+  Rendered recipes/_create_update_form.html.haml (2.7ms)
+  Rendered recipes/new.html.haml within layouts/application (3.9ms)
+Completed 200 OK in 8ms (Views: 6.5ms | ActiveRecord: 0.0ms)
+Started POST "/recipes" for 127.0.0.1 at 2019-04-05 16:11:58 -0400
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "recipe"=>{"name"=>"Fried Burger Bacon", "directions"=>"Fry it up", "cuisine"=>"Druggie Lunch", "calories"=>"1000", "images"=>#<ActionDispatch::Http::UploadedFile:0x00007fb892423680 @tempfile=#<Tempfile:/var/folders/_v/jwvltfyj03v464tcjs8kj6y80000gn/T/RackMultipart20190405-98139-1ai4l95.jpg>, @original_filename="Burger.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"recipe[images]\"; filename=\"Burger.jpg\"\r\nContent-Type: image/jpeg\r\nContent-Length: 3486750\r\n">}, "commit"=>"Create Recipe"}
+[36m  Disk Storage (22.4ms) [0m[32mUploaded file to key: cbrjZaDC2iKqdFiMDF1aBYEe (checksum: 9UhzJeIT8k91na+20Zdd4A==)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mActiveStorage::Blob Create (1.6ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["key", "cbrjZaDC2iKqdFiMDF1aBYEe"], ["filename", "Burger.jpg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 3486750], ["checksum", "9UhzJeIT8k91na+20Zdd4A=="], ["created_at", "2019-04-05 20:11:58.727991"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRecipe Create (0.3ms)[0m  [1m[32mINSERT INTO "recipes" ("name", "directions", "cuisine", "calories", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Fried Burger Bacon"], ["directions", "Fry it up"], ["cuisine", "Druggie Lunch"], ["calories", 1000], ["created_at", "2019-04-05 20:11:58.771116"], ["updated_at", "2019-04-05 20:11:58.771116"]]
+  [1m[36mActiveStorage::Attachment Create (1.7ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "images"], ["record_type", "Recipe"], ["record_id", 3], ["blob_id", 1], ["created_at", "2019-04-05 20:11:58.773341"]]
+  [1m[36mRecipe Update (0.2ms)[0m  [1m[33mUPDATE "recipes" SET "updated_at" = ? WHERE "recipes"."id" = ?[0m  [["updated_at", "2019-04-05 20:11:58.777003"], ["id", 3]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: ca66e999-37bc-46aa-a3fb-e80073c4794a) to Async(default) with arguments: #<GlobalID:0x00007fb890ce6918 @uri=#<URI::GID gid://reci/ActiveStorage::Blob/1>>
+Redirected to http://www.example.com/recipes
+Completed 302 Found in 174ms (ActiveRecord: 5.4ms)
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Started GET "/recipes" for 127.0.0.1 at 2019-04-05 16:11:58 -0400
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.haml within layouts/application
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 1], ["record_type", "Recipe"], ["name", "images"]]
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 2], ["record_type", "Recipe"], ["name", "images"]]
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 3], ["record_type", "Recipe"], ["name", "images"]]
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered recipes/index.html.haml within layouts/application (8.7ms)
+Completed 200 OK in 11ms (Views: 10.2ms | ActiveRecord: 0.6ms)
+  [1m[35m (1.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRecipe Create (1.1ms)[0m  [1m[32mINSERT INTO "recipes" ("name", "directions", "cuisine", "calories", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Burger"], ["directions", "Infected"], ["cuisine", "American"], ["calories", 300], ["created_at", "2019-04-05 20:14:56.433123"], ["updated_at", "2019-04-05 20:14:56.433123"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRecipe Create (0.5ms)[0m  [1m[32mINSERT INTO "recipes" ("name", "directions", "cuisine", "calories", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Pizza"], ["directions", "Infested"], ["cuisine", "Italian"], ["calories", 500], ["created_at", "2019-04-05 20:14:56.436733"], ["updated_at", "2019-04-05 20:14:56.436733"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/recipes/new" for 127.0.0.1 at 2019-04-05 16:14:56 -0400
+Processing by RecipesController#new as HTML
+  Rendering recipes/new.html.haml within layouts/application
+  Rendered recipes/_create_update_form.html.haml (16.8ms)
+  Rendered recipes/new.html.haml within layouts/application (30.0ms)
+Completed 200 OK in 348ms (Views: 339.8ms | ActiveRecord: 0.0ms)
+Started POST "/recipes" for 127.0.0.1 at 2019-04-05 16:14:56 -0400
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "recipe"=>{"name"=>"Fried Burger Bacon", "directions"=>"Fry it up", "cuisine"=>"Druggie Lunch", "calories"=>"1000"}, "commit"=>"Create Recipe"}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRecipe Create (0.2ms)[0m  [1m[32mINSERT INTO "recipes" ("name", "directions", "cuisine", "calories", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Fried Burger Bacon"], ["directions", "Fry it up"], ["cuisine", "Druggie Lunch"], ["calories", 1000], ["created_at", "2019-04-05 20:14:56.832838"], ["updated_at", "2019-04-05 20:14:56.832838"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/recipes
+Completed 302 Found in 5ms (ActiveRecord: 0.5ms)
+Started GET "/recipes" for 127.0.0.1 at 2019-04-05 16:14:56 -0400
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.haml within layouts/application
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  [1m[36mActiveStorage::Attachment Load (1.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 1], ["record_type", "Recipe"], ["name", "images"]]
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 2], ["record_type", "Recipe"], ["name", "images"]]
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 3], ["record_type", "Recipe"], ["name", "images"]]
+  Rendered recipes/index.html.haml within layouts/application (44.7ms)
+Completed 200 OK in 50ms (Views: 45.7ms | ActiveRecord: 1.9ms)
+  [1m[35m (1.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRecipe Create (0.7ms)[0m  [1m[32mINSERT INTO "recipes" ("name", "directions", "cuisine", "calories", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Burger"], ["directions", "Infected"], ["cuisine", "American"], ["calories", 300], ["created_at", "2019-04-05 20:14:56.917761"], ["updated_at", "2019-04-05 20:14:56.917761"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRecipe Create (0.2ms)[0m  [1m[32mINSERT INTO "recipes" ("name", "directions", "cuisine", "calories", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Pizza"], ["directions", "Infested"], ["cuisine", "Italian"], ["calories", 500], ["created_at", "2019-04-05 20:14:56.920541"], ["updated_at", "2019-04-05 20:14:56.920541"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/recipes/new" for 127.0.0.1 at 2019-04-05 16:14:56 -0400
+Processing by RecipesController#new as HTML
+  Rendering recipes/new.html.haml within layouts/application
+  Rendered recipes/_create_update_form.html.haml (2.4ms)
+  Rendered recipes/new.html.haml within layouts/application (3.4ms)
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.0ms)
+Started POST "/recipes" for 127.0.0.1 at 2019-04-05 16:14:57 -0400
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "recipe"=>{"name"=>"Fried Burger Bacon", "directions"=>"Fry it up", "cuisine"=>"Druggie Lunch", "calories"=>"1000", "images"=>#<ActionDispatch::Http::UploadedFile:0x00007fe5c1a61bf8 @tempfile=#<Tempfile:/var/folders/_v/jwvltfyj03v464tcjs8kj6y80000gn/T/RackMultipart20190405-98181-1c3s4ts.jpg>, @original_filename="Burger.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"recipe[images]\"; filename=\"Burger.jpg\"\r\nContent-Type: image/jpeg\r\nContent-Length: 3486750\r\n">}, "commit"=>"Create Recipe"}
+[36m  Disk Storage (28.7ms) [0m[32mUploaded file to key: SwnLbre8fqatQfMTo15qs52f (checksum: 9UhzJeIT8k91na+20Zdd4A==)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mActiveStorage::Blob Create (1.3ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["key", "SwnLbre8fqatQfMTo15qs52f"], ["filename", "Burger.jpg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 3486750], ["checksum", "9UhzJeIT8k91na+20Zdd4A=="], ["created_at", "2019-04-05 20:14:57.212023"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRecipe Create (0.6ms)[0m  [1m[32mINSERT INTO "recipes" ("name", "directions", "cuisine", "calories", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Fried Burger Bacon"], ["directions", "Fry it up"], ["cuisine", "Druggie Lunch"], ["calories", 1000], ["created_at", "2019-04-05 20:14:57.232149"], ["updated_at", "2019-04-05 20:14:57.232149"]]
+  [1m[36mActiveStorage::Attachment Create (2.0ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "images"], ["record_type", "Recipe"], ["record_id", 3], ["blob_id", 1], ["created_at", "2019-04-05 20:14:57.235107"]]
+  [1m[36mRecipe Update (0.2ms)[0m  [1m[33mUPDATE "recipes" SET "updated_at" = ? WHERE "recipes"."id" = ?[0m  [["updated_at", "2019-04-05 20:14:57.238580"], ["id", 3]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: a607e64c-64c0-40e7-8ac0-8004e3b71b3a) to Async(default) with arguments: #<GlobalID:0x00007fe5c4800050 @uri=#<URI::GID gid://reci/ActiveStorage::Blob/1>>
+Redirected to http://www.example.com/recipes
+Completed 302 Found in 144ms (ActiveRecord: 5.1ms)
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Started GET "/recipes" for 127.0.0.1 at 2019-04-05 16:14:57 -0400
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.haml within layouts/application
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 1], ["record_type", "Recipe"], ["name", "images"]]
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 2], ["record_type", "Recipe"], ["name", "images"]]
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 3], ["record_type", "Recipe"], ["name", "images"]]
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered recipes/index.html.haml within layouts/application (10.3ms)
+Completed 200 OK in 20ms (Views: 18.8ms | ActiveRecord: 0.6ms)
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
