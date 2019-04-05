@@ -7953,3 +7953,161 @@ Processing by RecipesController#new as HTML
 Completed 200 OK in 450ms (Views: 442.8ms | ActiveRecord: 0.6ms)
 
 
+Started GET "/recipes/18" for ::1 at 2019-04-05 17:14:13 -0400
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mRecipe Load (1.5ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:9
+  Rendering recipes/show.html.haml within layouts/application
+  [1m[36mActiveStorage::Attachment Load (1.8ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 18], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/show.html.haml:7
+  [1m[36mActiveStorage::Blob Load (1.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/recipes/show.html.haml:8
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/recipes/show.html.haml:8
+  Rendered recipes/show.html.haml within layouts/application (136.0ms)
+Completed 200 OK in 252ms (Views: 197.9ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--908db106c0eb4e3b9c5413070f4d84639229f7af/6507802.jpg" for ::1 at 2019-04-05 17:14:13 -0400
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--908db106c0eb4e3b9c5413070f4d84639229f7af", "filename"=>"6507802"}
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--286d18ecae85533e4754883ae4851f677ae49dbe/4521556.jpg" for ::1 at 2019-04-05 17:14:13 -0400
+Processing by ActiveStorage::BlobsController#show as JPEG
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--6f38db7e4af2418e1c77244c6185c5462ee70245/IMG_6218.jpg" for ::1 at 2019-04-05 17:14:13 -0400
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--286d18ecae85533e4754883ae4851f677ae49dbe", "filename"=>"4521556"}
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--6f38db7e4af2418e1c77244c6185c5462ee70245", "filename"=>"IMG_6218"}
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /Users/john/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  ↳ /Users/john/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[36m  Disk Storage (2.6ms) [0m[34mGenerated URL for file at key: GeHZJmDgfknoZUz18X76xo7S (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRSMlZJV2twdFJHZG1hMjV2V2xWNk1UaFlOelo0YnpkVEJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkRhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlTVTFIWHpZeU1UZ3VhbkJuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkSlRVZGZOakl4T0M1cWNHY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDE5LTA0LTA1VDIxOjE5OjEzLjk4N1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--3c19b75883c450d39ffc1b01efe4e244641b3cd8/IMG_6218.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22IMG_6218.jpg%22%3B+filename%2A%3DUTF-8%27%27IMG_6218.jpg)[0m
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRSMlZJV2twdFJHZG1hMjV2V2xWNk1UaFlOelo0YnpkVEJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkRhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlTVTFIWHpZeU1UZ3VhbkJuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkSlRVZGZOakl4T0M1cWNHY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDE5LTA0LTA1VDIxOjE5OjEzLjk4N1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--3c19b75883c450d39ffc1b01efe4e244641b3cd8/IMG_6218.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22IMG_6218.jpg%22%3B+filename%2A%3DUTF-8%27%27IMG_6218.jpg
+Completed 302 Found in 16ms (ActiveRecord: 0.5ms)
+
+
+[36m  Disk Storage (2.0ms) [0m[34mGenerated URL for file at key: sPwuevzWZAc7RRhLmpms4jKy (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRjMUIzZFdWMmVsZGFRV00zVWxKb1RHMXdiWE0wYWt0NUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkJhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlOalV3Tnpnd01pNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSnpZMU1EYzRNREl1YW5CbkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSVBhVzFoWjJVdmFuQmxad1k3QmxRPSIsImV4cCI6IjIwMTktMDQtMDVUMjE6MTk6MTMuOTkxWiIsInB1ciI6ImJsb2Jfa2V5In19--7bde7c0e240b7a49e0084e08622232ce99511068/6507802.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%226507802.jpg%22%3B+filename%2A%3DUTF-8%27%276507802.jpg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRjMUIzZFdWMmVsZGFRV00zVWxKb1RHMXdiWE0wYWt0NUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkJhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlOalV3Tnpnd01pNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSnpZMU1EYzRNREl1YW5CbkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSVBhVzFoWjJVdmFuQmxad1k3QmxRPSIsImV4cCI6IjIwMTktMDQtMDVUMjE6MTk6MTMuOTkxWiIsInB1ciI6ImJsb2Jfa2V5In19--7bde7c0e240b7a49e0084e08622232ce99511068/6507802.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%226507802.jpg%22%3B+filename%2A%3DUTF-8%27%276507802.jpg
+Completed 302 Found in 34ms (ActiveRecord: 0.2ms)
+
+
+  ↳ /Users/john/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[36m  Disk Storage (0.7ms) [0m[34mGenerated URL for file at key: K3cTH3fPJyRucdqKSxqRgdxB (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRTek5qVkVnelpsQktlVkoxWTJSeFMxTjRjVkpuWkhoQ0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkJhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlORFV5TVRVMU5pNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSnpRMU1qRTFOVFl1YW5CbkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSVBhVzFoWjJVdmFuQmxad1k3QmxRPSIsImV4cCI6IjIwMTktMDQtMDVUMjE6MTk6MTMuOTk2WiIsInB1ciI6ImJsb2Jfa2V5In19--1936a026ff9bfc67e32170fe604a12c842383a3d/4521556.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%224521556.jpg%22%3B+filename%2A%3DUTF-8%27%274521556.jpg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRTek5qVkVnelpsQktlVkoxWTJSeFMxTjRjVkpuWkhoQ0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkJhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlORFV5TVRVMU5pNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSnpRMU1qRTFOVFl1YW5CbkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSVBhVzFoWjJVdmFuQmxad1k3QmxRPSIsImV4cCI6IjIwMTktMDQtMDVUMjE6MTk6MTMuOTk2WiIsInB1ciI6ImJsb2Jfa2V5In19--1936a026ff9bfc67e32170fe604a12c842383a3d/4521556.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%224521556.jpg%22%3B+filename%2A%3DUTF-8%27%274521556.jpg
+Completed 302 Found in 30ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRjMUIzZFdWMmVsZGFRV00zVWxKb1RHMXdiWE0wYWt0NUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkJhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlOalV3Tnpnd01pNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSnpZMU1EYzRNREl1YW5CbkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSVBhVzFoWjJVdmFuQmxad1k3QmxRPSIsImV4cCI6IjIwMTktMDQtMDVUMjE6MTk6MTMuOTkxWiIsInB1ciI6ImJsb2Jfa2V5In19--7bde7c0e240b7a49e0084e08622232ce99511068/6507802.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%226507802.jpg%22%3B+filename%2A%3DUTF-8%27%276507802.jpg" for ::1 at 2019-04-05 17:14:14 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"6507802.jpg\"; filename*=UTF-8''6507802.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRjMUIzZFdWMmVsZGFRV00zVWxKb1RHMXdiWE0wYWt0NUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkJhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlOalV3Tnpnd01pNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSnpZMU1EYzRNREl1YW5CbkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSVBhVzFoWjJVdmFuQmxad1k3QmxRPSIsImV4cCI6IjIwMTktMDQtMDVUMjE6MTk6MTMuOTkxWiIsInB1ciI6ImJsb2Jfa2V5In19--7bde7c0e240b7a49e0084e08622232ce99511068", "filename"=>"6507802"}
+Completed 200 OK in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRTek5qVkVnelpsQktlVkoxWTJSeFMxTjRjVkpuWkhoQ0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkJhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlORFV5TVRVMU5pNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSnpRMU1qRTFOVFl1YW5CbkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSVBhVzFoWjJVdmFuQmxad1k3QmxRPSIsImV4cCI6IjIwMTktMDQtMDVUMjE6MTk6MTMuOTk2WiIsInB1ciI6ImJsb2Jfa2V5In19--1936a026ff9bfc67e32170fe604a12c842383a3d/4521556.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%224521556.jpg%22%3B+filename%2A%3DUTF-8%27%274521556.jpg" for ::1 at 2019-04-05 17:14:14 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"4521556.jpg\"; filename*=UTF-8''4521556.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRTek5qVkVnelpsQktlVkoxWTJSeFMxTjRjVkpuWkhoQ0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkJhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlORFV5TVRVMU5pNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSnpRMU1qRTFOVFl1YW5CbkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSVBhVzFoWjJVdmFuQmxad1k3QmxRPSIsImV4cCI6IjIwMTktMDQtMDVUMjE6MTk6MTMuOTk2WiIsInB1ciI6ImJsb2Jfa2V5In19--1936a026ff9bfc67e32170fe604a12c842383a3d", "filename"=>"4521556"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRSMlZJV2twdFJHZG1hMjV2V2xWNk1UaFlOelo0YnpkVEJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkRhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlTVTFIWHpZeU1UZ3VhbkJuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkSlRVZGZOakl4T0M1cWNHY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDE5LTA0LTA1VDIxOjE5OjEzLjk4N1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--3c19b75883c450d39ffc1b01efe4e244641b3cd8/IMG_6218.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22IMG_6218.jpg%22%3B+filename%2A%3DUTF-8%27%27IMG_6218.jpg" for ::1 at 2019-04-05 17:14:14 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"IMG_6218.jpg\"; filename*=UTF-8''IMG_6218.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRSMlZJV2twdFJHZG1hMjV2V2xWNk1UaFlOelo0YnpkVEJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkRhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlTVTFIWHpZeU1UZ3VhbkJuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkSlRVZGZOakl4T0M1cWNHY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDE5LTA0LTA1VDIxOjE5OjEzLjk4N1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--3c19b75883c450d39ffc1b01efe4e244641b3cd8", "filename"=>"IMG_6218"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/recipes/18/edit" for ::1 at 2019-04-05 17:14:30 -0400
+Processing by RecipesController#edit as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:34
+  Rendering recipes/edit.html.haml within layouts/application
+  Rendered recipes/_create_update_form.html.haml (15.4ms)
+  Rendered recipes/edit.html.haml within layouts/application (29.9ms)
+Completed 200 OK in 74ms (Views: 67.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--286d18ecae85533e4754883ae4851f677ae49dbe/4521556.jpg" for ::1 at 2019-04-05 17:20:43 -0400
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--286d18ecae85533e4754883ae4851f677ae49dbe", "filename"=>"4521556"}
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--908db106c0eb4e3b9c5413070f4d84639229f7af/6507802.jpg" for ::1 at 2019-04-05 17:20:43 -0400
+  [1m[36mActiveStorage::Blob Load (5.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /Users/john/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[36m  Disk Storage (1.4ms) [0m[34mGenerated URL for file at key: K3cTH3fPJyRucdqKSxqRgdxB (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRTek5qVkVnelpsQktlVkoxWTJSeFMxTjRjVkpuWkhoQ0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkJhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlORFV5TVRVMU5pNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSnpRMU1qRTFOVFl1YW5CbkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSVBhVzFoWjJVdmFuQmxad1k3QmxRPSIsImV4cCI6IjIwMTktMDQtMDVUMjE6MjU6NDQuMDEwWiIsInB1ciI6ImJsb2Jfa2V5In19--6b94ec55f4ae4b7d1b5c415be67695983a14968f/4521556.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%224521556.jpg%22%3B+filename%2A%3DUTF-8%27%274521556.jpg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRTek5qVkVnelpsQktlVkoxWTJSeFMxTjRjVkpuWkhoQ0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkJhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlORFV5TVRVMU5pNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSnpRMU1qRTFOVFl1YW5CbkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSVBhVzFoWjJVdmFuQmxad1k3QmxRPSIsImV4cCI6IjIwMTktMDQtMDVUMjE6MjU6NDQuMDEwWiIsInB1ciI6ImJsb2Jfa2V5In19--6b94ec55f4ae4b7d1b5c415be67695983a14968f/4521556.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%224521556.jpg%22%3B+filename%2A%3DUTF-8%27%274521556.jpg
+Completed 302 Found in 12ms (ActiveRecord: 5.1ms)
+
+
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--908db106c0eb4e3b9c5413070f4d84639229f7af", "filename"=>"6507802"}
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /Users/john/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[36m  Disk Storage (1.0ms) [0m[34mGenerated URL for file at key: sPwuevzWZAc7RRhLmpms4jKy (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRjMUIzZFdWMmVsZGFRV00zVWxKb1RHMXdiWE0wYWt0NUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkJhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlOalV3Tnpnd01pNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSnpZMU1EYzRNREl1YW5CbkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSVBhVzFoWjJVdmFuQmxad1k3QmxRPSIsImV4cCI6IjIwMTktMDQtMDVUMjE6MjU6NDQuMDE5WiIsInB1ciI6ImJsb2Jfa2V5In19--7ce9dc016a69566f243864c0b1ad54c995512c8f/6507802.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%226507802.jpg%22%3B+filename%2A%3DUTF-8%27%276507802.jpg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRjMUIzZFdWMmVsZGFRV00zVWxKb1RHMXdiWE0wYWt0NUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkJhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlOalV3Tnpnd01pNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSnpZMU1EYzRNREl1YW5CbkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSVBhVzFoWjJVdmFuQmxad1k3QmxRPSIsImV4cCI6IjIwMTktMDQtMDVUMjE6MjU6NDQuMDE5WiIsInB1ciI6ImJsb2Jfa2V5In19--7ce9dc016a69566f243864c0b1ad54c995512c8f/6507802.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%226507802.jpg%22%3B+filename%2A%3DUTF-8%27%276507802.jpg
+Completed 302 Found in 7ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRTek5qVkVnelpsQktlVkoxWTJSeFMxTjRjVkpuWkhoQ0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkJhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlORFV5TVRVMU5pNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSnpRMU1qRTFOVFl1YW5CbkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSVBhVzFoWjJVdmFuQmxad1k3QmxRPSIsImV4cCI6IjIwMTktMDQtMDVUMjE6MjU6NDQuMDEwWiIsInB1ciI6ImJsb2Jfa2V5In19--6b94ec55f4ae4b7d1b5c415be67695983a14968f/4521556.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%224521556.jpg%22%3B+filename%2A%3DUTF-8%27%274521556.jpg" for ::1 at 2019-04-05 17:20:44 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"4521556.jpg\"; filename*=UTF-8''4521556.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRTek5qVkVnelpsQktlVkoxWTJSeFMxTjRjVkpuWkhoQ0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkJhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlORFV5TVRVMU5pNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSnpRMU1qRTFOVFl1YW5CbkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSVBhVzFoWjJVdmFuQmxad1k3QmxRPSIsImV4cCI6IjIwMTktMDQtMDVUMjE6MjU6NDQuMDEwWiIsInB1ciI6ImJsb2Jfa2V5In19--6b94ec55f4ae4b7d1b5c415be67695983a14968f", "filename"=>"4521556"}
+Completed 200 OK in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRjMUIzZFdWMmVsZGFRV00zVWxKb1RHMXdiWE0wYWt0NUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkJhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlOalV3Tnpnd01pNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSnpZMU1EYzRNREl1YW5CbkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSVBhVzFoWjJVdmFuQmxad1k3QmxRPSIsImV4cCI6IjIwMTktMDQtMDVUMjE6MjU6NDQuMDE5WiIsInB1ciI6ImJsb2Jfa2V5In19--7ce9dc016a69566f243864c0b1ad54c995512c8f/6507802.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%226507802.jpg%22%3B+filename%2A%3DUTF-8%27%276507802.jpg" for ::1 at 2019-04-05 17:20:44 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"6507802.jpg\"; filename*=UTF-8''6507802.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRjMUIzZFdWMmVsZGFRV00zVWxKb1RHMXdiWE0wYWt0NUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkJhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlOalV3Tnpnd01pNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSnpZMU1EYzRNREl1YW5CbkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSVBhVzFoWjJVdmFuQmxad1k3QmxRPSIsImV4cCI6IjIwMTktMDQtMDVUMjE6MjU6NDQuMDE5WiIsInB1ciI6ImJsb2Jfa2V5In19--7ce9dc016a69566f243864c0b1ad54c995512c8f", "filename"=>"6507802"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--6f38db7e4af2418e1c77244c6185c5462ee70245/IMG_6218.jpg" for ::1 at 2019-04-05 17:20:47 -0400
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--6f38db7e4af2418e1c77244c6185c5462ee70245", "filename"=>"IMG_6218"}
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /Users/john/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[36m  Disk Storage (0.9ms) [0m[34mGenerated URL for file at key: GeHZJmDgfknoZUz18X76xo7S (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRSMlZJV2twdFJHZG1hMjV2V2xWNk1UaFlOelo0YnpkVEJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkRhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlTVTFIWHpZeU1UZ3VhbkJuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkSlRVZGZOakl4T0M1cWNHY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDE5LTA0LTA1VDIxOjI1OjQ3LjA5NFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--690f3024bc8522d5e596b95d9a1f02219869d52c/IMG_6218.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22IMG_6218.jpg%22%3B+filename%2A%3DUTF-8%27%27IMG_6218.jpg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRSMlZJV2twdFJHZG1hMjV2V2xWNk1UaFlOelo0YnpkVEJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkRhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlTVTFIWHpZeU1UZ3VhbkJuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkSlRVZGZOakl4T0M1cWNHY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDE5LTA0LTA1VDIxOjI1OjQ3LjA5NFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--690f3024bc8522d5e596b95d9a1f02219869d52c/IMG_6218.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22IMG_6218.jpg%22%3B+filename%2A%3DUTF-8%27%27IMG_6218.jpg
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/stylesheets/bootstrap.min.css"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.2.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.3) lib/active_support/logger.rb:65:in `block (3 levels) in broadcast'
+activesupport (5.2.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.3) lib/active_support/logger.rb:63:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRSMlZJV2twdFJHZG1hMjV2V2xWNk1UaFlOelo0YnpkVEJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkRhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlTVTFIWHpZeU1UZ3VhbkJuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkSlRVZGZOakl4T0M1cWNHY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDE5LTA0LTA1VDIxOjI1OjQ3LjA5NFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--690f3024bc8522d5e596b95d9a1f02219869d52c/IMG_6218.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22IMG_6218.jpg%22%3B+filename%2A%3DUTF-8%27%27IMG_6218.jpg" for ::1 at 2019-04-05 17:20:47 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"IMG_6218.jpg\"; filename*=UTF-8''IMG_6218.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRSMlZJV2twdFJHZG1hMjV2V2xWNk1UaFlOelo0YnpkVEJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkRhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlTVTFIWHpZeU1UZ3VhbkJuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkSlRVZGZOakl4T0M1cWNHY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZBPT0iLCJleHAiOiIyMDE5LTA0LTA1VDIxOjI1OjQ3LjA5NFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--690f3024bc8522d5e596b95d9a1f02219869d52c", "filename"=>"IMG_6218"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms)
+
+

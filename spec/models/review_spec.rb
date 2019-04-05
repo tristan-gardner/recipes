@@ -14,10 +14,12 @@ RSpec.describe Review, type: :model do
       expect {a_p = Review.create!(rating: 5)}.to raise_exception ActiveRecord::NotNullException
     end
     it "should fail to be created when the rating is greater than 5" do
-      expect {a_p = Review.create(rating: 10, description: "Wow amazing")}.to eq(nil)
+      a_p = Review.create(rating: 10, description: "Wow amazing")
+      expect( a_p).to eq(nil)
     end
     it "should fail to be created when the rating is less than 0" do
-      expect {a_p = Review.create(rating: -1, description: "Wow amazing")}.to eq(nil)
+      a_p = Review.create(rating: -1, description: "Wow amazing")
+      expect( a_p).to eq(nil)
     end
   end
 end
