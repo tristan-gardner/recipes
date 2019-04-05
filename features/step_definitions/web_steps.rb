@@ -31,6 +31,29 @@ module WithinHelpers
 end
 World(WithinHelpers)
 
+
+
+#Datatable creation
+Given "these Recipes:" do |table|
+  desc, data = table.raw[0], table.raw[1,table.raw.length-1]
+  obj_list = []
+  data.each do |obj|
+    obj_hash = {}
+    (0..(desc.length)).each do |i|
+        obj_hash[desc[i]] = obj[i]
+    end
+    obj_list.append(obj_hash)
+  end
+  obj_list.each do |things|
+    r = Recipe.new
+    r.name = things["name"]
+    r.cuisine = things["cuisine"]
+    r.directions = things["directions"]
+    r.calories = things["calories"]
+    r.save
+  end
+end
+
 # Single-line step scoper
 When /^(.*) within (.*[^:])$/ do |step, parent|
   with_scope(parent) { When step }
@@ -226,7 +249,7 @@ Then /^the "([^"]*)" checkbox(?: within (.*))? should not be checked$/ do |label
     end
   end
 end
- 
+
 Then /^(?:|I )should be on (.+)$/ do |page_name|
   current_path = URI.parse(current_url).path
   if current_path.respond_to? :should
@@ -240,8 +263,8 @@ Then /^(?:|I )should have the following query string:$/ do |expected_pairs|
   query = URI.parse(current_url).query
   actual_params = query ? CGI.parse(query) : {}
   expected_params = {}
-  expected_pairs.rows_hash.each_pair{|k,v| expected_params[k] = v.split(',')} 
-  
+  expected_pairs.rows_hash.each_pair{|k,v| expected_params[k] = v.split(',')}
+
   if actual_params.respond_to? :should
     actual_params.should == expected_params
   else
