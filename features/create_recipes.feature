@@ -19,7 +19,6 @@ Feature: Create a new recipe
 
     When I press "Create Recipe"
     Then I should be on the recipes page
-    And I should see "New recipe 'Fried Burger Bacon' created"
     And I should see that "Fried Burger Bacon" has a calorie count of "1000"
 
   Scenario: Create a new recipe with a specific image
@@ -33,6 +32,5 @@ Feature: Create a new recipe
     When I attach the file "Burger.jpg" to "Image"
     When I press "Create Recipe"
     Then I should be on the recipes page
-    And I should see "New recipe 'Fried Burger Bacon' created"
     And I should see that "Fried Burger Bacon" has a calorie count of "1000"
     And I should see that "Fried Burger Bacon" has an image "Burger.jpg"
