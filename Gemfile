@@ -44,6 +44,8 @@ group :development, :test do
   #Cucumber and cucumber helpers
   gem 'cucumber-rails', :require => false
   gem 'cucumber-rails-training-wheels'
+  gem 'rspec-rails'
+  gem 'rails-controller-testing'
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 2.13'
   gem 'selenium-webdriver'

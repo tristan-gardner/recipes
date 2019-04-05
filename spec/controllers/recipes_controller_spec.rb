@@ -1,4 +1,6 @@
-Rspec.describe RecipeController do
+require 'rails_helper'
+
+RSpec.describe RecipesController do
   describe "INDEX" do
     it "has a 200 response code" do
       get :index
@@ -13,22 +15,17 @@ Rspec.describe RecipeController do
 
   describe "SHOW PAGE" do
     before(:each) do
-      FactoryBot.define do
-        factory :recipe do
-          name {"Dumpster Burger"}
-          directions {"You woudn't believe me if I told you"}
-        end
-      end
+      @r = Recipe.create!(id:1, name:"Dumpster Burger", directions: "Youd oudwn")
     end
     it "has a 200 response code" do
-      get :show, :id 1
+      get :show, id: @r
       assert_response 200
     end
     it "should display an object when accessing it's show page" do
-      get :show, :id 1
+      get :show, id: @r
     end
     it "should redirect to the index when attempting to access an item that does not exist" do
-      get :show, :id 100000000
+      get :show
       assert_response 302
       expect(response).to redirect_to(index)
     end
@@ -59,7 +56,7 @@ Rspec.describe RecipeController do
   describe "UDPATE ID" do
     before(:each) do
       r = Recipe.create!(id: 50, name: "Bacony Burgers", description: "Totally Burgerlicous!")
-      get :update 50
+      get :update, id: r
     end
     it "should properly update a model object" do
       fill_in "Name", with: "Baconery Burgers"
@@ -82,7 +79,7 @@ Rspec.describe RecipeController do
       click_button "Update Recipe"
       expect(response).to render_template('update')
     end
-    
+
     it "should not update an objects values when new values are invalid" do
       fill_in "Name", with: 123
       click_button "Update Recipe"
