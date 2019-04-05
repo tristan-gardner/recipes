@@ -13,27 +13,6 @@ RSpec.describe RecipesController do
     end
   end
 
-  describe "SHOW PAGE" do
-    before(:each) do
-      @r = Recipe.create!(id:1, name:"Dumpster Burger", directions: "Youd oudwn")
-    end
-    it "has a 200 response code" do
-      get :show(:id => @r.id)
-      assert_response 200
-    end
-    it "should display an object when accessing it's show page" do
-      get :show(:id => @r.id)
-    end
-    it "should redirect to the index when attempting to access an item that does not exist" do
-      get :show
-      assert_response 302
-      expect(response).to redirect_to(index)
-    end
-    it "should display a button to edit a recipe" do
-    end
-    it "should display an objects title, description and vote counts" do
-    end
-  end
 
   describe "CREATE PAGE" do
     before(:each) do
