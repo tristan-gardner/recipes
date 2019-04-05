@@ -1,10 +1,14 @@
-=label :recipe, :name, "Name"
-=text_field :recipe, "name"
-= label :recipe, :directions, "Directions"
-= text_field :recipe, "directions"
-= label :recipe, :cuisine, "Cuisine"
-= text_field :recipe, "cuisine"
-= label :recipe, :calories, "Calories"
-= number_field :recipe, "calories"
-= label :images, "Image"
-= file_field :images, "images"
+%div.field= f.label :name
+= f.text_field :name
+
+%div.field= f.label :directions
+= f.text_area :directions
+
+%div.field= f.label :cuisine
+= f.text_field :cuisine
+
+%div.field= f.label :calories
+= f.number_field :calories
+
+%div.field= f.label :images
+= f.file_field :images

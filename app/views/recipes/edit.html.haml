@@ -6,20 +6,7 @@
 
   -# I commented out the partial because I couldn't get the picture to attach without form_for -Winters
   =form_for @recipe, :method => :patch do |f|
-    %div.field= f.label :name
-    = f.text_field :name
-
-    %div.field= f.label :directions
-    = f.text_area :directions
-
-    %div.field= f.label :cuisine
-    = f.text_field :cuisine
-
-    %div.field= f.label :calories
-    = f.number_field :calories
-
-    %div.field= f.label :images
-    = f.file_field :images
+    =render "create_update_form", f: f
 
     %br
     %br
