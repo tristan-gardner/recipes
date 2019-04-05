@@ -11,6 +11,7 @@
             %div.title= link_to "#{r.name}", recipe_path(r)
             -r.images.each do |img|
               %div.image= image_tag(img, height: '400')
+              -break
             %div.directions= "Directions: #{r.directions}"
             %div.calories= "Calories: #{r.calories}"
             %br
