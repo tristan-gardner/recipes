@@ -1,24 +1,12 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Reci - The recipe sharing app
 
-Things you may want to cover:
+Iteration 0:
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+1. Project setup/designing and building the models - Cristian, John, Matt
+2. Route setup/index, show, create, edit, destroy methods for recipes - Cristian, Tristan, Matt
+3. Testing - John
+4. Frontend/styling - Cristian, Tristan
+5. Support for multiple images per recipe - Matt
+6. Logo - Cristian
