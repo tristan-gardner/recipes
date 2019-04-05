@@ -18,11 +18,11 @@ RSpec.describe RecipesController do
       @r = Recipe.create!(id:1, name:"Dumpster Burger", directions: "Youd oudwn")
     end
     it "has a 200 response code" do
-      get :show, id: @r
+      get :show(:id => @r.id)
       assert_response 200
     end
     it "should display an object when accessing it's show page" do
-      get :show, id: @r
+      get :show(:id => @r.id)
     end
     it "should redirect to the index when attempting to access an item that does not exist" do
       get :show
@@ -56,7 +56,7 @@ RSpec.describe RecipesController do
   describe "UDPATE ID" do
     before(:each) do
       r = Recipe.create!(id: 50, name: "Bacony Burgers", description: "Totally Burgerlicous!")
-      get :update, id: r
+      get :update, r
     end
     it "should properly update a model object" do
       fill_in "Name", with: "Baconery Burgers"
