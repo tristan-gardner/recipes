@@ -1,6 +1,15 @@
 class RecipesController < ApplicationController
   def index
-    @recipes = Recipe.all
+    do_redirect, view_prefs = update_settings(params, session)
+    if do_redirect
+      flash.keep
+      redirect_to recipes_path(view_prefs) and return
+    end
+
+    @recipes = filter_and_sort view_prefs
+
+    @calories = view_prefs["calories_filter"]
+    @cuisine = view_prefs["cuisine_filter"]
   end
 
   def show
@@ -63,5 +72,38 @@ class RecipesController < ApplicationController
   private
   def create_update_params
     params.require(:recipe).permit(:name, :directions, :cuisine, :calories, :images)
+  end
+
+  def update_settings(parms, sess)
+    preferences = sess[:preferences] || Hash.new
+    if parms[:reset_filters]
+      session.clear
+      return true, preferences
+    end
+    should_redirect = false
+    { "calories_filter" => "", "cuisine_filter" => ""}.each do |parm, default|
+        parmval = parms[parm]
+        if parmval.nil?  # not currently set; look at session
+          parmval = preferences[parm] || default
+          should_redirect = true
+        elsif parmval != preferences[parm]  # is set, but is it different?
+          should_redirect = true
+        end
+        preferences[parm] = parmval
+    end
+
+    sess[:preferences] = preferences
+    return should_redirect, preferences
+  end
+
+  def filter_and_sort(view_prefs)
+    constraints = {}
+    calories = view_prefs["calories_filter"].to_i
+    if calories > 0
+      constraints[:calories] = calories
+    end
+    constraints[:cuisine] = view_prefs["cuisine_filter"]
+    recipes = Recipe.filter_on_constraints(constraints)
+    recipes
   end
 end

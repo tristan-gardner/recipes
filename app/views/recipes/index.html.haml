@@ -1,6 +1,17 @@
 #main
   %header
     %link{:rel => :stylesheet, :type => :"text/css", :href => "/assets/stylesheets/bootstrap.min.css"}
+  #filters
+    -# maximum occupants, price, number of bathrooms, and distance from a given location.
+    =form_tag recipes_path, :method => :get do
+      %span.filter
+        =label_tag "calories_filter", "Maximum calories"
+        =number_field_tag "calories_filter", "#{@calories}"
+      %span.filter
+        =label_tag "cuisine_filter", "Cuisine Type"
+        =text_field_tag "cuisine_filter", "#{@cuisine}"
+      =submit_tag "Filter"
+    =link_to 'Clear filters', recipes_path(:reset_filters => ""), :class => "btn btn-primary"
   %div.main_container
     %h1 Recipes List
     %p= link_to 'Create New Recipe', new_recipe_path, :class => 'btn btn-info'
