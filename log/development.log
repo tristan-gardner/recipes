@@ -11882,3 +11882,411 @@ Processing by ActiveStorage::DiskController#show as JPEG
 Completed 200 OK in 1ms (ActiveRecord: 0.0ms)
 
 
+Started GET "/recipes/new" for ::1 at 2019-04-15 19:54:39 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by RecipesController#new as HTML
+  Rendering recipes/new.html.haml within layouts/application
+  Rendered recipes/_create_update_form.html.haml (15.4ms)
+  Rendered recipes/new.html.haml within layouts/application (34.5ms)
+Completed 200 OK in 387ms (Views: 376.0ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/recipes" for ::1 at 2019-04-15 19:55:45 -0400
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8HV4E/EKqPm2xd1OnjY0281wtyA+1cmzJp8gTOJXEW2opKfQkEqMaTaEf03e7NBQZCYttlTKpbRze8+iwN6Wkg==", "recipe"=>{"name"=>"All-American Cheeseburger", "directions"=>"In a large bowl, mix ground beef, onion powder, salt and pepper until just combined. Do not overmix, or your patties will be tough. \r\nDivide into six portions and form patties, without pressing too hard. They should be uniform in thickness. Smooth out any cracks using your fingers. Make these right before you grill them, so they stay at room temperature. \r\nPreheat your grill, grill pan or cast-iron skillet to high heat and add burger patties. If using a grill, cover with the lid.\r\nCook until the crust that forms on the bottom of the burger releases it from the pan or grate — about 2 minutes. Gently test, but don't flip it until it gets to this point. When burgers lift up easily, flip, add two slices of cheese to each, close lid if using a grill, and cook on the other side for another 2-3 minutes for medium to medium rare. \r\nRemove burgers with a sturdy metal spatula and transfer to a plate. Allow to rest for several minutes, then transfer to buns.\r\nGarnish as desired and serve immediately. ", "cuisine"=>"American", "calories"=>"700", "images"=>#<ActionDispatch::Http::UploadedFile:0x00007ff65c8c1b58 @tempfile=#<Tempfile:/var/folders/ry/c63dv3vx3ms58r_h6h18lwlm0000gn/T/RackMultipart20190415-18016-1waqg7f.jpg>, @original_filename="Burger.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"recipe[images]\"; filename=\"Burger.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Create Recipe"}
+[36m  Disk Storage (19.4ms) [0m[32mUploaded file to key: nDvz26LwQoQG83NPLUjL7cEx (checksum: 9UhzJeIT8k91na+20Zdd4A==)[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/recipes_controller.rb:30
+  [1m[36mActiveStorage::Blob Create (1.7ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["key", "nDvz26LwQoQG83NPLUjL7cEx"], ["filename", "Burger.jpg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 3486750], ["checksum", "9UhzJeIT8k91na+20Zdd4A=="], ["created_at", "2019-04-15 23:55:45.826277"]]
+  ↳ app/controllers/recipes_controller.rb:30
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/recipes_controller.rb:30
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/recipes_controller.rb:31
+  [1m[36mRecipe Create (0.6ms)[0m  [1m[32mINSERT INTO "recipes" ("name", "directions", "cuisine", "calories", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "All-American Cheeseburger"], ["directions", "In a large bowl, mix ground beef, onion powder, salt and pepper until just combined. Do not overmix, or your patties will be tough. \r\nDivide into six portions and form patties, without pressing too hard. They should be uniform in thickness. Smooth out any cracks using your fingers. Make these right before you grill them, so they stay at room temperature. \r\nPreheat your grill, grill pan or cast-iron skillet to high heat and add burger patties. If using a grill, cover with the lid.\r\nCook until the crust that forms on the bottom of the burger releases it from the pan or grate — about 2 minutes. Gently test, but don't flip it until it gets to this point. When burgers lift up easily, flip, add two slices of cheese to each, close lid if using a grill, and cook on the other side for another 2-3 minutes for medium to medium rare. \r\nRemove burgers with a sturdy metal spatula and transfer to a plate. Allow to rest for several minutes, then transfer to buns.\r\nGarnish as desired and serve immediately. "], ["cuisine", "American"], ["calories", 700], ["created_at", "2019-04-15 23:55:45.859994"], ["updated_at", "2019-04-15 23:55:45.859994"]]
+  ↳ app/controllers/recipes_controller.rb:31
+  [1m[36mActiveStorage::Attachment Create (0.6ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "images"], ["record_type", "Recipe"], ["record_id", 22], ["blob_id", 6], ["created_at", "2019-04-15 23:55:45.864705"]]
+  ↳ app/controllers/recipes_controller.rb:31
+  [1m[36mRecipe Update (0.2ms)[0m  [1m[33mUPDATE "recipes" SET "updated_at" = ? WHERE "recipes"."id" = ?[0m  [["updated_at", "2019-04-15 23:55:45.874405"], ["id", 22]]
+  ↳ app/controllers/recipes_controller.rb:31
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/recipes_controller.rb:31
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: dba2b872-5a7c-423c-8fb9-e975743c5fe4) to Async(default) with arguments: #<GlobalID:0x00007ff65ab81d40 @uri=#<URI::GID gid://reci/ActiveStorage::Blob/6>>
+Redirected to http://localhost:3000/recipes
+Completed 302 Found in 257ms (ActiveRecord: 7.4ms)
+
+
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [dba2b872-5a7c-423c-8fb9-e975743c5fe4] Performing ActiveStorage::AnalyzeJob (Job ID: dba2b872-5a7c-423c-8fb9-e975743c5fe4) from Async(default) with arguments: #<GlobalID:0x00007ff65749dbf8 @uri=#<URI::GID gid://reci/ActiveStorage::Blob/6>>
+Started GET "/recipes" for ::1 at 2019-04-15 19:55:45 -0400
+Processing by RecipesController#index as HTML
+Redirected to http://localhost:3000/recipes?calories_filter=&cuisine_filter=
+Completed 302 Found in 4ms (ActiveRecord: 0.0ms)
+
+
+[ActiveJob] [ActiveStorage::AnalyzeJob] [dba2b872-5a7c-423c-8fb9-e975743c5fe4] [36m  Disk Storage (10.4ms) [0m[34mDownloaded file from key: nDvz26LwQoQG83NPLUjL7cEx[0m
+Started GET "/recipes?calories_filter=&cuisine_filter=" for ::1 at 2019-04-15 19:55:46 -0400
+Processing by RecipesController#index as HTML
+  Parameters: {"calories_filter"=>"", "cuisine_filter"=>""}
+  Rendering recipes/index.html.haml within layouts/application
+  [1m[36mRecipe Load (0.5ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 19], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:22
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:23
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 20], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:22
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 21], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:22
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 22], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:22
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:23
+  Rendered recipes/index.html.haml within layouts/application (101.6ms)
+Completed 200 OK in 214ms (Views: 207.4ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--8bfcf676a6afd4406812bc4c18e1a8d386b05ef5/4521556.jpg" for ::1 at 2019-04-15 19:55:46 -0400
+[ActiveJob] [ActiveStorage::AnalyzeJob] [dba2b872-5a7c-423c-8fb9-e975743c5fe4]   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [dba2b872-5a7c-423c-8fb9-e975743c5fe4]   ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [dba2b872-5a7c-423c-8fb9-e975743c5fe4]   [1m[36mActiveStorage::Blob Update (0.5ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = ? WHERE "active_storage_blobs"."id" = ?[0m  [["metadata", "{\"identified\":true,\"width\":5184,\"height\":3456,\"analyzed\":true}"], ["id", 6]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [dba2b872-5a7c-423c-8fb9-e975743c5fe4]   ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [dba2b872-5a7c-423c-8fb9-e975743c5fe4]   [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [dba2b872-5a7c-423c-8fb9-e975743c5fe4]   ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [dba2b872-5a7c-423c-8fb9-e975743c5fe4] Performed ActiveStorage::AnalyzeJob (Job ID: dba2b872-5a7c-423c-8fb9-e975743c5fe4) from Async(default) in 823.34ms
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--8bfcf676a6afd4406812bc4c18e1a8d386b05ef5", "filename"=>"4521556"}
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--031391ac2998e7e11fff3da513b0ece4e16ba174/Burger.jpg" for ::1 at 2019-04-15 19:55:46 -0400
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--031391ac2998e7e11fff3da513b0ece4e16ba174", "filename"=>"Burger"}
+  
+ActionController::RoutingError (No route matches [GET] "/assets/stylesheets/bootstrap.min.css"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.2.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.3) lib/active_support/logger.rb:65:in `block (3 levels) in broadcast'
+activesupport (5.2.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.3) lib/active_support/logger.rb:63:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[36m  Disk Storage (1.3ms) [0m[34mGenerated URL for file at key: MRyuTH3syZbPYSsMKGejKw7p (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRUVko1ZFZSSU0zTjVXbUpRV1ZOelRVdEhaV3BMZHpkd0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkJhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlORFV5TVRVMU5pNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSnpRMU1qRTFOVFl1YW5CbkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSVBhVzFoWjJVdmFuQmxad1k3QmxRPSIsImV4cCI6IjIwMTktMDQtMTZUMDA6MDA6NDcuMDEyWiIsInB1ciI6ImJsb2Jfa2V5In19--89239e0b6a3b1da21715a1de49e6da6e5d55583f/4521556.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%224521556.jpg%22%3B+filename%2A%3DUTF-8%27%274521556.jpg)[0m
+[36m  Disk Storage (0.9ms) [0m[34mGenerated URL for file at key: nDvz26LwQoQG83NPLUjL7cEx (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRia1IyZWpJMlRIZFJiMUZIT0ROT1VFeFZha3czWTBWNEJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSS9hVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlRblZ5WjJWeUxtcHdaeUk3SUdacGJHVnVZVzFsS2oxVlZFWXRPQ2NuUW5WeVoyVnlMbXB3WndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraUQybHRZV2RsTDJwd1pXY0dPd1pVIiwiZXhwIjoiMjAxOS0wNC0xNlQwMDowMDo0Ny4wMTRaIiwicHVyIjoiYmxvYl9rZXkifX0=--a093d94bd7650f628d148b3a20df34ac1aa8d860/Burger.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22Burger.jpg%22%3B+filename%2A%3DUTF-8%27%27Burger.jpg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRUVko1ZFZSSU0zTjVXbUpRV1ZOelRVdEhaV3BMZHpkd0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkJhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlORFV5TVRVMU5pNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSnpRMU1qRTFOVFl1YW5CbkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSVBhVzFoWjJVdmFuQmxad1k3QmxRPSIsImV4cCI6IjIwMTktMDQtMTZUMDA6MDA6NDcuMDEyWiIsInB1ciI6ImJsb2Jfa2V5In19--89239e0b6a3b1da21715a1de49e6da6e5d55583f/4521556.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%224521556.jpg%22%3B+filename%2A%3DUTF-8%27%274521556.jpg
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRia1IyZWpJMlRIZFJiMUZIT0ROT1VFeFZha3czWTBWNEJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSS9hVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlRblZ5WjJWeUxtcHdaeUk3SUdacGJHVnVZVzFsS2oxVlZFWXRPQ2NuUW5WeVoyVnlMbXB3WndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraUQybHRZV2RsTDJwd1pXY0dPd1pVIiwiZXhwIjoiMjAxOS0wNC0xNlQwMDowMDo0Ny4wMTRaIiwicHVyIjoiYmxvYl9rZXkifX0=--a093d94bd7650f628d148b3a20df34ac1aa8d860/Burger.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22Burger.jpg%22%3B+filename%2A%3DUTF-8%27%27Burger.jpg
+Completed 302 Found in 195ms (ActiveRecord: 0.3ms)
+
+
+Completed 302 Found in 192ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRUVko1ZFZSSU0zTjVXbUpRV1ZOelRVdEhaV3BMZHpkd0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkJhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlORFV5TVRVMU5pNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSnpRMU1qRTFOVFl1YW5CbkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSVBhVzFoWjJVdmFuQmxad1k3QmxRPSIsImV4cCI6IjIwMTktMDQtMTZUMDA6MDA6NDcuMDEyWiIsInB1ciI6ImJsb2Jfa2V5In19--89239e0b6a3b1da21715a1de49e6da6e5d55583f/4521556.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%224521556.jpg%22%3B+filename%2A%3DUTF-8%27%274521556.jpg" for ::1 at 2019-04-15 19:55:47 -0400
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRia1IyZWpJMlRIZFJiMUZIT0ROT1VFeFZha3czWTBWNEJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSS9hVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlRblZ5WjJWeUxtcHdaeUk3SUdacGJHVnVZVzFsS2oxVlZFWXRPQ2NuUW5WeVoyVnlMbXB3WndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraUQybHRZV2RsTDJwd1pXY0dPd1pVIiwiZXhwIjoiMjAxOS0wNC0xNlQwMDowMDo0Ny4wMTRaIiwicHVyIjoiYmxvYl9rZXkifX0=--a093d94bd7650f628d148b3a20df34ac1aa8d860/Burger.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22Burger.jpg%22%3B+filename%2A%3DUTF-8%27%27Burger.jpg" for ::1 at 2019-04-15 19:55:47 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"4521556.jpg\"; filename*=UTF-8''4521556.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRUVko1ZFZSSU0zTjVXbUpRV1ZOelRVdEhaV3BMZHpkd0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkJhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlORFV5TVRVMU5pNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSnpRMU1qRTFOVFl1YW5CbkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSVBhVzFoWjJVdmFuQmxad1k3QmxRPSIsImV4cCI6IjIwMTktMDQtMTZUMDA6MDA6NDcuMDEyWiIsInB1ciI6ImJsb2Jfa2V5In19--89239e0b6a3b1da21715a1de49e6da6e5d55583f", "filename"=>"4521556"}
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"Burger.jpg\"; filename*=UTF-8''Burger.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRia1IyZWpJMlRIZFJiMUZIT0ROT1VFeFZha3czWTBWNEJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSS9hVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlRblZ5WjJWeUxtcHdaeUk3SUdacGJHVnVZVzFsS2oxVlZFWXRPQ2NuUW5WeVoyVnlMbXB3WndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraUQybHRZV2RsTDJwd1pXY0dPd1pVIiwiZXhwIjoiMjAxOS0wNC0xNlQwMDowMDo0Ny4wMTRaIiwicHVyIjoiYmxvYl9rZXkifX0=--a093d94bd7650f628d148b3a20df34ac1aa8d860", "filename"=>"Burger"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/recipes/20" for ::1 at 2019-04-15 19:55:54 -0400
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"20"}
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:18
+  Rendering recipes/show.html.haml within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 20], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/show.html.haml:7
+  Rendered recipes/show.html.haml within layouts/application (5.1ms)
+Completed 200 OK in 31ms (Views: 26.4ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/recipes/20" for ::1 at 2019-04-15 19:55:55 -0400
+Processing by RecipesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"01bGj4k2Su1Yt/IEzzTy3Z85mtdqJYpJdGVUQGITl8SLhxlM6HZufdj2UAeP7hZWNm8AQQA65k4hgbuuQJoQOw==", "id"=>"20"}
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:61
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/recipes_controller.rb:63
+  [1m[36mRecipe Destroy (0.4ms)[0m  [1m[31mDELETE FROM "recipes" WHERE "recipes"."id" = ?[0m  [["id", 20]]
+  ↳ app/controllers/recipes_controller.rb:63
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/recipes_controller.rb:63
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 20], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/controllers/recipes_controller.rb:63
+Redirected to http://localhost:3000/recipes
+Completed 302 Found in 11ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/recipes" for ::1 at 2019-04-15 19:55:55 -0400
+Processing by RecipesController#index as HTML
+Redirected to http://localhost:3000/recipes?calories_filter=&cuisine_filter=
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/recipes?calories_filter=&cuisine_filter=" for ::1 at 2019-04-15 19:55:55 -0400
+Processing by RecipesController#index as HTML
+  Parameters: {"calories_filter"=>"", "cuisine_filter"=>""}
+  Rendering recipes/index.html.haml within layouts/application
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 19], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:22
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:23
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 21], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:22
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 22], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:22
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:23
+  Rendered recipes/index.html.haml within layouts/application (38.5ms)
+Completed 200 OK in 67ms (Views: 64.4ms | ActiveRecord: 0.9ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/stylesheets/bootstrap.min.css"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.2.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.3) lib/active_support/logger.rb:65:in `block (3 levels) in broadcast'
+activesupport (5.2.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.3) lib/active_support/logger.rb:63:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRUVko1ZFZSSU0zTjVXbUpRV1ZOelRVdEhaV3BMZHpkd0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkJhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlORFV5TVRVMU5pNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSnpRMU1qRTFOVFl1YW5CbkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSVBhVzFoWjJVdmFuQmxad1k3QmxRPSIsImV4cCI6IjIwMTktMDQtMTZUMDA6MDA6NDcuMDEyWiIsInB1ciI6ImJsb2Jfa2V5In19--89239e0b6a3b1da21715a1de49e6da6e5d55583f/4521556.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%224521556.jpg%22%3B+filename%2A%3DUTF-8%27%274521556.jpg" for ::1 at 2019-04-15 19:55:55 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"4521556.jpg\"; filename*=UTF-8''4521556.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRUVko1ZFZSSU0zTjVXbUpRV1ZOelRVdEhaV3BMZHpkd0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkJhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlORFV5TVRVMU5pNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSnpRMU1qRTFOVFl1YW5CbkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSVBhVzFoWjJVdmFuQmxad1k3QmxRPSIsImV4cCI6IjIwMTktMDQtMTZUMDA6MDA6NDcuMDEyWiIsInB1ciI6ImJsb2Jfa2V5In19--89239e0b6a3b1da21715a1de49e6da6e5d55583f", "filename"=>"4521556"}
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRia1IyZWpJMlRIZFJiMUZIT0ROT1VFeFZha3czWTBWNEJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSS9hVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlRblZ5WjJWeUxtcHdaeUk3SUdacGJHVnVZVzFsS2oxVlZFWXRPQ2NuUW5WeVoyVnlMbXB3WndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraUQybHRZV2RsTDJwd1pXY0dPd1pVIiwiZXhwIjoiMjAxOS0wNC0xNlQwMDowMDo0Ny4wMTRaIiwicHVyIjoiYmxvYl9rZXkifX0=--a093d94bd7650f628d148b3a20df34ac1aa8d860/Burger.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22Burger.jpg%22%3B+filename%2A%3DUTF-8%27%27Burger.jpg" for ::1 at 2019-04-15 19:55:55 -0400
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms)
+
+
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"Burger.jpg\"; filename*=UTF-8''Burger.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRia1IyZWpJMlRIZFJiMUZIT0ROT1VFeFZha3czWTBWNEJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSS9hVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlRblZ5WjJWeUxtcHdaeUk3SUdacGJHVnVZVzFsS2oxVlZFWXRPQ2NuUW5WeVoyVnlMbXB3WndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraUQybHRZV2RsTDJwd1pXY0dPd1pVIiwiZXhwIjoiMjAxOS0wNC0xNlQwMDowMDo0Ny4wMTRaIiwicHVyIjoiYmxvYl9rZXkifX0=--a093d94bd7650f628d148b3a20df34ac1aa8d860", "filename"=>"Burger"}
+Completed 304 Not Modified in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/recipes/21" for ::1 at 2019-04-15 19:55:57 -0400
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"21"}
+  [1m[36mRecipe Load (0.6ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:18
+  Rendering recipes/show.html.haml within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 21], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/show.html.haml:7
+  Rendered recipes/show.html.haml within layouts/application (10.4ms)
+Completed 200 OK in 45ms (Views: 38.7ms | ActiveRecord: 0.8ms)
+
+
+Started DELETE "/recipes/21" for ::1 at 2019-04-15 19:55:58 -0400
+Processing by RecipesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"7lx/nHqPnkEeVDQzlGkr5kwz6jlEmc5/bQWUCJCYTtS2jaBfG8+60Z4VljDUs89t5WVwry6Gong44XvmshHJKw==", "id"=>"21"}
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:61
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/recipes_controller.rb:63
+  [1m[36mRecipe Destroy (0.4ms)[0m  [1m[31mDELETE FROM "recipes" WHERE "recipes"."id" = ?[0m  [["id", 21]]
+  ↳ app/controllers/recipes_controller.rb:63
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/recipes_controller.rb:63
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 21], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/controllers/recipes_controller.rb:63
+Redirected to http://localhost:3000/recipes
+Completed 302 Found in 8ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/recipes" for ::1 at 2019-04-15 19:55:58 -0400
+Processing by RecipesController#index as HTML
+Redirected to http://localhost:3000/recipes?calories_filter=&cuisine_filter=
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/recipes?calories_filter=&cuisine_filter=" for ::1 at 2019-04-15 19:55:59 -0400
+Processing by RecipesController#index as HTML
+  Parameters: {"calories_filter"=>"", "cuisine_filter"=>""}
+  Rendering recipes/index.html.haml within layouts/application
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 19], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:22
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:23
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 22], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:22
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:23
+  Rendered recipes/index.html.haml within layouts/application (15.2ms)
+Completed 200 OK in 41ms (Views: 38.6ms | ActiveRecord: 0.8ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/stylesheets/bootstrap.min.css"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.2.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.3) lib/active_support/logger.rb:65:in `block (3 levels) in broadcast'
+activesupport (5.2.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.3) lib/active_support/logger.rb:63:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRUVko1ZFZSSU0zTjVXbUpRV1ZOelRVdEhaV3BMZHpkd0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkJhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlORFV5TVRVMU5pNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSnpRMU1qRTFOVFl1YW5CbkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSVBhVzFoWjJVdmFuQmxad1k3QmxRPSIsImV4cCI6IjIwMTktMDQtMTZUMDA6MDA6NDcuMDEyWiIsInB1ciI6ImJsb2Jfa2V5In19--89239e0b6a3b1da21715a1de49e6da6e5d55583f/4521556.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%224521556.jpg%22%3B+filename%2A%3DUTF-8%27%274521556.jpg" for ::1 at 2019-04-15 19:55:59 -0400
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRia1IyZWpJMlRIZFJiMUZIT0ROT1VFeFZha3czWTBWNEJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSS9hVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlRblZ5WjJWeUxtcHdaeUk3SUdacGJHVnVZVzFsS2oxVlZFWXRPQ2NuUW5WeVoyVnlMbXB3WndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraUQybHRZV2RsTDJwd1pXY0dPd1pVIiwiZXhwIjoiMjAxOS0wNC0xNlQwMDowMDo0Ny4wMTRaIiwicHVyIjoiYmxvYl9rZXkifX0=--a093d94bd7650f628d148b3a20df34ac1aa8d860/Burger.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22Burger.jpg%22%3B+filename%2A%3DUTF-8%27%27Burger.jpg" for ::1 at 2019-04-15 19:55:59 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"4521556.jpg\"; filename*=UTF-8''4521556.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRUVko1ZFZSSU0zTjVXbUpRV1ZOelRVdEhaV3BMZHpkd0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkJhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlORFV5TVRVMU5pNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSnpRMU1qRTFOVFl1YW5CbkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSVBhVzFoWjJVdmFuQmxad1k3QmxRPSIsImV4cCI6IjIwMTktMDQtMTZUMDA6MDA6NDcuMDEyWiIsInB1ciI6ImJsb2Jfa2V5In19--89239e0b6a3b1da21715a1de49e6da6e5d55583f", "filename"=>"4521556"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms)
+
+
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"Burger.jpg\"; filename*=UTF-8''Burger.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRia1IyZWpJMlRIZFJiMUZIT0ROT1VFeFZha3czWTBWNEJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSS9hVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlRblZ5WjJWeUxtcHdaeUk3SUdacGJHVnVZVzFsS2oxVlZFWXRPQ2NuUW5WeVoyVnlMbXB3WndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraUQybHRZV2RsTDJwd1pXY0dPd1pVIiwiZXhwIjoiMjAxOS0wNC0xNlQwMDowMDo0Ny4wMTRaIiwicHVyIjoiYmxvYl9rZXkifX0=--a093d94bd7650f628d148b3a20df34ac1aa8d860", "filename"=>"Burger"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/recipes?calories_filter=&cuisine_filter=" for ::1 at 2019-04-15 19:56:05 -0400
+Processing by RecipesController#index as HTML
+  Parameters: {"calories_filter"=>"", "cuisine_filter"=>""}
+  Rendering recipes/index.html.haml within layouts/application
+  [1m[36mRecipe Load (0.5ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.haml:19
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 19], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:22
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:23
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 22], ["record_type", "Recipe"], ["name", "images"]]
+  ↳ app/views/recipes/index.html.haml:22
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.haml:23
+  Rendered recipes/index.html.haml within layouts/application (19.6ms)
+Completed 200 OK in 40ms (Views: 37.8ms | ActiveRecord: 1.0ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/stylesheets/bootstrap.min.css"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.2.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.3) lib/active_support/logger.rb:65:in `block (3 levels) in broadcast'
+activesupport (5.2.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.3) lib/active_support/logger.rb:63:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRUVko1ZFZSSU0zTjVXbUpRV1ZOelRVdEhaV3BMZHpkd0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkJhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlORFV5TVRVMU5pNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSnpRMU1qRTFOVFl1YW5CbkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSVBhVzFoWjJVdmFuQmxad1k3QmxRPSIsImV4cCI6IjIwMTktMDQtMTZUMDA6MDA6NDcuMDEyWiIsInB1ciI6ImJsb2Jfa2V5In19--89239e0b6a3b1da21715a1de49e6da6e5d55583f/4521556.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%224521556.jpg%22%3B+filename%2A%3DUTF-8%27%274521556.jpg" for ::1 at 2019-04-15 19:56:05 -0400
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRia1IyZWpJMlRIZFJiMUZIT0ROT1VFeFZha3czWTBWNEJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSS9hVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlRblZ5WjJWeUxtcHdaeUk3SUdacGJHVnVZVzFsS2oxVlZFWXRPQ2NuUW5WeVoyVnlMbXB3WndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraUQybHRZV2RsTDJwd1pXY0dPd1pVIiwiZXhwIjoiMjAxOS0wNC0xNlQwMDowMDo0Ny4wMTRaIiwicHVyIjoiYmxvYl9rZXkifX0=--a093d94bd7650f628d148b3a20df34ac1aa8d860/Burger.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22Burger.jpg%22%3B+filename%2A%3DUTF-8%27%27Burger.jpg" for ::1 at 2019-04-15 19:56:05 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"4521556.jpg\"; filename*=UTF-8''4521556.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRUVko1ZFZSSU0zTjVXbUpRV1ZOelRVdEhaV3BMZHpkd0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkJhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlORFV5TVRVMU5pNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSnpRMU1qRTFOVFl1YW5CbkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSVBhVzFoWjJVdmFuQmxad1k3QmxRPSIsImV4cCI6IjIwMTktMDQtMTZUMDA6MDA6NDcuMDEyWiIsInB1ciI6ImJsb2Jfa2V5In19--89239e0b6a3b1da21715a1de49e6da6e5d55583f", "filename"=>"4521556"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms)
+
+
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"Burger.jpg\"; filename*=UTF-8''Burger.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRia1IyZWpJMlRIZFJiMUZIT0ROT1VFeFZha3czWTBWNEJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSS9hVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlRblZ5WjJWeUxtcHdaeUk3SUdacGJHVnVZVzFsS2oxVlZFWXRPQ2NuUW5WeVoyVnlMbXB3WndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraUQybHRZV2RsTDJwd1pXY0dPd1pVIiwiZXhwIjoiMjAxOS0wNC0xNlQwMDowMDo0Ny4wMTRaIiwicHVyIjoiYmxvYl9rZXkifX0=--a093d94bd7650f628d148b3a20df34ac1aa8d860", "filename"=>"Burger"}
+Completed 304 Not Modified in 2ms (ActiveRecord: 0.0ms)
+
+
