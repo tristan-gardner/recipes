@@ -13,6 +13,8 @@
             -r.images.each do |img|
               %div.image= image_tag(img, width: '700')
               -break
+            -user = User.find(r.user_id)
+            %div.user= "Recipe by: #{user.username}"
             %div.directions= "Directions: #{r.directions}"
             %div.calories= "Calories: #{r.calories}"
             %br

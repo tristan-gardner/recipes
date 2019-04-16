@@ -3,11 +3,16 @@
 #main
   %div.main_container
     =link_to("Back to recipe list", recipes_path)
-    %div.title= @recipe.name
-    -@recipe.images.each do |img|
-      %div.image= image_tag(img, height: '400')
-    %div.directions= "Directions: #{@recipe.directions}"
-    %div.calories= "Calories: #{@recipe.calories}"
+    %div.recipes
+      %div.recipe_container
+        %div.title= link_to "#{@recipe.name}", recipe_path(@recipe)
+        -@recipe.images.each do |img|
+          %div.image= image_tag(img, width: '700')
+          -break
+        -user = User.find(@recipe.user_id)
+        %div.user= "Recipe by: #{user.username}"
+        %div.directions= "Directions: #{@recipe.directions}"
+        %div.calories= "Calories: #{@recipe.calories}"
 
     %p=link_to("Edit Recipe", edit_recipe_path)
     %p=link_to "Delete Recipe", recipe_path, method: :delete
