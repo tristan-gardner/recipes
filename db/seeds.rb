@@ -8,4 +8,6 @@
 Recipe.delete_all
 
 user = User.create!(username: "user", password: "password", email: "user@mail.com")
-Recipe.create!(name: "Pizza", directions: "make a pizza", cuisine: "Italian", calories: 800, user: user)
+recipe = Recipe.create!(name: "Pizza", directions: "make a pizza", cuisine: "Italian", calories: 800, user: user)
+ingredient = Ingredient.create!(name: "cheese")
+recipe.ingredients << ingredient
