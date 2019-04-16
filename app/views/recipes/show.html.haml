@@ -11,6 +11,12 @@
           -break
         -user = User.find(@recipe.user_id)
         %div.user= "Recipe by: #{user.username}"
+        %div.ingredients
+          Ingredients
+          %br
+          -@recipe.ingredients.each do |ingredient|
+            =ingredient.name
+            %br
         %div.directions= "Directions: #{@recipe.directions}"
         %div.calories= "Calories: #{@recipe.calories}"
 
