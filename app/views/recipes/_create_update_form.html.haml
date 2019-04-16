@@ -12,3 +12,5 @@
 
 %div.field= f.label :images
 = f.file_field :images
+
+= f.hidden_field :user_id, :value => current_user.id
