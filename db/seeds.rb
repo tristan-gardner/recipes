@@ -7,4 +7,5 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 Recipe.delete_all
 
-Recipe.create!(name: "Pizza", directions: "make a pizza", cuisine: "Italian", calories: 800)
+user = User.create!(username: "user", password: "password", email: "user@mail.com")
+Recipe.create!(name: "Pizza", directions: "make a pizza", cuisine: "Italian", calories: 800, user: user)

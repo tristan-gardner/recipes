@@ -1,12 +1,15 @@
 class RecipesController < ApplicationController
   def index
+    puts "-----adfjhasldjfkhalskdjfhlsakjdhflakdsjhf"
     do_redirect, view_prefs = update_settings(params, session)
     if do_redirect
       flash.keep
       redirect_to recipes_path(view_prefs) and return
     end
 
-    @recipes = filter_and_sort view_prefs
+    @recipes = Recipe.all
+    puts @recipes.size
+    # filter_and_sort view_prefs
 
     @calories = view_prefs["calories_filter"]
     @cuisine = view_prefs["cuisine_filter"]
