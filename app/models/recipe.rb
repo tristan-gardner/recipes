@@ -1,5 +1,8 @@
 class Recipe < ApplicationRecord
   has_many_attached :images
+  has_many :reviews
+  belongs_to :user
+
 
   def self.filter_on_constraints(constraint_hash)
     recipes = Recipe.all
