@@ -28,6 +28,9 @@ class RecipesController < ApplicationController
   def create
     begin
       r = Recipe.new(create_update_params)
+      r.ingredient_raw_text.split(",").each do |ingredient_name|
+        r.ingredients << Ingredient.create!(name: ingredient_name)
+      end
       r.save
       flash[:notice] = "Recipe successfully added"
       redirect_to(recipes_path)
@@ -47,6 +50,10 @@ class RecipesController < ApplicationController
     recipe = Recipe.find(params[:id])
     begin
       recipe.update(create_update_params)
+      recipe.ingredient_raw_text.split(",").each do |ingredient_name|
+        recipe.ingredients << Ingredient.create!(name: ingredient_name)
+      end
+      recipe.save
       flash[:notice] = "#{recipe.name} succesfully updated"
       redirect_to recipes_path
       return
@@ -71,7 +78,7 @@ class RecipesController < ApplicationController
 
   private
   def create_update_params
-    params.require(:recipe).permit(:name, :directions, :cuisine, :calories, :images, :user_id)
+    params.require(:recipe).permit(:name, :directions, :cuisine, :calories, :images, :user_id, :ingredient_raw_text)
   end
 
   def update_settings(parms, sess)

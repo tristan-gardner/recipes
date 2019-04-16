@@ -15,6 +15,7 @@
               -break
             -user = User.find(r.user_id)
             %div.user= "Recipe by: #{user.username}"
+            %div.ingredients= "Requires #{r.ingredients.size} ingredients"
             %div.directions= "Directions: #{r.directions}"
             %div.calories= "Calories: #{r.calories}"
             %br
