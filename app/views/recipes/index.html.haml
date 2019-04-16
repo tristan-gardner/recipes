@@ -1,29 +1,31 @@
 #main
   %header
     %link{:rel => :stylesheet, :type => :"text/css", :href => "/assets/stylesheets/bootstrap.min.css"}
+  %hr
   %div.main_container
-    #filters
-      -# maximum occupants, price, number of bathrooms, and distance from a given location.
-      =form_tag recipes_path, :method => :get do
-        %span.filter
-          =label_tag "calories_filter", "Maximum calories"
-          =number_field_tag "calories_filter", "#{@calories}"
-        %span.filter
-          =label_tag "cuisine_filter", "Cuisine Type"
-          =text_field_tag "cuisine_filter", "#{@cuisine}"
-        =submit_tag "Filter"
-      =link_to 'Clear filters', recipes_path(:reset_filters => "")
     %p= link_to 'Create New Recipe', new_recipe_path, :class => 'btn btn-info'
     %div.flexbox
+      %div.left_spacer
       %div.recipes
         -@recipes.each do |r|
           %div.recipe_container
             %div.title= link_to "#{r.name}", recipe_path(r)
             -r.images.each do |img|
-              %div.image= image_tag(img, height: '400')
+              %div.image= image_tag(img, width: '700')
               -break
             %div.directions= "Directions: #{r.directions}"
             %div.calories= "Calories: #{r.calories}"
             %br
 
       %div.search_box
+        #filters
+          -# maximum occupants, price, number of bathrooms, and distance from a given location.
+          =form_tag recipes_path, :method => :get do
+            %span.filter
+              =number_field_tag "calories_filter", "#{@calories}", placeholder: "Maximum Calories"
+            %br
+            %span.filter
+              =text_field_tag "cuisine_filter", "#{@cuisine}", placeholder: "Cuisine Type"
+            %br
+            =submit_tag "Filter", :class => 'btn btn-info'
+          =link_to 'Clear filters', recipes_path(:reset_filters => "")
