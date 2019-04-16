@@ -30,4 +30,4 @@
               =text_field_tag "cuisine_filter", "#{@cuisine}", placeholder: "Cuisine Type"
             %br
             =submit_tag "Filter", :class => 'btn btn-info'
-          =link_to 'Clear filters', recipes_path(:reset_filters => "")
+          =link_to 'Clear filters', recipes_path(:reset_filters => true)

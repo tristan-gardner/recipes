@@ -76,9 +76,9 @@ class RecipesController < ApplicationController
 
   def update_settings(parms, sess)
     preferences = sess[:preferences] || Hash.new
-    if parms[:reset_filters]
+    if parms[:reset_filters] == "true"
       session.clear
-      return true, preferences
+      return true, Hash.new
     end
     should_redirect = false
     { "calories_filter" => "", "cuisine_filter" => ""}.each do |parm, default|
