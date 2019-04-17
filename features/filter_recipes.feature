@@ -22,6 +22,7 @@ Feature: Filter Recipes by attribute
     And I press "Filter"
     Then I should see "Pizza"
     And I should not see "Burger"
+
   Scenario: Filter on Multiple Categories
     Given that I am on the recipes page
     When I fill in the following:
@@ -31,3 +32,16 @@ Feature: Filter Recipes by attribute
     Then I should see "Burger"
     And I should see "Cheese"
     And I should not see "Pizza"
+
+  Scenario: Filter then Unfilter:
+    Given that I am on the recipes page
+    When I fill in the following:
+      |Cuisine         | American |
+      |Maximum calories| 700      |
+    And I press "Filter"
+    Then I should see "Burger"
+    And I should see "Cheese"
+    And I should not see "Pizza"
+    And then I press "Clear Filters"
+    And I should see "Cheese"
+    And I should see "Pizza"
