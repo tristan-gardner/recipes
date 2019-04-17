@@ -57,6 +57,25 @@ RSpec.describe "index page", type: :feature do
     expect(names.length).to eq(4)
   end
 
+  it "should do the correct filtering when filtering by calories and cuisine" do
+    fill_in "Cuisine Type", :with => "italian"
+    fill_in "Maximum Calories", :with => "800"
+    click_button "Filter"
+    visit "/recipes"
+    names = []
+    page.all(".title").each { |x| names << x.text }
+    expect(names.length).to eq(1)
+    visit "/recipes"
+    names = []
+    page.all(".title").each { |x| names << x.text }
+    expect(names.length).to eq(1)
+    click_link "Clear filter"
+    names = []
+    page.all(".title").each { |x| names << x.text }
+    expect(names.length).to eq(4)
+  end
+
+
 
 
   it "should have a link to create a recipe" do
