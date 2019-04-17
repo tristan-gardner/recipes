@@ -13,7 +13,7 @@ RSpec.describe "index page", type: :feature do
     Recipe.create!(name: "Chicken Adobo", directions: "Saguil's famous dish", cuisine: "Filipino", calories: 400, user_id: user.id)
     Recipe.create!(name: "Latkas", directions: "Round hash browns", cuisine: "Jewish", calories: 200, user_id: user.id)
 
-    allow_any_instance_of(ReceipesController).to receive(:session).and_return
+    allow_any_instance_of(RecipesController).to receive(:session).and_return
     visit "/recipes"
   end
 

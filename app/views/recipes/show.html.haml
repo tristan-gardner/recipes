@@ -6,18 +6,24 @@
     %div.recipes
       %div.recipe_container
         %div.title= link_to "#{@recipe.name}", recipe_path(@recipe)
+        %div.user= "by: #{User.find(@recipe.user_id).username}"
         -@recipe.images.each do |img|
           %div.image= image_tag(img, width: '700')
           -break
-        -user = User.find(@recipe.user_id)
-        %div.user= "Recipe by: #{user.username}"
-        %div.ingredients
-          Ingredients
-          %br
-          -@recipe.ingredients.each do |ingredient|
-            =ingredient.name
+        %br
+        -if !@recipe.ingredients.empty?
+          %div.ingredients
+            Ingredients
             %br
-        %div.directions= "Directions: #{@recipe.directions}"
+            -@recipe.ingredients.each do |ingredient|
+              = "- #{ingredient.name}"
+              %br
+          %br
+        %div.directions
+          Directions:
+          %br
+          = "#{@recipe.directions}"
+        %br
         %div.calories= "Calories: #{@recipe.calories}"
 
     %p=link_to("Edit Recipe", edit_recipe_path)

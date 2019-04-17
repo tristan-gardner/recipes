@@ -10,13 +10,12 @@
         -@recipes.each do |r|
           %div.recipe_container
             %div.title= link_to "#{r.name}", recipe_path(r)
+            %div.user= "by: #{User.find(r.user_id).username}"
             -r.images.each do |img|
               %div.image= image_tag(img, width: '700')
               -break
-            -user = User.find(r.user_id)
-            %div.user= "Recipe by: #{user.username}"
             %div.ingredients= "Requires #{r.ingredients.size} ingredients"
-            %div.directions= "Directions: #{r.directions}"
+            %div.directions= "#{r.directions}"
             %div.calories= "Calories: #{r.calories}"
             %br
 

@@ -20,13 +20,13 @@
 }
 
 .recipe_container {
-  text-align: center;
+  text-align: left;
   border-style: solid;
   border-width: thin;
   border-color: rgb(230, 230, 230);
   background-color: rgb(255, 255, 255);
   margin: 30px;
-  padding-top: 15px;
+  padding: 25px;
 }
 
 .search_box {
@@ -39,4 +39,8 @@
   width: 15%;
   border-color: rgb(230, 230, 230);
   background-color: rgb(255, 255, 255);
+}
+
+.title {
+  font-size: 24px;
 }
