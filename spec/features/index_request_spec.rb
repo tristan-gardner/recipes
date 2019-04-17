@@ -7,19 +7,18 @@ RSpec.describe "index page", type: :feature do
   #let(:distance_sort) {["abhorrent", "gorgeous", "stinky", "lovely"]}
 
   before :each do
-    user = User.create!(:username => "user", :email => "user@user.com", :password => "password")
+    user = User.create!(:username => "user1", :email => "user1@user.com", :password => "password")
     Recipe.create!(name: "Pizza", directions: "make a pizza", cuisine: "Italian", calories: 800, user_id: user.id)
     Recipe.create!(name: "Lasagna", directions: "Kind of like layered pasta", cuisine: "italian", calories: 1000, user_id: user.id)
     Recipe.create!(name: "Chicken Adobo", directions: "Saguil's famous dish", cuisine: "Filipino", calories: 400, user_id: user.id)
     Recipe.create!(name: "Latkas", directions: "Round hash browns", cuisine: "Jewish", calories: 200, user_id: user.id)
 
-    allow_any_instance_of(RecipesController).to receive(:session).and_return
     visit "/recipes"
   end
 
 
   it "should do the correct filtering when filtering by calories" do
-    fill_in "Maximum calories", :with => "800"
+    fill_in "Maximum Calories", :with => "800"
     click_button "Filter"
     visit "/recipes"
     names = []
@@ -30,29 +29,29 @@ RSpec.describe "index page", type: :feature do
     page.all(".title").each { |x| names << x.text }
     expect(names.length).to eq(3)
     visit "/recipes"
-    click_button "Clear filters"
+    click_link "Clear filters"
     names = []
     page.all(".title").each { |x| names << x.text }
     expect(names.length).to eq(4)
   end
 
   it "should do the correct filtering when filtering by cuisine" do
-    fill_in "Cuisine type", :with => "italian"
+    fill_in "Cuisine Type", :with => "italian"
     click_button "Filter"
     visit "/recipes"
     names = []
     page.all(".title").each { |x| names << x.text }
     expect(names.length).to eq(2)
-    visit "/rental_properties"
+    visit "/recipes"
     names = []
     page.all(".title").each { |x| names << x.text }
     expect(names.length).to eq(2)
-    fill_in "Cuisine type", :with => "Filipino"
+    fill_in "Cuisine Type", :with => "Filipino"
     click_button "Filter"
     names = []
     page.all(".title").each { |x| names << x.text }
     expect(names.length).to eq(1)
-    click_button "Clear filter"
+    click_link "Clear filter"
     names = []
     page.all(".title").each { |x| names << x.text }
     expect(names.length).to eq(4)
