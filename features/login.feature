@@ -34,7 +34,7 @@ Feature: Login Button
     And I press "login"
     Then I should be on the recipes page
     And I should see "TotesGOAT"
-
+      
   Scenario: Login from the show page
     Given that I am on the show page
     When I press "login or create a new account"
