@@ -1,5 +1,5 @@
 Feature: Filter Recipes by attribute
-  Background: The following are already created
+  Background:
     Given these Recipes:
       | name   | cuisine  | directions     | calories |
       | Burger | American | Infected       |  300     |
