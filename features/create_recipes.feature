@@ -1,8 +1,4 @@
 Feature: Create a new recipe
-  As cook
-  so that I can share my recipes with other people
-  I want to be able to create a new recipe.
-
   Background: The website already has the following recipes
     Given these Recipes:
       | name   | cuisine  | directions | calories |
@@ -10,7 +6,7 @@ Feature: Create a new recipe
       | Pizza  | Italian  | Infested   |  500     |
 
   Scenario: Create a new recipe with no image attached
-    Given I am on the create new recipe page
+    Given I am on create recipe page
     When I fill in the following:
       | Name            | Fried Burger Bacon        |
       | Cuisine         | Druggie Lunch             |

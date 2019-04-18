@@ -1,8 +1,4 @@
 Feature: Update an existing recipe
-  As a user who has posted a recipe
-  so that I can make later additions to my recipe
-  I want to be able to edit my recipe's information
-
   Background: The following recipes already exists
     Given these Recipes:
       | name   | cuisine  | directions | calories |

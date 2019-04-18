@@ -1,6 +1,6 @@
 Feature: Login Button
   Scenario: Register an account and password, Log out, then log back in with it
-    Given that I am on the recipes page
+    Given I am on the recipes page
     When I press "login or create a new account"
     Then I should be on the login page
     When I press "create a new account" button
@@ -22,7 +22,7 @@ Feature: Login Button
     And I should see "TotesGOAT"
 
   Scenario: Login from the index page
-    Given that I am on the recipes page
+    Given I am on the recipes page
     When I press "login or create a new account"
     Then I should be on the login page
     When I fill in the following
