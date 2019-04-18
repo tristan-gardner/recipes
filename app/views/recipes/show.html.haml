@@ -24,22 +24,23 @@
         %br
         %div.calories= "Calories: #{@recipe.calories}"
         %br
-        %div.reviews
-          Reviews
+      %div.reviews_title
+        Reviews
+      %div.reviews_container
+        %br
+        - count = 1
+        -@recipe.reviews.each do |review|
+          = "Reviewed by #{User.find(review.user_id).username}"
           %br
-          - count = 1
-          -@recipe.reviews.each do |review|
-            = "Reviewed by #{User.find(review.user_id).username}"
-            %br
-            = review.description
-            %br
-            = "#{review.rating}/5"
-            %br
-            %br
-            -if count == 3
-              -break
-            -count += 1
-        %p=link_to "Add Review", new_review_path << "?recipe_id=#{@recipe.id}"
+          = review.description
+          %br
+          = "#{review.rating}/5"
+          %br
+          %br
+          -if count == 3
+            -break
+          -count += 1
+      %p=link_to "Add Review", new_review_path << "?recipe_id=#{@recipe.id}"
 
     %p=link_to("Edit Recipe", edit_recipe_path)
     %p=link_to "Delete Recipe", recipe_path, method: :delete

@@ -50,6 +50,7 @@ class RecipesController < ApplicationController
     recipe = Recipe.find(params[:id])
     begin
       recipe.update(create_update_params)
+      recipe.ingredients = []
       recipe.ingredient_raw_text.split(",").each do |ingredient_name|
         recipe.ingredients << Ingredient.create!(name: ingredient_name)
       end
