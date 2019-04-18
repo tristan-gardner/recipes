@@ -1,0 +1,9 @@
+#main
+  -@reviews.each do |review|
+    = "Reviewed by #{User.find(review.user_id).username}"
+    %br
+    = review.description
+    %br
+    = "#{review.rating}/5"
+    %br
+    %br
