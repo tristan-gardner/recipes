@@ -1,0 +1,17 @@
+#main
+  %div.main_container
+    %h2 Create New Review
+    = form_for Review.new do |f|
+      %div.field= f.label :description
+      = f.text_field :description
+
+      %div.field= f.label :rating
+      = f.number_field :rating, min: 0, max: 10
+
+      = f.hidden_field :recipe_id, :value => params["recipe_id"]
+
+      = f.hidden_field :user_id, :value => current_user.id
+
+      %br
+      %br
+      %div= submit_tag "Create Review", :class => 'btn btn-info'
