@@ -97,7 +97,7 @@ When /^(?:|I )follow "([^"]*)"$/ do |link|
   click_link(link)
 end
 
-When "I follow the \"string\" \"string\"" do |num, second|
+When "I follow the {string} {string}" do |num, second|
   target = num.to_i
   count = 0
   page.all("li").each do |link| do
