@@ -97,6 +97,21 @@ When /^(?:|I )follow "([^"]*)"$/ do |link|
   click_link(link)
 end
 
+When "I follow the \"string\" \"string\"" do |num, second|
+  target = num.to_i
+  count = 0
+  page.all("li").each do |link| do
+    if link.has_content? second
+      if target == count
+        click_link(link)
+      else
+        count += 1
+      end
+    end
+
+  end
+end
+
 When /^(?:|I )fill in "([^"]*)" with "([^"]*)"$/ do |field, value|
   fill_in(field, :with => value)
 end
