@@ -9,7 +9,7 @@ Recipe.delete_all
 
 user1 = User.create!(username: "csaguil", password: "password", email: "csaguil@colgate.edu")
 user2 = User.create!(username: "tgardner", password: "password", email: "tgardner@colgate.edu")
-recipe = Recipe.create!(name: "Guacamole", directions: "In a medium bowl, mash together the avocados, lime juice, and salt. Mix in onion, cilantro, tomatoes, and garlic. Stir in cayenne pepper. Refrigerate 1 hour for best flavor, or serve immediately.", cuisine: "Mexican", calories: 800, user_id: user.id)
+recipe = Recipe.create!(name: "Guacamole", directions: "In a medium bowl, mash together the avocados, lime juice, and salt. Mix in onion, cilantro, tomatoes, and garlic. Stir in cayenne pepper. Refrigerate 1 hour for best flavor, or serve immediately.", cuisine: "Mexican", calories: 800, user_id: user1.id)
 ingredients = ["Avocado", "Lime Juice", "Cilantro", "Onion", "Tomato", "Salts"]
 ingredients.each do |ing|
   recipe.ingredients << Ingredient.create!(name: ing, recipe_id: recipe.id)
