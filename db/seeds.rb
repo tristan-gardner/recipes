@@ -12,7 +12,7 @@ user2 = User.create!(username: "tgardner", password: "password", email: "tgardne
 recipe = Recipe.create!(name: "Guacamole", directions: "In a medium bowl, mash together the avocados, lime juice, and salt. Mix in onion, cilantro, tomatoes, and garlic. Stir in cayenne pepper. Refrigerate 1 hour for best flavor, or serve immediately.", cuisine: "Mexican", calories: 800, user_id: user1.id)
 ingredients = ["Avocado", "Lime Juice", "Cilantro", "Onion", "Tomato", "Salts"]
 ingredients.each do |ing|
-  recipe.ingredients << Ingredient.create!(name: ing, recipe_id: recipe.id)
+  recipe.ingredients << Ingredient.create!(name: ing)
 end
 review = Review.create!(description: "Wow, way too much salt! I think it could have been good with just a 1/2 tsp of salt. I even used 4 avocados instead of the three mentioned in recipe.", rating: 2, recipe_id: recipe.id, user_id: user2.id)
 recipe.reviews << review
