@@ -1,47 +1,28 @@
 Feature: Login Button
-  As a user of the site,
-  So that I can associate my recipes with myself
-  I want a unique username to call my own
-
   Scenario: Register an account and password, Log out, then log back in with it
-    Given that I am on the recipes page
-    When I press "login or create a new account"
-    I should be on the login page
-    When I press "create a new account" button
-    When I fill in the following
+    Given I am on the recipes page
+    Then I should see "Sign In"
+    And I should see "Sign Up"
+    When I follow "Sign Up"
+    When I fill in the following:
     | Username | TotesGOAT |
-    | Password | wowcool   |
-    And I press "create account"
-    Then I should be on the recipes page
+    | Email    | GOATsim@example.com |
+    | Password | wowscool   |
+    And I follow the "second" "Sign Up"
     And I should see "TotesGOAT"
-    And I press "logout"
-    And I should see "login or create a new account"
-    When I press "login or create a new account"
+    And I should see "Sign Out"
+    And I follow "Sign Out"
+    And I should see "Sign In"
+    When I follow "Sign In"
     And I should be on the login page
-    When I fill in the following
+    When I fill in the following:
     | Username | TotesGOAT |
-    | Password | wowcool   |
-    And I press "sign in"
+    | Email    | GOATsim@example.com |
+    | Password | wowscool   |
+    And I press "Sign In"
     Then I should be on the recipes page
     And I should see "TotesGOAT"
+
   Scenario: Login from the index page
-    Given that I am on the recipes page
-    When I press "login or create a new account"
-    I should be on the login page
-    When I fill in the following
-    | Username | TotesGOAT |
-    | Password | wowcool   |
-    And I press "login"
-    Then I should be on the recipes page
-    And I should see "TotesGOAT"
-      
-  Scenario: Login from the show page
-    Given that I am on the show page
-    When I press "login or create a new account"
-    I should be on the login page
-    When I fill in the following
-    | Username | TotesGOAT |
-    | Password | wowcool   |
-    And I press "login"
-    Then I should be on the recipes page
-    And I should see "TotesGOAT"
+    Given I am on the recipes page
+    Then I should see "Sign In"

@@ -1,5 +1,9 @@
 require 'rails_helper'
 
+require 'simplecov'
+
+SimpleCov.start
+
 RSpec.describe "index page", type: :feature do
   #let(:title_sort) {["abhorrent", "gorgeous", "lovely", "stinky"]}
   let(:calories_sort) {["Latkas", "Chicken Adobo", "Pizza", "Lasagna"]}
