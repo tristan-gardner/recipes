@@ -1,4 +1,8 @@
 require 'rails_helper'
+require 'simplecov'
+
+SimpleCov.start
+
 
 RSpec.describe Ingredient, type: :model do
   describe "object creation" do

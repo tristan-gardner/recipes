@@ -1,4 +1,8 @@
 require 'rails_helper'
+require 'simplecov'
+
+SimpleCov.start
+
 
 RSpec.describe Vote, type: :model do
   describe "check attributes and methods" do

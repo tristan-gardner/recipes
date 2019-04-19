@@ -1,4 +1,7 @@
 require 'rails_helper'
+require 'simplecov'
+
+SimpleCov.start
 
 RSpec.describe RecipesController do
   describe "INDEX" do
