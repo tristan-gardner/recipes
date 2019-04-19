@@ -8,7 +8,7 @@ Feature: Login Button
     | Username | TotesGOAT |
     | Email    | GOATsim@example.com |
     | Password | wowscool   |
-    And I follow "Sign Up"
+    And I follow the "second" "Sign Up"
     And I should see "TotesGOAT"
     And I should see "Sign Out"
     And I follow "Sign Out"
