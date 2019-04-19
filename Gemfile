@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '>= 2.6.0'
+gem "pg", "~> 0.18"
+gem "rails_12factor"
 
 gem 'devise'
 
@@ -78,8 +80,6 @@ group :test do
 end
 
 group :production do
-  gem "pg", "~> 0.18"
-  gem "rails_12factor"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
