@@ -7,9 +7,12 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 Recipe.delete_all
 
-user = User.create!(username: "user", password: "password", email: "user@mail.com")
-recipe = Recipe.create!(name: "Pizza", directions: "make a pizza", cuisine: "Italian", calories: 800, user_id: user.id)
-ingredient = Ingredient.create!(name: "cheese")
-recipe.ingredients << ingredient
-review = Review.create!(description: "test", rating: 4, recipe_id: recipe.id, user_id: user.id)
+user1 = User.create!(username: "csaguil", password: "password", email: "csaguil@colgate.edu")
+user2 = User.create!(username: "tgardner", password: "password", email: "tgardner@colgate.edu")
+recipe = Recipe.create!(name: "Guacamole", directions: "In a medium bowl, mash together the avocados, lime juice, and salt. Mix in onion, cilantro, tomatoes, and garlic. Stir in cayenne pepper. Refrigerate 1 hour for best flavor, or serve immediately.", cuisine: "Mexican", calories: 800, user_id: user.id)
+ingredients = ["Avocado", "Lime Juice", "Cilantro", "Onion", "Tomato", "Salts"]
+ingredients.each do |ing|
+  recipe.ingredients << Ingredient.create!(name: ing, recipe_id: recipe.id)
+end
+review = Review.create!(description: "Wow, way too much salt! I think it could have been good with just a 1/2 tsp of salt. I even used 4 avocados instead of the three mentioned in recipe.", rating: 2, recipe_id: recipe.id, user_id: user2.id)
 recipe.reviews << review
