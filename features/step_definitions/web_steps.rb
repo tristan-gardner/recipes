@@ -100,7 +100,7 @@ end
 When "I follow the {string} {string}" do |num, second|
   target = num.to_i
   count = 0
-  page.all("li").each do |link| do
+  page.all("li").each do |link|
     if link.has_content? second
       if target == count
         click_link(link)
