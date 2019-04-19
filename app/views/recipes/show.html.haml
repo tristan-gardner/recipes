@@ -40,7 +40,9 @@
           -if count == 3
             -break
           -count += 1
+        %p=link_to "View more", reviews_path << "?recipe_id=#{@recipe.id}"
       %p=link_to "Add Review", new_review_path << "?recipe_id=#{@recipe.id}"
-
-    %p=link_to("Edit Recipe", edit_recipe_path)
-    %p=link_to "Delete Recipe", recipe_path, method: :delete
+    - if user_signed_in?
+      - if current_user.id == @recipe.user_id
+        %p=link_to("Edit Recipe", edit_recipe_path)
+        %p=link_to "Delete Recipe", recipe_path, method: :delete

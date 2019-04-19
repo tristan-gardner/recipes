@@ -1,11 +1,6 @@
 class ReviewsController < ApplicationController
   def new
-    puts "----------------------------"
     puts params
-    puts "----------------------------"
-    puts "----------------------------"
-    puts "----------------------------"
-    puts "----------------------------"
   end
 
   def create
@@ -19,6 +14,10 @@ class ReviewsController < ApplicationController
     end
     redirect_to(recipe_path(Recipe.find(params["review"]["recipe_id"].to_i)))
     return
+  end
+
+  def index
+    @reviews = Review.where("recipe_id = #{params[:recipe_id]}")
   end
 
   private
