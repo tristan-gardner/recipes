@@ -5,9 +5,10 @@ Feature: Login Button
     And I should see "Sign Up"
     When I follow "Sign Up"
     When I fill in the following:
-    | Username | TotesGOAT |
-    | Email    | GOATsim@example.com |
-    | Password | wowscool   |
+    | Username              | TotesGOAT |
+    | Email                 | GOATsim@example.com |
+    | Password              | wowscool   |
+    | Password confirmation | wowscool |
     And I follow the "second" "Sign Up"
     And I should see "TotesGOAT"
     And I should see "Sign Out"
@@ -19,7 +20,8 @@ Feature: Login Button
     | Username | TotesGOAT |
     | Email    | GOATsim@example.com |
     | Password | wowscool   |
-    And I press "Sign In"
+    And I should see "Log in"
+    And I press "Log in"
     Then I should be on the recipes page
     And I should see "TotesGOAT"
 
