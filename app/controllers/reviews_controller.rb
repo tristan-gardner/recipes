@@ -1,11 +1,6 @@
 class ReviewsController < ApplicationController
   def new
-    puts "----------------------------"
     puts params
-    puts "----------------------------"
-    puts "----------------------------"
-    puts "----------------------------"
-    puts "----------------------------"
   end
 
   def create
