@@ -54,6 +54,26 @@ Given "these Recipes:" do |table|
   end
 end
 
+Given "these Users:" do |table|
+  desc, data = table.raw[0], table.raw[1,table.raw.length-1]
+  obj_list = []
+  data.each do |obj|
+    obj_hash = {}
+    (0..(desc.length)).each do |i|
+        obj_hash[desc[i]] = obj[i]
+    end
+    obj_list.append(obj_hash)
+  end
+  obj_list.each do |things|
+    r = User.new
+    r.email = things["email"]
+    r.username = things["username"]
+    r.password = things["password"]
+    r.save!
+  end
+end
+
+
 # Single-line step scoper
 When /^(.*) within (.*[^:])$/ do |step, parent|
   with_scope(parent) { When step }

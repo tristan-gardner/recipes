@@ -1,10 +1,14 @@
 Feature: Filter Recipes by attribute
   Background:
+    Given these Users:
+      | username | password | email             |
+      | Totes    | wowscool | totes@example.com |
+
     Given these Recipes:
-      | name   | cuisine  | directions     | calories |
-      | Burger | American | Infected       |  300     |
-      | Pizza  | Italian  | Infested       |  500     |
-      | Cheese | American | Freshly Barfed |  200     |
+      | name   | cuisine  | directions     | calories | users |
+      | Burger | American | Infected       |  300     | Totes |
+      | Pizza  | Italian  | Infested       |  500     | Totes |
+      | Cheese | American | Freshly Barfed |  200     | Totes |
 
   Scenario: Filter on one Calories
     Given I am on the recipes page
@@ -29,8 +33,8 @@ Feature: Filter Recipes by attribute
   Scenario: Filter on Multiple Categories
     Given I am on the recipes page
     When I fill in the following:
+      |Maximum Calories     | 700      |
       |Cuisine Type         | American |
-      |Maximum Calories| 700      |
     And I press "Filter"
     Then I should see "Burger"
     And I should see "Cheese"
@@ -39,8 +43,8 @@ Feature: Filter Recipes by attribute
   Scenario: Filter then Unfilter:
     Given I am on the recipes page
     When I fill in the following:
+      |Maximum Calories     | 700      |
       |Cuisine Type         | American |
-      |Maximum Calories| 700      |
     And I press "Filter"
     Then I should see "Burger"
     And I should see "Cheese"

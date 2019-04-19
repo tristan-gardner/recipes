@@ -12,7 +12,7 @@ RSpec.describe RecipesController do
     it "should render the index view displaying created recipes with an empty params hash" do
       get :index
       assert_response 302
-      expect(response).to render_template('index')
+      expect(response).to redirect_to('http://test.host/recipes?calories_filter=&cuisine_filter=')
     end
   end
 end
