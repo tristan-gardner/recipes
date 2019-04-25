@@ -1,0 +1,19 @@
+#main
+  %header
+    %link{:rel => :stylesheet, :type => :"text/css", :href => "/assets/stylesheets/bootstrap.min.css"}
+  %hr
+  %h1.name=@user.username
+  %div.main_container
+    %div.flexbox
+      %div.title= "#{@user.username}'s Recipes"
+      %div.left_spacer
+      %div.recipes
+        -@recipes.each do |r|
+          %div.recipe_container
+            %div.title= link_to "#{r.name}", recipe_path(r)
+            -r.images.each do |img|
+              %div.image= image_tag(img, width: '700')
+              -break
+            %div.ingredients= "Requires #{r.ingredients.size} ingredients"
+            %div.calories= "Calories: #{r.calories}"
+            %br

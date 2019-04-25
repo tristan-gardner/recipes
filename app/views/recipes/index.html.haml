@@ -10,7 +10,7 @@
         -@recipes.each do |r|
           %div.recipe_container
             %div.title= link_to "#{r.name}", recipe_path(r)
-            %div.user= "by: #{User.find(r.user_id).username}"
+            %div.user= link_to "by: #{User.find(r.user_id).username}", user_path(r.user_id)
             -r.images.each do |img|
               %div.image= image_tag(img, width: '700')
               -break
