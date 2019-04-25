@@ -5,6 +5,26 @@
       %div.recipe_container
         %div.title= link_to "#{@recipe.name}", recipe_path(@recipe)
         %div.user= "by: #{User.find(@recipe.user_id).username}"
+
+        .offset-md-1.col-md-1
+          %h4
+            =octicon "triangle-up"
+            %span#upcount.text-success="#{@recipe.upvotes}"
+        .col-md-1
+          %h4
+            =octicon "triangle-down"
+            %span#downcount.text-danger="#{@recipe.downvotes}"
+        .offset-md-1.col-md-2
+          -if user_signed_in?
+            %span.badge.badge-dark Vote
+            %span
+              =link_to octicon("thumbsup"), upvote_path(@recipe.id), :method => :post, :id => :upvote, :remote => true
+            %span
+              =link_to octicon("thumbsdown"), downvote_path(@recipe.id), :method => :post, :id => :downvote, :remote => true
+          -else
+            .alert.alert-secondary.small Sign in or sign up to vote sights up or down.
+
+
         -@recipe.images.each do |img|
           %div.image= image_tag(img, width: '700')
           -break

@@ -7,6 +7,8 @@ gem "rails_12factor"
 
 gem 'devise'
 
+gem 'octicons_helper'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.2', '>= 5.2.2.1'
 
