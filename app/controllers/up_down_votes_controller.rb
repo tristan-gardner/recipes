@@ -2,11 +2,23 @@ class UpDownVotesController < ApplicationController
   before_action :authenticate_user!
 
   def upvote
-    dovote(true)
+    recipe = Recipe.find(params[:id])
+    if !recipe.hasUpvoter?(current_user)
+      if recipe.hasDownvoter?(current_user)
+        recipe.removeVote(current_user)
+      end
+      dovote(true)
+    end
   end
 
   def downvote
-    dovote(false)
+    recipe = Recipe.find(params[:id])
+    if !recipe.hasDownvoter?(current_user)
+      if recipe.hasUpvoter?(current_user)
+        recipe.removeVote(current_user)
+      end
+      dovote(false)
+    end
   end
 
 private
@@ -16,6 +28,10 @@ private
     rescue ActiveRecord::RecordNotFound
       flash[:alert] = "No such recipe"
       redirect_to recipes_path and return
+    end
+    if recipe.users.include?(current_user)
+      puts "here"
+      return
     end
     recipe.up_down_votes.create(:upvote => updown, :user => current_user)
     respond_to do |format|
