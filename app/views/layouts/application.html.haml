@@ -16,7 +16,8 @@
         -if user_signed_in?
           %p
             .button-navigate.devise
-              %span= "hello, #{current_user.username}"
+              %span Hello
+              %span= link_to current_user.username, user_path(current_user)
               =link_to "logout", destroy_user_session_path, method: :delete, :class => "btn btn-primary btn-sm"
         -else
           %br
