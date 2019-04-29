@@ -21,13 +21,16 @@
 
       %div.search_box
         #filters
-          -# maximum occupants, price, number of bathrooms, and distance from a given location.
+          -# Calorie, cuisine type, and ingredients
           =form_tag recipes_path, :method => :get do
             %span.filter
               =number_field_tag "calories_filter", "#{@calories}", placeholder: "Maximum Calories"
             %br
             %span.filter
               =text_field_tag "cuisine_filter", "#{@cuisine}", placeholder: "Cuisine Type"
+            %br
+            %span.filter
+              =text_field_tag "ingredient_filter", "#{@ingredient}", placeholder: "Ingredient"
             %br
             =submit_tag "Filter", :class => 'btn btn-info'
           =link_to 'Clear filters', recipes_path(:reset_filters => true)
