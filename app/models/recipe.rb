@@ -7,6 +7,8 @@ class Recipe < ApplicationRecord
   has_many :up_down_votes
   has_many :users, :through => :up_down_votes
 
+  #scope: :related_recipes, -> { Recipe.most_similar_ingredients(recipe) }
+
   def upvotes
     self.up_down_votes.where("upvote = ?", true).count
   end
@@ -27,7 +29,25 @@ class Recipe < ApplicationRecord
     downvote = self.up_down_votes.where("user_id = ?", user.id)[0]
     downvote.destroy
   end
-  
+
+  def self.most_similar_ingredients(recipe)
+    min_diff = recipe.ingredients.size
+    most_similar = nil
+    puts "starting function"
+    Recipe.all.each do |r|
+      puts "in loop"
+      if r != recipe
+        diff = (recipe.ingredients - r.ingredients | r.ingredients - recipe.ingredients).size
+        if diff < min_diff
+          puts "FOUND A MORE SIMILAR RECIPE"
+          min_diff = diff
+          most_similar = r
+        end
+      end
+    end
+    return most_similar
+  end
+
   private
   def hasUpOrDownvoter?(user, up)
     if self.users.include?(user)
@@ -35,6 +55,8 @@ class Recipe < ApplicationRecord
       return vote.upvote == up
     end
   end
+
+
 
   def self.filter_on_constraints(constraint_hash)
     recipes = Recipe.all
