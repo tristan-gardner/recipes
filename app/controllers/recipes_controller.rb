@@ -13,9 +13,12 @@ class RecipesController < ApplicationController
   end
 
   def show
+
     id = params[:id]
     begin
       @recipe = Recipe.find(id)
+      @similar = Recipe.most_similar_ingredients(@recipe)
+      #byebug
     rescue ActiveRecord::RecordNotFound
       redirect_to products_path
       return
@@ -29,8 +32,16 @@ class RecipesController < ApplicationController
     begin
       r = Recipe.new(create_update_params)
       r.ingredient_raw_text.split(",").each do |ingredient_name|
-        r.ingredients << Ingredient.create!(name: ingredient_name)
+        name = ingredient_name.gsub(/\s+/, "")
+        if Ingredient.where("name = ?", name).size > 0
+          ingredient = Ingredient.where("name = ?", name)[0]
+        else
+          ingredient = Ingredient.create!(name: name)
+        end
+        r.ingredients << ingredient
+        ingredient.recipes << r
       end
+
       r.save
       flash[:notice] = "Recipe successfully added"
       redirect_to(recipes_path)

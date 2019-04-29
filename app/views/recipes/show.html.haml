@@ -44,6 +44,10 @@
         %br
         %div.calories= "Calories: #{@recipe.calories}"
         %br
+        %div
+          -if @similar
+            Related Recipe
+            = @similar.name
       %div.reviews_title
         Reviews
       %div.reviews_container
@@ -62,6 +66,7 @@
           -count += 1
         %p=link_to "View more", reviews_path << "?recipe_id=#{@recipe.id}"
       %p=link_to "Add Review", new_review_path << "?recipe_id=#{@recipe.id}"
+      %div.similar= link_to "If you like #{@recipe.name} Check out #{@similar.name}!", recipe_path(@similar) if @similar
     - if user_signed_in?
       - if current_user.id == @recipe.user_id
         %p=link_to("Edit Recipe", edit_recipe_path)

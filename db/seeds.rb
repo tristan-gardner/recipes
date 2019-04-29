@@ -14,5 +14,7 @@ ingredients = ["Avocado", "Lime Juice", "Cilantro", "Onion", "Tomato", "Salts"]
 ingredients.each do |ing|
   recipe.ingredients << Ingredient.create!(name: ing)
 end
+#recipe2 = Recipe.create!(name: "Pico", directions: "Salssssssa.", cuisine: "Mexican", calories: 400, user_id: user2.id)
+#ingredients = ["Cilantro", "Onion", "Tomato", "Salts"]
 review = Review.create!(description: "Wow, way too much salt! I think it could have been good with just a 1/2 tsp of salt. I even used 4 avocados instead of the three mentioned in recipe.", rating: 2, recipe_id: recipe.id, user_id: user2.id)
 recipe.reviews << review
