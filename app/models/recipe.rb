@@ -7,8 +7,6 @@ class Recipe < ApplicationRecord
   has_many :up_down_votes
   has_many :users, :through => :up_down_votes
 
-  #scope: :related_recipes, -> { Recipe.most_similar_ingredients(recipe) }
-
   def upvotes
     self.up_down_votes.where("upvote = ?", true).count
   end
@@ -25,29 +23,6 @@ class Recipe < ApplicationRecord
     return hasUpOrDownvoter?(user, false)
   end
 
-  def removeVote(upvote)
-    downvote = self.up_down_votes.where("user_id = ?", user.id)[0]
-    downvote.destroy
-  end
-
-  def self.most_similar_ingredients(recipe)
-    max_matches = 0
-    most_similar = nil
-    Recipe.all.each do |r|
-      if r.id != recipe.id
-        union = (recipe.ingredients + r.ingredients).uniq
-        diff = (recipe.ingredients - r.ingredients | r.ingredients - recipe.ingredients)
-        intersection = union - diff
-        num_matches = intersection.size
-        if num_matches > max_matches
-          max_matches = num_matches
-          most_similar = r
-        end
-      end
-    end
-    return most_similar
-  end
-
   private
   def hasUpOrDownvoter?(user, up)
     if self.users.include?(user)
@@ -56,7 +31,33 @@ class Recipe < ApplicationRecord
     end
   end
 
+  def removeVote(upvote)
+    downvote = self.up_down_votes.where("user_id = ?", user.id)[0]
+    downvote.destroy
+  end
 
+  def self.most_similar_ingredients(recipe)
+    max_matches = 0
+    most_similar = nil
+    @recipes = Recipe.all.includes(:ingredients)
+    @recipes.each do |other|
+      if other.id != recipe.id
+        num_matches = Recipe.count_matching_ingredients(recipe, other)
+        if num_matches > max_matches
+          max_matches = num_matches
+          most_similar = other
+        end
+      end
+    end
+    return most_similar
+  end
+
+  def self.count_matching_ingredients(r1, r2)
+    union = (r1.ingredients + r2.ingredients).uniq
+    diff = (r1.ingredients - r2.ingredients | r2.ingredients - r1.ingredients)
+    intersection = union - diff
+    return intersection.size
+  end
 
   def self.filter_on_constraints(constraint_hash)
     recipes = Recipe.all
