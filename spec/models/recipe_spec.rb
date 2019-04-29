@@ -41,24 +41,24 @@ RSpec.describe Recipe, type: :model do
 
       author = User.create!(username: "t", email: "t@t.com", password: "password")
 
-      r1 = Recipe.new(name: "Strawberry Milkshake")
-      r1.user = author
-      r1.ingredients << [milk,sugar,ice,strawberry]
-      r1.save
+      sm = Recipe.new(name: "Strawberry Milkshake")
+      sm.user = author
+      sm.ingredients << [milk,sugar,ice,strawberry]
+      sm.save
 
-      r2 = Recipe.new(name: "Chocolate Milkshake")
-      r2.user = author
-      r2.ingredients << [milk, sugar, ice, chocolate]
-      r2.save
+      cm = Recipe.new(name: "Chocolate Milkshake")
+      cm.user = author
+      cm.ingredients << [milk, sugar, ice, chocolate]
+      cm.save
 
-      r3 = Recipe.new(name: "Bacon Burger")
-      r3.user = author
-      r3.ingredients << [bun, meat]
-      r3.save
+      bb = Recipe.new(name: "Bacon Burger")
+      bb.user = author
+      bb.ingredients << [bun, meat]
+      bb.save
 
-      expect(Recipe.most_similar_ingredients(r1)).to eq(r2)
-      expect(Recipe.most_similar_ingredients(r2)).to eq(r1)
-      expect(Recipe.most_similar_ingredients(r3)).to eq(nil)
+      expect(Recipe.most_similar_ingredients(sm)).to eq(cm)
+      expect(Recipe.most_similar_ingredients(cm)).to eq(sm)
+      expect(Recipe.most_similar_ingredients(bb)).to eq(nil)
     end
   end
 end

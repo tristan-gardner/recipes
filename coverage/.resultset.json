@@ -1,12 +1,12 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/tristangardner/Desktop/480/recipes/app/models/ingredient.rb": [
+      "/Users/Cristian/School/College/Senior/SE/recipes/app/models/ingredient.rb": [
         1,
         1,
         null
       ],
-      "/Users/tristangardner/Desktop/480/recipes/spec/models/recipe_spec.rb": [
+      "/Users/Cristian/School/College/Senior/SE/recipes/spec/models/recipe_spec.rb": [
         1,
         1,
         null,
@@ -72,7 +72,7 @@
         null,
         null
       ],
-      "/Users/tristangardner/Desktop/480/recipes/app/models/recipe.rb": [
+      "/Users/Cristian/School/College/Senior/SE/recipes/app/models/recipe.rb": [
         1,
         1,
         1,
@@ -114,9 +114,13 @@
         9,
         6,
         6,
-        4,
-        4,
-        4,
+        6,
+        6,
+        6,
+        6,
+        2,
+        2,
+        2,
         null,
         null,
         null,
@@ -152,7 +156,7 @@
         null,
         null
       ],
-      "/Users/tristangardner/Desktop/480/recipes/spec/models/review_spec.rb": [
+      "/Users/Cristian/School/College/Senior/SE/recipes/spec/models/review_spec.rb": [
         1,
         1,
         null,
@@ -188,20 +192,20 @@
         null,
         null
       ],
-      "/Users/tristangardner/Desktop/480/recipes/app/models/review.rb": [
+      "/Users/Cristian/School/College/Senior/SE/recipes/app/models/review.rb": [
         1,
         1,
         1,
         null
       ],
-      "/Users/tristangardner/Desktop/480/recipes/spec/models/up_down_vote_spec.rb": [
+      "/Users/Cristian/School/College/Senior/SE/recipes/spec/models/up_down_vote_spec.rb": [
         1,
         null,
         1,
         1,
         null
       ],
-      "/Users/tristangardner/Desktop/480/recipes/app/models/up_down_vote.rb": [
+      "/Users/Cristian/School/College/Senior/SE/recipes/app/models/up_down_vote.rb": [
         1,
         1,
         1,
@@ -210,7 +214,7 @@
         null,
         null
       ],
-      "/Users/tristangardner/Desktop/480/recipes/spec/models/user_spec.rb": [
+      "/Users/Cristian/School/College/Senior/SE/recipes/spec/models/user_spec.rb": [
         1,
         1,
         null,
@@ -221,7 +225,7 @@
         1,
         null
       ],
-      "/Users/tristangardner/Desktop/480/recipes/spec/models/vote_spec.rb": [
+      "/Users/Cristian/School/College/Senior/SE/recipes/spec/models/vote_spec.rb": [
         1,
         1,
         null,
@@ -237,11 +241,11 @@
         null,
         null
       ],
-      "/Users/tristangardner/Desktop/480/recipes/app/models/vote.rb": [
+      "/Users/Cristian/School/College/Senior/SE/recipes/app/models/vote.rb": [
         1,
         null
       ]
     },
-    "timestamp": 1556495720
+    "timestamp": 1556512485
   }
 }

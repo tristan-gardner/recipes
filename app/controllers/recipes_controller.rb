@@ -39,7 +39,6 @@ class RecipesController < ApplicationController
           ingredient = Ingredient.create!(name: name)
         end
         r.ingredients << ingredient
-        ingredient.recipes << r
       end
 
       r.save

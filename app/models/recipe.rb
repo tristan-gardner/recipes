@@ -31,16 +31,16 @@ class Recipe < ApplicationRecord
   end
 
   def self.most_similar_ingredients(recipe)
-    min_diff = recipe.ingredients.size
+    max_matches = 0
     most_similar = nil
-    puts "starting function"
     Recipe.all.each do |r|
-      puts "in loop"
-      if r != recipe
-        diff = (recipe.ingredients - r.ingredients | r.ingredients - recipe.ingredients).size
-        if diff < min_diff
-          puts "FOUND A MORE SIMILAR RECIPE"
-          min_diff = diff
+      if r.id != recipe.id
+        union = (recipe.ingredients + r.ingredients).uniq
+        diff = (recipe.ingredients - r.ingredients | r.ingredients - recipe.ingredients)
+        intersection = union - diff
+        num_matches = intersection.size
+        if num_matches > max_matches
+          max_matches = num_matches
           most_similar = r
         end
       end
