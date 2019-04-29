@@ -51,3 +51,16 @@
   margin-left: 30px;
   font-size: 20px;
 }
+
+.like_button_bar {
+  display: flex;
+  flex-direction: column;
+}
+
+.recipe_headers {
+  float: left;
+}
+
+.edit_buttons {
+  float: right;
+}
