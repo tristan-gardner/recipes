@@ -20,7 +20,7 @@
   width: 10%;
 }
 
-.recipe_container {
+.content_container {
   text-align: left;
   border-style: solid;
   border-width: thin;
@@ -43,22 +43,11 @@
   background-color: rgb(255, 255, 255);
 }
 
-.title {
+.main_title {
   font-size: 24px;
 }
 
-.reviews_container {
-  border-style: solid;
-  border-width: thin;
-  border-color: rgb(230, 230, 230);
-  background-color: rgb(255, 255, 255);
-  margin-top: 5px;
-  margin-left: 30px;
-  margin-right: 30px;
-  padding: 25px;
-}
-
-.reviews_title {
+.subtitle {
   margin-left: 30px;
   font-size: 20px;
 }

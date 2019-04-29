@@ -2,8 +2,12 @@
   %div.main_container
     =link_to("Back to recipe list", recipes_path)
     %div.recipes
-      %div.recipe_container
-        %div.title= link_to "#{@recipe.name}", recipe_path(@recipe)
+      %div.content_container
+        - if user_signed_in?
+          - if current_user.id == @recipe.user_id
+            %p=link_to octicon("pencil"), edit_recipe_path
+            %p=link_to octicon("trashcan"), recipe_path, method: :delete
+        %div.main_title= "#{@recipe.name}"
         %div.user= "by: #{User.find(@recipe.user_id).username}"
 
         .offset-md-1.col-md-1
@@ -44,13 +48,9 @@
         %br
         %div.calories= "Calories: #{@recipe.calories}"
         %br
-        %div
-          -if @similar
-            Related Recipe
-            = @similar.name
-      %div.reviews_title
+      %div.subtitle
         Reviews
-      %div.reviews_container
+      %div.content_container
         %br
         - count = 1
         -@recipe.reviews.each do |review|
@@ -65,9 +65,19 @@
             -break
           -count += 1
         %p=link_to "View more", reviews_path << "?recipe_id=#{@recipe.id}"
-      %p=link_to "Add Review", new_review_path << "?recipe_id=#{@recipe.id}"
-      %div.similar= link_to "If you like #{@recipe.name} Check out #{@similar.name}!", recipe_path(@similar) if @similar
-    - if user_signed_in?
-      - if current_user.id == @recipe.user_id
-        %p=link_to("Edit Recipe", edit_recipe_path)
-        %p=link_to "Delete Recipe", recipe_path, method: :delete
+        %p=link_to "Add Review", new_review_path << "?recipe_id=#{@recipe.id}"
+
+      -if @similar
+        %div.subtitle
+          Related Recipes
+        %div.content_container
+          %br
+          %div.title= link_to "#{@similar.name}", recipe_path(@similar)
+          %div.user= link_to "by: #{User.find(@similar.user_id).username}", user_path(@similar.user_id)
+          -@similar.images.each do |img|
+            %div.image= image_tag(img, width: '300')
+            -break
+          %div.ingredients= "Requires #{@similar.ingredients.size} ingredients"
+          %div.directions= "#{@similar.directions}"
+          %div.calories= "Calories: #{@similar.calories}"
+          %br

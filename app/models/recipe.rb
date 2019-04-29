@@ -39,8 +39,7 @@ class Recipe < ApplicationRecord
   def self.most_similar_ingredients(recipe)
     max_matches = 0
     most_similar = nil
-    @recipes = Recipe.all.includes(:ingredients)
-    @recipes.each do |other|
+    Recipe.all.includes(:ingredients).each do |other|
       if other.id != recipe.id
         num_matches = Recipe.count_matching_ingredients(recipe, other)
         if num_matches > max_matches
