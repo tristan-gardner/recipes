@@ -23,17 +23,17 @@ class Recipe < ApplicationRecord
     return hasUpOrDownvoter?(user, false)
   end
 
+  def removeVote(upvote)
+    downvote = self.up_down_votes.where("user_id = ?", user.id)[0]
+    downvote.destroy
+  end
+
   private
   def hasUpOrDownvoter?(user, up)
     if self.users.include?(user)
       vote = self.up_down_votes.where("user_id = ?", user.id)[0]
       return vote.upvote == up
     end
-  end
-
-  def removeVote(upvote)
-    downvote = self.up_down_votes.where("user_id = ?", user.id)[0]
-    downvote.destroy
   end
 
   def self.most_similar_ingredients(recipe)
