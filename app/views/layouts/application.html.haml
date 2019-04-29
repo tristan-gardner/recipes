@@ -11,7 +11,7 @@
     %p= flash[:notice]
     %p= flash[:warning]
     #header
-      .logo= image_tag("reci_logo.png", :width => 200)
+      .logo= link_to image_tag("reci_logo.png", :width => 200), recipes_path
       .offset-md-6.col-md-2
         -if user_signed_in?
           %p
