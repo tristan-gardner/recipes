@@ -17,9 +17,9 @@
           -break
         %div.like_button_bar
           %h4
-            =link_to octicon("thumbsup"), upvote_path(@recipe.id), :method => :post, :id => :upvote, :remote => true
+            =link_to octicon("thumbsup"), upvote_path(@recipe.id), :method => :post, :id => :upvote, :remote => true, "data-type" => "json"
             %span#upcount.text-success="#{@recipe.upvotes}"
-            =link_to octicon("thumbsdown"), downvote_path(@recipe.id), :method => :post, :id => :downvote, :remote => true
+            =link_to octicon("thumbsdown"), downvote_path(@recipe.id), :method => :post, :id => :downvote, :remote => true, "data-type" => "json"
             %span#downcount.text-danger="#{@recipe.downvotes}"
         %br
         -if !@recipe.ingredients.empty?
@@ -42,34 +42,25 @@
       %div.content_container
         %br
         - count = 1
-        -@recipe.reviews.each do |review|
-          = "Reviewed by #{User.find(review.user_id).username}"
-          %br
-          = review.description
-          %br
-          = "#{review.rating}/5"
-          %br
-          %br
-          -if count == 3
-            -break
-          -count += 1
-        = form_for :review, :url => add_review_path(@recipe.id), :method => :post, :id => :add_review, :remote => true, :class => "btn btn-primary" do |f|
-          %div.field= f.label :description
-          = f.text_field :description
+        %ul
+          -@recipe.reviews.each do |review|
+            =render :partial => review, :review => review
+            -if count == 10
+              -break
+            -count += 1
+        -if user_signed_in?
+          =form_with(id: :review_form, model: Review.new, url: create_review_path(@recipe), data: { type: :json } ) do |f|
+            =f.label :description
+            =f.text_area :description, :id => "descriptionbox"
+            =f.label :rating
+            =f.number_field :rating, :id => "rating"
 
-          %div.field= f.label :rating
-          = f.number_field :rating, min: 0, max: 10
-
-          = f.hidden_field :recipe_id, :value => params["recipe_id"]
-
-          = f.hidden_field :user_id, :value => current_user.id
-
-          %br
-          %br
-          %div= submit_tag "Submit Review", :class => 'btn btn-info'
+            =f.submit "Add comment", :remote => true, "data-type" => "json"
+        -else
+          %p Sign in to post a comment.
 
         -# %p=link_to "Submit Review", add_review_path(@recipe.id), :method => :post, :id => :add_review, :remote => true, :class => "btn btn-primary"
-        %p=link_to "View all reviews", reviews_path << "?recipe_id=#{@recipe.id}"
+        -# %p=link_to "View all reviews", reviews_path << "?recipe_id=#{@recipe.id}"
 
       -if @similar
         %div.subtitle
