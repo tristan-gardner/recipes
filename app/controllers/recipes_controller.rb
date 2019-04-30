@@ -10,6 +10,7 @@ class RecipesController < ApplicationController
 
     @calories = view_prefs["calories_filter"]
     @cuisine = view_prefs["cuisine_filter"]
+    @ingredient = view_prefs["ingredient"]
   end
 
   def show
@@ -99,7 +100,7 @@ class RecipesController < ApplicationController
       return true, Hash.new
     end
     should_redirect = false
-    { "calories_filter" => "", "cuisine_filter" => ""}.each do |parm, default|
+    { "calories_filter" => "", "cuisine_filter" => "", "ingredient_filter" => ""}.each do |parm, default|
         parmval = parms[parm]
         if parmval.nil?  # not currently set; look at session
           parmval = preferences[parm] || default
@@ -121,6 +122,7 @@ class RecipesController < ApplicationController
       constraints[:calories] = calories
     end
     constraints[:cuisine] = view_prefs["cuisine_filter"]
+    constraints[:ingredient] = view_prefs["ingredient_filter"]
     recipes = Recipe.filter_on_constraints(constraints)
     recipes
   end

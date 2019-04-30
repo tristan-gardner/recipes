@@ -69,9 +69,12 @@ class Recipe < ApplicationRecord
     constraint_hash.each_pair do |key, value|
       symbol = key.to_sym
       operator = operator_hash[symbol]
-      if !operator.nil? and value != ""
+      if symbol == :ingredient and constraint_hash[:ingredient] != ""
+        recipes = Recipe.joins(:ingredients).where("ingredients.name LIKE ?", value)
+      elsif !operator.nil? and value != ""
         recipes = recipes.where("#{symbol.to_s} #{operator} ?", value)
       end
+
     end
     recipes
   end
