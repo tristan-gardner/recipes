@@ -5,13 +5,13 @@ class UsersController < ApplicationController
     @recipes = @user.recipes
 
     #history implementation
-    history = @user.view_history.split(":")
+    id_list = @user.view_history.split(":")
     @history = []
     seen = []
-    history.each do |hist_id|
-      if seen.include? hist_id
+    id_list.each do |hist_id|
+      if (!seen.include? hist_id) && (hist_id != "")
         seen << hist_id
-        @history << Recipes.find(hist_id)
+        @history << Recipe.find_by_id(hist_id.to_i)
       end
     end
   end
