@@ -1,4 +1,5 @@
 require 'rails_helper'
+require 'simplecov'
 
 RSpec.describe UpDownVote, type: :model do
   before(:each) do
