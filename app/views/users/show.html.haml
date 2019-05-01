@@ -17,3 +17,8 @@
             %div.ingredients= "Requires #{r.ingredients.size} ingredients"
             %div.calories= "Calories: #{r.calories}"
             %br
+  %h3.user_history="You've visited:"
+  %div.history_container
+    -@history.each do |r|
+      %div.history_title=r.title
+      %div.history_author=r.author
