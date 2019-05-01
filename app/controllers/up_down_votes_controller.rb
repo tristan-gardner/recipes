@@ -40,12 +40,14 @@ private
     respond_to do |format|
       format.html do
         # existing code that renders or redirects.
+        puts ("vote request format - html")
         flash[:notice] = "You #{updown ? "upvoted" : "downvoted"} #{@recipe.name}"
         redirect_to recipe_path(@recipe) and return
       end
       format.json do
         # new code that handles responding to an AJAX call with some
         # JSON.
+        puts ("vote request format - json")
         render json: { up: @recipe.upvotes, down: @recipe.downvotes }, :status => :ok
       end
     end
@@ -53,6 +55,7 @@ private
 
   private
   def handle_double_vote(recipe_id)
+    puts "handling double vote"
     recipe = Recipe.find(recipe_id)
     respond_to do |format|
       format.html do
