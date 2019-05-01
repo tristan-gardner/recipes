@@ -1,4 +1,5 @@
 require 'rails_helper'
+require 'simplecov'
 
 # Specs in this file have access to a helper object that includes
 # the UpDownVotesHelper. For example:

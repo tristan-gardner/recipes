@@ -4,11 +4,15 @@ var recipes = (function() {
     // make any additional "private" function or variables here
     function vote(e) {
       //e = array of 3 items
+      console.log(e);
       if (e.detail[1] === "OK") {
         var vote = JSON.parse(e.detail[2].responseText);
         jQuery("#upcount").text(vote.up);
         jQuery("#downcount").text(vote.down);
+      } else {
+        console.log("uh oh");
       }
+      console.log("voting");
     }
 
     function comment(e) {

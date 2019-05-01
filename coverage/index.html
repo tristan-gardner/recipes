@@ -14,27 +14,27 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2019-04-29T19:25:56-04:00">2019-04-29T19:25:56-04:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2019-05-01T18:51:59-04:00">2019-05-01T18:51:59-04:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="red">53.9%</span></span>
+    (<span class="covered_percent"><span class="red">54.17%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         6.69
+         12.1
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>4</b> files in total.
-    <b>141</b> relevant lines. 
-    <span class="green"><b>76</b> lines covered</span> and
-    <span class="red"><b>65</b> lines missed </span>
+    <b>144</b> relevant lines. 
+    <span class="green"><b>78</b> lines covered</span> and
+    <span class="red"><b>66</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -62,12 +62,12 @@
       
       <tr>
         <td class="strong"><a href="#521b33a664fc6734ccd64f14ce41adc4a101ef79" class="src_link" title="app/controllers/recipes_controller.rb">app/controllers/recipes_controller.rb</a></td>
-        <td class="red strong">50.62 %</td>
-        <td>129</td>
-        <td>81</td>
+        <td class="red strong">51.19 %</td>
+        <td>133</td>
+        <td>84</td>
+        <td>43</td>
         <td>41</td>
-        <td>40</td>
-        <td>9.1</td>
+        <td>16.5</td>
       </tr>
       
       <tr>
@@ -87,7 +87,7 @@
         <td>50</td>
         <td>28</td>
         <td>22</td>
-        <td>4.0</td>
+        <td>7.0</td>
       </tr>
       
     </tbody>
@@ -200,11 +200,11 @@
         <div class="source_table" id="521b33a664fc6734ccd64f14ce41adc4a101ef79">
   <div class="header">
     <h3>app/controllers/recipes_controller.rb</h3>
-    <h4><span class="red">50.62 %</span> covered</h4>
+    <h4><span class="red">51.19 %</span> covered</h4>
     <div>
-      <b>81</b> relevant lines. 
-      <span class="green"><b>41</b> lines covered</span> and
-      <span class="red"><b>40</b> lines missed.</span>
+      <b>84</b> relevant lines. 
+      <span class="green"><b>43</b> lines covered</span> and
+      <span class="red"><b>41</b> lines missed.</span>
     </div>
   </div>
   
@@ -223,26 +223,26 @@
           <code class="ruby">  def index</code>
         </li>
       
-        <li class="covered" data-hits="26" data-linenumber="3">
-          <span class="hits">26</span>
+        <li class="covered" data-hits="52" data-linenumber="3">
+          <span class="hits">52</span>
           
           <code class="ruby">    do_redirect, view_prefs = update_settings(params, session)</code>
         </li>
       
-        <li class="covered" data-hits="26" data-linenumber="4">
-          <span class="hits">26</span>
+        <li class="covered" data-hits="52" data-linenumber="4">
+          <span class="hits">52</span>
           
           <code class="ruby">    if do_redirect</code>
         </li>
       
-        <li class="covered" data-hits="13" data-linenumber="5">
-          <span class="hits">13</span>
+        <li class="covered" data-hits="28" data-linenumber="5">
+          <span class="hits">28</span>
           
           <code class="ruby">      flash.keep</code>
         </li>
       
-        <li class="covered" data-hits="13" data-linenumber="6">
-          <span class="hits">13</span>
+        <li class="covered" data-hits="28" data-linenumber="6">
+          <span class="hits">28</span>
           
           <code class="ruby">      redirect_to recipes_path(view_prefs) and return</code>
         </li>
@@ -259,8 +259,8 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="13" data-linenumber="9">
-          <span class="hits">13</span>
+        <li class="covered" data-hits="24" data-linenumber="9">
+          <span class="hits">24</span>
           
           <code class="ruby">    @recipes = filter_and_sort view_prefs</code>
         </li>
@@ -271,20 +271,20 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="13" data-linenumber="11">
-          <span class="hits">13</span>
+        <li class="covered" data-hits="24" data-linenumber="11">
+          <span class="hits">24</span>
           
           <code class="ruby">    @calories = view_prefs[&quot;calories_filter&quot;]</code>
         </li>
       
-        <li class="covered" data-hits="13" data-linenumber="12">
-          <span class="hits">13</span>
+        <li class="covered" data-hits="24" data-linenumber="12">
+          <span class="hits">24</span>
           
           <code class="ruby">    @cuisine = view_prefs[&quot;cuisine_filter&quot;]</code>
         </li>
       
-        <li class="covered" data-hits="13" data-linenumber="13">
-          <span class="hits">13</span>
+        <li class="covered" data-hits="24" data-linenumber="13">
+          <span class="hits">24</span>
           
           <code class="ruby">    @ingredient = view_prefs[&quot;ingredient&quot;]</code>
         </li>
@@ -346,178 +346,178 @@
         <li class="missed" data-hits="0" data-linenumber="23">
           
           
-          <code class="ruby">    rescue ActiveRecord::RecordNotFound</code>
+          <code class="ruby">      if user_signed_in?</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="24">
           
           
-          <code class="ruby">      redirect_to products_path</code>
+          <code class="ruby">        current_user.view_history += &quot;:#{id}&quot;</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="25">
           
           
-          <code class="ruby">      return</code>
+          <code class="ruby">        current_user.save</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="26">
           
           
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="27">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="28">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="29">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def new</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="30">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="31">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="32">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def create</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="33">
-          
-          
-          <code class="ruby">    begin</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="34">
-          
-          
-          <code class="ruby">      r = Recipe.new(create_update_params)</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="35">
-          
-          
-          <code class="ruby">      r.ingredient_raw_text.split(&quot;,&quot;).each do |ingredient_name|</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="36">
-          
-          
-          <code class="ruby">        name = ingredient_name.gsub(/\s+/, &quot;&quot;)</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="37">
-          
-          
-          <code class="ruby">        if Ingredient.where(&quot;name = ?&quot;, name).size &gt; 0</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="38">
-          
-          
-          <code class="ruby">          ingredient = Ingredient.where(&quot;name = ?&quot;, name)[0]</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="39">
-          
-          
-          <code class="ruby">        else</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="40">
-          
-          
-          <code class="ruby">          ingredient = Ingredient.create!(name: name)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="41">
-          
-          
-          <code class="ruby">        end</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="42">
-          
-          
-          <code class="ruby">        r.ingredients &lt;&lt; ingredient</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="43">
-          
-          
           <code class="ruby">      end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="44">
+        <li class="missed" data-hits="0" data-linenumber="27">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">    rescue ActiveRecord::RecordNotFound =&gt; e</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="45">
+        <li class="missed" data-hits="0" data-linenumber="28">
           
           
-          <code class="ruby">      r.save</code>
+          <code class="ruby">      redirect_to products_path</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="46">
-          
-          
-          <code class="ruby">      flash[:notice] = &quot;Recipe successfully added&quot;</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="47">
-          
-          
-          <code class="ruby">      redirect_to(recipes_path)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="48">
+        <li class="missed" data-hits="0" data-linenumber="29">
           
           
           <code class="ruby">      return</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="49">
+        <li class="never" data-hits="" data-linenumber="30">
           
           
-          <code class="ruby">    rescue</code>
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="31">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="32">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="33">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def new</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="34">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="35">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="36">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def create</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="37">
+          
+          
+          <code class="ruby">    begin</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="38">
+          
+          
+          <code class="ruby">      r = Recipe.new(create_update_params)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="39">
+          
+          
+          <code class="ruby">      r.ingredient_raw_text.split(&quot;,&quot;).each do |ingredient_name|</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="40">
+          
+          
+          <code class="ruby">        name = ingredient_name.gsub(/\s+/, &quot;&quot;)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="41">
+          
+          
+          <code class="ruby">        if Ingredient.where(&quot;name = ?&quot;, name).size &gt; 0</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="42">
+          
+          
+          <code class="ruby">          ingredient = Ingredient.where(&quot;name = ?&quot;, name)[0]</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="43">
+          
+          
+          <code class="ruby">        else</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="44">
+          
+          
+          <code class="ruby">          ingredient = Ingredient.create!(name: name)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="45">
+          
+          
+          <code class="ruby">        end</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="46">
+          
+          
+          <code class="ruby">        r.ingredients &lt;&lt; ingredient</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="47">
+          
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="48">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="49">
+          
+          
+          <code class="ruby">      r.save</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="50">
           
           
-          <code class="ruby">      flash[:warning] = &quot;An error occurred, recipe not added&quot;</code>
+          <code class="ruby">      flash[:notice] = &quot;Recipe successfully added&quot;</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="51">
           
           
-          <code class="ruby">      redirect_to(new_recipe_path)</code>
+          <code class="ruby">      redirect_to(recipes_path)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="52">
+        <li class="never" data-hits="" data-linenumber="52">
           
           
           <code class="ruby">      return</code>
@@ -526,31 +526,31 @@
         <li class="never" data-hits="" data-linenumber="53">
           
           
+          <code class="ruby">    rescue</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="54">
+          
+          
+          <code class="ruby">      flash[:warning] = &quot;An error occurred, recipe not added&quot;</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="55">
+          
+          
+          <code class="ruby">      redirect_to(new_recipe_path)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="56">
+          
+          
+          <code class="ruby">      return</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="57">
+          
+          
           <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="54">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="55">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="56">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def edit</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="57">
-          
-          
-          <code class="ruby">    @recipe = Recipe.find(params[:id])</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="58">
@@ -568,94 +568,94 @@
         <li class="covered" data-hits="1" data-linenumber="60">
           <span class="hits">1</span>
           
-          <code class="ruby">  def update</code>
+          <code class="ruby">  def edit</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="61">
           
           
-          <code class="ruby">    recipe = Recipe.find(params[:id])</code>
+          <code class="ruby">    @recipe = Recipe.find(params[:id])</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="62">
           
           
-          <code class="ruby">    begin</code>
+          <code class="ruby">  end</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="63">
+        <li class="never" data-hits="" data-linenumber="63">
           
           
-          <code class="ruby">      recipe.update(create_update_params)</code>
+          <code class="ruby"></code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="64">
+        <li class="covered" data-hits="1" data-linenumber="64">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">      recipe.ingredients = []</code>
+          <code class="ruby">  def update</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="65">
           
           
-          <code class="ruby">      recipe.ingredient_raw_text.split(&quot;,&quot;).each do |ingredient_name|</code>
+          <code class="ruby">    recipe = Recipe.find(params[:id])</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="66">
+        <li class="never" data-hits="" data-linenumber="66">
           
           
-          <code class="ruby">        recipe.ingredients &lt;&lt; Ingredient.create!(name: ingredient_name)</code>
+          <code class="ruby">    begin</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="67">
+        <li class="missed" data-hits="0" data-linenumber="67">
           
           
-          <code class="ruby">      end</code>
+          <code class="ruby">      recipe.update(create_update_params)</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="68">
           
           
-          <code class="ruby">      recipe.save</code>
+          <code class="ruby">      recipe.ingredients = []</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="69">
           
           
-          <code class="ruby">      flash[:notice] = &quot;#{recipe.name} succesfully updated&quot;</code>
+          <code class="ruby">      recipe.ingredient_raw_text.split(&quot;,&quot;).each do |ingredient_name|</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="70">
           
           
-          <code class="ruby">      redirect_to recipes_path</code>
+          <code class="ruby">        recipe.ingredients &lt;&lt; Ingredient.create!(name: ingredient_name)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="71">
           
           
-          <code class="ruby">      return</code>
+          <code class="ruby">      end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="72">
+        <li class="missed" data-hits="0" data-linenumber="72">
           
           
-          <code class="ruby">    rescue</code>
+          <code class="ruby">      recipe.save</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="73">
           
           
-          <code class="ruby">      flash[:warning] = &quot;Unable to update #{recipe.name}&quot;</code>
+          <code class="ruby">      flash[:notice] = &quot;#{recipe.name} succesfully updated&quot;</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="74">
           
           
-          <code class="ruby">      redirect_to edit_recipe_path</code>
+          <code class="ruby">      redirect_to recipes_path</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="75">
+        <li class="never" data-hits="" data-linenumber="75">
           
           
           <code class="ruby">      return</code>
@@ -664,247 +664,247 @@
         <li class="never" data-hits="" data-linenumber="76">
           
           
+          <code class="ruby">    rescue</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="77">
+          
+          
+          <code class="ruby">      flash[:warning] = &quot;Unable to update #{recipe.name}&quot;</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="78">
+          
+          
+          <code class="ruby">      redirect_to edit_recipe_path</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="79">
+          
+          
+          <code class="ruby">      return</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="80">
+          
+          
           <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="77">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="78">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="79">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def destroy</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="80">
-          
-          
-          <code class="ruby">      recipe = Recipe.find(params[:id])</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="81">
           
           
-          <code class="ruby">      begin</code>
+          <code class="ruby">  end</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="82">
+        <li class="never" data-hits="" data-linenumber="82">
           
           
-          <code class="ruby">          recipe.destroy</code>
+          <code class="ruby"></code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="83">
+        <li class="covered" data-hits="1" data-linenumber="83">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">          flash[:notice] = &quot;#{recipe.name} succesfully destroyed&quot;</code>
+          <code class="ruby">  def destroy</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="84">
           
           
-          <code class="ruby">          redirect_to recipes_path</code>
+          <code class="ruby">      recipe = Recipe.find(params[:id])</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="85">
           
           
-          <code class="ruby">      rescue</code>
+          <code class="ruby">      begin</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="86">
           
           
-          <code class="ruby">          flash[:warning] = &quot;Unable to destroy #{recipe.name}&quot;</code>
+          <code class="ruby">          recipe.destroy</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="87">
           
           
-          <code class="ruby">          redirect_to recipe_path</code>
+          <code class="ruby">          flash[:notice] = &quot;#{recipe.name} succesfully destroyed&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="88">
+        <li class="missed" data-hits="0" data-linenumber="88">
           
           
-          <code class="ruby">      end</code>
+          <code class="ruby">          redirect_to recipes_path</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="89">
           
           
+          <code class="ruby">      rescue</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="90">
+          
+          
+          <code class="ruby">          flash[:warning] = &quot;Unable to destroy #{recipe.name}&quot;</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="91">
+          
+          
+          <code class="ruby">          redirect_to recipe_path</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="92">
+          
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="93">
+          
+          
           <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="90">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="91">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  private</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="92">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def create_update_params</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="93">
-          
-          
-          <code class="ruby">    params.require(:recipe).permit(:name, :directions, :cuisine, :calories, :images, :user_id, :ingredient_raw_text)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="94">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="95">
+        <li class="covered" data-hits="1" data-linenumber="95">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby"></code>
+          <code class="ruby">  private</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="96">
           <span class="hits">1</span>
           
-          <code class="ruby">  def update_settings(parms, sess)</code>
+          <code class="ruby">  def create_update_params</code>
         </li>
       
-        <li class="covered" data-hits="26" data-linenumber="97">
-          <span class="hits">26</span>
+        <li class="missed" data-hits="0" data-linenumber="97">
           
-          <code class="ruby">    preferences = sess[:preferences] || Hash.new</code>
+          
+          <code class="ruby">    params.require(:recipe).permit(:name, :directions, :cuisine, :calories, :images, :user_id, :ingredient_raw_text)</code>
         </li>
       
-        <li class="covered" data-hits="26" data-linenumber="98">
-          <span class="hits">26</span>
+        <li class="never" data-hits="" data-linenumber="98">
           
-          <code class="ruby">    if parms[:reset_filters] == &quot;true&quot;</code>
+          
+          <code class="ruby">  end</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="99">
-          
-          
-          <code class="ruby">      session.clear</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="100">
-          
-          
-          <code class="ruby">      return true, Hash.new</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="101">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="covered" data-hits="26" data-linenumber="102">
-          <span class="hits">26</span>
-          
-          <code class="ruby">    should_redirect = false</code>
-        </li>
-      
-        <li class="covered" data-hits="26" data-linenumber="103">
-          <span class="hits">26</span>
-          
-          <code class="ruby">    { &quot;calories_filter&quot; =&gt; &quot;&quot;, &quot;cuisine_filter&quot; =&gt; &quot;&quot;, &quot;ingredient_filter&quot; =&gt; &quot;&quot;}.each do |parm, default|</code>
-        </li>
-      
-        <li class="covered" data-hits="78" data-linenumber="104">
-          <span class="hits">78</span>
-          
-          <code class="ruby">        parmval = parms[parm]</code>
-        </li>
-      
-        <li class="covered" data-hits="78" data-linenumber="105">
-          <span class="hits">78</span>
-          
-          <code class="ruby">        if parmval.nil?  # not currently set; look at session</code>
-        </li>
-      
-        <li class="covered" data-hits="27" data-linenumber="106">
-          <span class="hits">27</span>
-          
-          <code class="ruby">          parmval = preferences[parm] || default</code>
-        </li>
-      
-        <li class="covered" data-hits="27" data-linenumber="107">
-          <span class="hits">27</span>
-          
-          <code class="ruby">          should_redirect = true</code>
-        </li>
-      
-        <li class="covered" data-hits="51" data-linenumber="108">
-          <span class="hits">51</span>
-          
-          <code class="ruby">        elsif parmval != preferences[parm]  # is set, but is it different?</code>
-        </li>
-      
-        <li class="covered" data-hits="5" data-linenumber="109">
-          <span class="hits">5</span>
-          
-          <code class="ruby">          should_redirect = true</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="110">
-          
-          
-          <code class="ruby">        end</code>
-        </li>
-      
-        <li class="covered" data-hits="78" data-linenumber="111">
-          <span class="hits">78</span>
-          
-          <code class="ruby">        preferences[parm] = parmval</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="112">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="113">
+        <li class="never" data-hits="" data-linenumber="99">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="26" data-linenumber="114">
-          <span class="hits">26</span>
+        <li class="covered" data-hits="1" data-linenumber="100">
+          <span class="hits">1</span>
           
-          <code class="ruby">    sess[:preferences] = preferences</code>
+          <code class="ruby">  def update_settings(parms, sess)</code>
         </li>
       
-        <li class="covered" data-hits="26" data-linenumber="115">
-          <span class="hits">26</span>
+        <li class="covered" data-hits="52" data-linenumber="101">
+          <span class="hits">52</span>
           
-          <code class="ruby">    return should_redirect, preferences</code>
+          <code class="ruby">    preferences = sess[:preferences] || Hash.new</code>
+        </li>
+      
+        <li class="covered" data-hits="52" data-linenumber="102">
+          <span class="hits">52</span>
+          
+          <code class="ruby">    if parms[:reset_filters] == &quot;true&quot;</code>
+        </li>
+      
+        <li class="covered" data-hits="4" data-linenumber="103">
+          <span class="hits">4</span>
+          
+          <code class="ruby">      session.clear</code>
+        </li>
+      
+        <li class="covered" data-hits="4" data-linenumber="104">
+          <span class="hits">4</span>
+          
+          <code class="ruby">      return true, Hash.new</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="105">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="covered" data-hits="48" data-linenumber="106">
+          <span class="hits">48</span>
+          
+          <code class="ruby">    should_redirect = false</code>
+        </li>
+      
+        <li class="covered" data-hits="48" data-linenumber="107">
+          <span class="hits">48</span>
+          
+          <code class="ruby">    { &quot;calories_filter&quot; =&gt; &quot;&quot;, &quot;cuisine_filter&quot; =&gt; &quot;&quot;, &quot;ingredient_filter&quot; =&gt; &quot;&quot;}.each do |parm, default|</code>
+        </li>
+      
+        <li class="covered" data-hits="144" data-linenumber="108">
+          <span class="hits">144</span>
+          
+          <code class="ruby">        parmval = parms[parm]</code>
+        </li>
+      
+        <li class="covered" data-hits="144" data-linenumber="109">
+          <span class="hits">144</span>
+          
+          <code class="ruby">        if parmval.nil?  # not currently set; look at session</code>
+        </li>
+      
+        <li class="covered" data-hits="54" data-linenumber="110">
+          <span class="hits">54</span>
+          
+          <code class="ruby">          parmval = preferences[parm] || default</code>
+        </li>
+      
+        <li class="covered" data-hits="54" data-linenumber="111">
+          <span class="hits">54</span>
+          
+          <code class="ruby">          should_redirect = true</code>
+        </li>
+      
+        <li class="covered" data-hits="90" data-linenumber="112">
+          <span class="hits">90</span>
+          
+          <code class="ruby">        elsif parmval != preferences[parm]  # is set, but is it different?</code>
+        </li>
+      
+        <li class="covered" data-hits="7" data-linenumber="113">
+          <span class="hits">7</span>
+          
+          <code class="ruby">          should_redirect = true</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="114">
+          
+          
+          <code class="ruby">        end</code>
+        </li>
+      
+        <li class="covered" data-hits="144" data-linenumber="115">
+          <span class="hits">144</span>
+          
+          <code class="ruby">        preferences[parm] = parmval</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="116">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="117">
@@ -913,73 +913,97 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="118">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="48" data-linenumber="118">
+          <span class="hits">48</span>
           
-          <code class="ruby">  def filter_and_sort(view_prefs)</code>
+          <code class="ruby">    sess[:preferences] = preferences</code>
         </li>
       
-        <li class="covered" data-hits="13" data-linenumber="119">
-          <span class="hits">13</span>
+        <li class="covered" data-hits="48" data-linenumber="119">
+          <span class="hits">48</span>
           
-          <code class="ruby">    constraints = {}</code>
+          <code class="ruby">    return should_redirect, preferences</code>
         </li>
       
-        <li class="covered" data-hits="13" data-linenumber="120">
-          <span class="hits">13</span>
-          
-          <code class="ruby">    calories = view_prefs[&quot;calories_filter&quot;].to_i</code>
-        </li>
-      
-        <li class="covered" data-hits="13" data-linenumber="121">
-          <span class="hits">13</span>
-          
-          <code class="ruby">    if calories &gt; 0</code>
-        </li>
-      
-        <li class="covered" data-hits="4" data-linenumber="122">
-          <span class="hits">4</span>
-          
-          <code class="ruby">      constraints[:calories] = calories</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="123">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="covered" data-hits="13" data-linenumber="124">
-          <span class="hits">13</span>
-          
-          <code class="ruby">    constraints[:cuisine] = view_prefs[&quot;cuisine_filter&quot;]</code>
-        </li>
-      
-        <li class="covered" data-hits="13" data-linenumber="125">
-          <span class="hits">13</span>
-          
-          <code class="ruby">    constraints[:ingredient] = view_prefs[&quot;ingredient_filter&quot;]</code>
-        </li>
-      
-        <li class="covered" data-hits="13" data-linenumber="126">
-          <span class="hits">13</span>
-          
-          <code class="ruby">    recipes = Recipe.filter_on_constraints(constraints)</code>
-        </li>
-      
-        <li class="covered" data-hits="13" data-linenumber="127">
-          <span class="hits">13</span>
-          
-          <code class="ruby">    recipes</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="128">
+        <li class="never" data-hits="" data-linenumber="120">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="129">
+        <li class="never" data-hits="" data-linenumber="121">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="122">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def filter_and_sort(view_prefs)</code>
+        </li>
+      
+        <li class="covered" data-hits="24" data-linenumber="123">
+          <span class="hits">24</span>
+          
+          <code class="ruby">    constraints = {}</code>
+        </li>
+      
+        <li class="covered" data-hits="24" data-linenumber="124">
+          <span class="hits">24</span>
+          
+          <code class="ruby">    calories = view_prefs[&quot;calories_filter&quot;].to_i</code>
+        </li>
+      
+        <li class="covered" data-hits="24" data-linenumber="125">
+          <span class="hits">24</span>
+          
+          <code class="ruby">    if calories &gt; 0</code>
+        </li>
+      
+        <li class="covered" data-hits="7" data-linenumber="126">
+          <span class="hits">7</span>
+          
+          <code class="ruby">      constraints[:calories] = calories</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="127">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="covered" data-hits="24" data-linenumber="128">
+          <span class="hits">24</span>
+          
+          <code class="ruby">    constraints[:cuisine] = view_prefs[&quot;cuisine_filter&quot;]</code>
+        </li>
+      
+        <li class="covered" data-hits="24" data-linenumber="129">
+          <span class="hits">24</span>
+          
+          <code class="ruby">    constraints[:ingredient] = view_prefs[&quot;ingredient_filter&quot;]</code>
+        </li>
+      
+        <li class="covered" data-hits="24" data-linenumber="130">
+          <span class="hits">24</span>
+          
+          <code class="ruby">    recipes = Recipe.filter_on_constraints(constraints)</code>
+        </li>
+      
+        <li class="covered" data-hits="24" data-linenumber="131">
+          <span class="hits">24</span>
+          
+          <code class="ruby">    recipes</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="132">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="133">
           
           
           <code class="ruby">end</code>
@@ -1407,8 +1431,8 @@
           <code class="ruby">  def self.filter_on_constraints(constraint_hash)</code>
         </li>
       
-        <li class="covered" data-hits="13" data-linenumber="62">
-          <span class="hits">13</span>
+        <li class="covered" data-hits="24" data-linenumber="62">
+          <span class="hits">24</span>
           
           <code class="ruby">    recipes = Recipe.all</code>
         </li>
@@ -1425,8 +1449,8 @@
           <code class="ruby">    operator_hash = {</code>
         </li>
       
-        <li class="covered" data-hits="13" data-linenumber="65">
-          <span class="hits">13</span>
+        <li class="covered" data-hits="24" data-linenumber="65">
+          <span class="hits">24</span>
           
           <code class="ruby">        :calories =&gt; &#39;&lt;=&#39;,</code>
         </li>
@@ -1449,44 +1473,44 @@
           <code class="ruby">    #byebug</code>
         </li>
       
-        <li class="covered" data-hits="13" data-linenumber="69">
-          <span class="hits">13</span>
+        <li class="covered" data-hits="24" data-linenumber="69">
+          <span class="hits">24</span>
           
           <code class="ruby">    constraint_hash.each_pair do |key, value|</code>
         </li>
       
-        <li class="covered" data-hits="30" data-linenumber="70">
-          <span class="hits">30</span>
+        <li class="covered" data-hits="55" data-linenumber="70">
+          <span class="hits">55</span>
           
           <code class="ruby">      symbol = key.to_sym</code>
         </li>
       
-        <li class="covered" data-hits="30" data-linenumber="71">
-          <span class="hits">30</span>
+        <li class="covered" data-hits="55" data-linenumber="71">
+          <span class="hits">55</span>
           
           <code class="ruby">      operator = operator_hash[symbol]</code>
         </li>
       
-        <li class="covered" data-hits="30" data-linenumber="72">
-          <span class="hits">30</span>
+        <li class="covered" data-hits="55" data-linenumber="72">
+          <span class="hits">55</span>
           
           <code class="ruby">      if symbol == :ingredient and constraint_hash[:ingredient] != &quot;&quot;</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="73">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="4" data-linenumber="73">
+          <span class="hits">4</span>
           
           <code class="ruby">        recipes = Recipe.joins(:ingredients).where(&quot;ingredients.name LIKE ?&quot;, value)</code>
         </li>
       
-        <li class="covered" data-hits="28" data-linenumber="74">
-          <span class="hits">28</span>
+        <li class="covered" data-hits="51" data-linenumber="74">
+          <span class="hits">51</span>
           
           <code class="ruby">      elsif !operator.nil? and value != &quot;&quot;</code>
         </li>
       
-        <li class="covered" data-hits="8" data-linenumber="75">
-          <span class="hits">8</span>
+        <li class="covered" data-hits="14" data-linenumber="75">
+          <span class="hits">14</span>
           
           <code class="ruby">        recipes = recipes.where(&quot;#{symbol.to_s} #{operator} ?&quot;, value)</code>
         </li>
@@ -1509,8 +1533,8 @@
           <code class="ruby">    end</code>
         </li>
       
-        <li class="covered" data-hits="13" data-linenumber="79">
-          <span class="hits">13</span>
+        <li class="covered" data-hits="24" data-linenumber="79">
+          <span class="hits">24</span>
           
           <code class="ruby">    recipes</code>
         </li>
