@@ -8,12 +8,16 @@ class UpDownVotesController < ApplicationController
         recipe.removeVote(current_user)
       end
       dovote(true)
+    else
+      handle_double_vote(params[:id])
     end
   end
 
   def downvote
     recipe = Recipe.find(params[:id])
-    if !recipe.hasDownvoter?(current_user)
+    if recipe.hasDownvoter?(current_user)
+      handle_double_vote(params[:id])
+    else
       if recipe.hasUpvoter?(current_user)
         recipe.removeVote(current_user)
       end
@@ -43,6 +47,20 @@ private
         # new code that handles responding to an AJAX call with some
         # JSON.
         render json: { up: @recipe.upvotes, down: @recipe.downvotes }, :status => :ok
+      end
+    end
+  end
+
+  private
+  def handle_double_vote(recipe_id)
+    recipe = Recipe.find(recipe_id)
+    respond_to do |format|
+      format.html do
+        flash[:notice] = "You've already #{updown ? "upvoted" : "downvoted"} #{recipe.name}"
+        redirect_to recipe_path(recipe) and return
+      end
+      format.json do
+        render json: { up: recipe.upvotes, down: recipe.downvotes }, :status => :ok
       end
     end
   end
