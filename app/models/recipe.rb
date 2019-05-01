@@ -25,7 +25,9 @@ class Recipe < ApplicationRecord
 
   def removeVote(upvote)
     downvote = self.up_down_votes.where("user_id = ?", user.id)[0]
-    downvote.destroy
+    if downvote
+      downvote.destroy
+    end
   end
 
   private
