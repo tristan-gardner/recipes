@@ -25,7 +25,7 @@ class RecipesController < ApplicationController
         current_user.save
       end
     rescue ActiveRecord::RecordNotFound => e
-      redirect_to products_path
+      redirect_to recipes_path
       return
     end
   end
