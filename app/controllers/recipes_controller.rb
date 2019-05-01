@@ -20,7 +20,11 @@ class RecipesController < ApplicationController
       @recipe = Recipe.find(id)
       @similar = Recipe.most_similar_ingredients(@recipe)
       #byebug
-    rescue ActiveRecord::RecordNotFound
+      if user_signed_in?
+        current_user.view_history += ":#{id}"
+        current_user.save
+      end
+    rescue ActiveRecord::RecordNotFound => e
       redirect_to products_path
       return
     end
