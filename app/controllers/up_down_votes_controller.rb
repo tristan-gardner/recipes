@@ -15,18 +15,19 @@ class UpDownVotesController < ApplicationController
 
   def downvote
     recipe = Recipe.find(params[:id])
-    if recipe.hasDownvoter?(current_user)
-      handle_double_vote(params[:id])
-    else
+    if !recipe.hasDownvoter?(current_user)
       if recipe.hasUpvoter?(current_user)
         recipe.removeVote(current_user)
       end
       dovote(false)
+    else
+      handle_double_vote(params[:id])
     end
   end
 
 private
   def dovote(updown)
+    puts "#{updown ? 'up' : 'down'}voting"
     begin
       @recipe = Recipe.find(params[:id])
     rescue ActiveRecord::RecordNotFound
