@@ -1,24 +1,25 @@
 #main
   %header
   %hr
-  %h1.name=@user.username
   %div.main_container
-    %div.flexbox
-      %div.title= "#{@user.username}'s Recipes"
-      %div.left_spacer
-      %div.recipes
-        -@recipes.each do |r|
-          %div.recipe_container
-            %div.title= link_to "#{r.name}", recipe_path(r)
-            -r.images.each do |img|
-              %div.image= image_tag(img, width: '700')
-              -break
-            %div.ingredients= "Requires #{r.ingredients.size} ingredients"
-            %div.calories= "Calories: #{r.calories}"
-            %br
-  -if current_user.id == @user.id
-    %h3.user_history="Your History:"
-    %div.history_container
-      -@history.each do |r|
-        %div.history_title=link_to "#{r.name}", recipe_path(r)
-        %div.history_author=link_to "#{r.user.username}", user_path(r.user)
+    %h1=@user.username
+    %h4 Recipes
+    %div.recipes
+      -@recipes.each do |r|
+        = render "user_recipe", r: r
+    %div.upvotes
+      %h4 Liked Posts
+      -@user.upvotes.each do |upvote|
+        = link_to upvote.recipe.name, recipe_path(upvote.recipe)
+        by
+        = link_to upvote.recipe.user.username, user_path(upvote.recipe.user)
+        %br
+    %br
+    -if current_user.id == @user.id
+      %h4="Your History:"
+      %div.history_container
+        -@history.each do |r|
+          =link_to "#{r.name}", recipe_path(r)
+          by
+          =link_to "#{r.user.username}", user_path(r.user)
+          %br
