@@ -22,10 +22,11 @@ class Recipe < ApplicationRecord
     return hasUpOrDownvoter?(user, false)
   end
 
-  def removeVote(upvote)
-    downvote = self.up_down_votes.where("user_id = ?", user.id)[0]
-    if downvote
-      downvote.destroy
+  def removeVote(user)
+    vote = self.up_down_votes.where("user_id = ?", user.id)[0]
+    if vote
+      vote.destroy
+    else
     end
   end
 

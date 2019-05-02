@@ -35,6 +35,7 @@ private
       redirect_to recipes_path and return
     end
     if @recipe.users.include?(current_user)
+      puts "user already voted!!"
       return
     end
     @recipe.up_down_votes.create(:upvote => updown, :user => current_user)
