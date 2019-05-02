@@ -15,11 +15,12 @@
         = link_to upvote.recipe.user.username, user_path(upvote.recipe.user)
         %br
     %br
-    -if current_user.id == @user.id
-      %h4="Your History:"
-      %div.history_container
-        -@history.each do |r|
-          =link_to "#{r.name}", recipe_path(r)
-          by
-          =link_to "#{r.user.username}", user_path(r.user)
-          %br
+    -if user_signed_in?
+      -if current_user.id == @user.id
+        %h4="Your History:"
+        %div.history_container
+          -@history.each do |r|
+            =link_to "#{r.name}", recipe_path(r)
+            by
+            =link_to "#{r.user.username}", user_path(r.user)
+            %br
