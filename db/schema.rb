@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 2019_04_25_192712) do
     t.text "directions"
     t.string "cuisine"
     t.integer "calories"
+    t.string "ingredient_raw_text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"

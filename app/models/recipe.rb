@@ -3,7 +3,6 @@ class Recipe < ApplicationRecord
   has_many :reviews
   has_and_belongs_to_many :ingredients
   belongs_to :user
-  attr_accessor :ingredient_raw_text
   has_many :up_down_votes
   has_many :users, :through => :up_down_votes
 

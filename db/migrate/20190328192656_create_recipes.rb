@@ -5,6 +5,7 @@ class CreateRecipes < ActiveRecord::Migration[5.2]
       t.text "directions"
       t.string "cuisine"
       t.integer "calories"
+      t.string "ingredient_raw_text"
       t.timestamps
     end
   end
