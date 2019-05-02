@@ -13,7 +13,7 @@ Given these Recipes:
     Given I am on the recipes page
     Then I should see "Pizza"
     When I follow "Pizza"
-    Then I Should see "Gotes"
+    Then I should see "Gotes"
     When I follow "Gotes"
     Then I should see "Pizza"
     And I should not see "Edit Recipe"
@@ -22,18 +22,36 @@ Given these Recipes:
     Given I am on the recipes page
     Then I should see "Pizza"
     When I follow "Pizza"
-    Then I Should see "Totes"
+    Then I should see "Totes"
     When I follow "Gotes"
     Then I should see "Pizza"
   Scenario: A user navigates to their own profile and sees options to delete recipes
-    Given that I am on the recipes page
+    Given I am on the recipes page
+    Then I should see "Sign In"
+    When I follow "Sign In"
+    And I fill in the following:
+    |Login   |Totes   |
+    |Password|wowscool|
+    And I press "Log in"
+    Then I should be on the recipes page
+    And I should see "Totes"
+    Given I am on the recipes page
     Then I should see "Totes"
     When I follow "Totes"
     Then I should see "Burger"
     And I should see "Edit Recipe"
     And I should see "Delete Recipe"
   Scenario: A user deletes a recipe from their profile
-    Given that I am on the recipes page
+    Given I am on the recipes page
+    Then I should see "Sign In"
+    When I follow "Sign In"
+    And I fill in the following:
+    |Login   |Totes   |
+    |Password|wowscool|
+    And I press "Log in"
+    Then I should be on the recipes page
+    And I should see "Totes"
+    Given I am on the recipes page
     Then I should see "Totes"
     When I follow "Totes"
     Then I should see "Burger"
@@ -42,7 +60,16 @@ Given these Recipes:
     When I press "Delete Recipe"
     Then I should not see "Burger"
   Scenario: A User visits a recipe and then visits their profile
-    Given that I am on the recipes page
+    Given I am on the recipes page
+    Then I should see "Sign In"
+    When I follow "Sign In"
+    And I fill in the following:
+    |Login   |Totes   |
+    |Password|wowscool|
+    And I press "Log in"
+    Then I should be on the recipes page
+    And I should see "Totes"
+    Given I am on the recipes page
     Then I should see "Pizza"
     When I follow "Pizza"
     Then I should see "Totes"

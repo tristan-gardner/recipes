@@ -1,4 +1,8 @@
 Feature: Login Button
+  Background: The following Users exist
+    Given these Users:
+      | username | password | email             |
+      | Totes    | wowscool | totes@example.com |
   Scenario: Register an account and password, Log out, then log back in with it
     Given I am on the recipes page
     Then I should see "Sign In"
@@ -28,3 +32,10 @@ Feature: Login Button
   Scenario: Login from the index page
     Given I am on the recipes page
     Then I should see "Sign In"
+    When I follow "Sign In"
+    And I fill in the following:
+    |Login   |Totes   |
+    |Password|wowscool|
+    And I press "Log in"
+    Then I should be on the recipes page
+    And I should see "Totes"

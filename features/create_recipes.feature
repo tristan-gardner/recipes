@@ -12,8 +12,17 @@ Feature: Create a new recipe
 
   Scenario: Create a new recipe with no image attached
     Given I am on the recipes page
+    Then I should see "Sign In"
+    When I follow "Sign In"
+    And I fill in the following:
+    |Login   |Totes   |
+    |Password|wowscool|
+    And I press "Log in"
+    Then I should be on the recipes page
+    And I should see "Totes"
+    Given I am on the recipes page
     Then I should see "Totes"
-    When I follow "Create New Recipe"
+    When I press "Create New Recipe"
     And I fill in the following:
       | Name            | Fried Burger Bacon        |
       | Cuisine         | Druggie Lunch             |
@@ -26,8 +35,17 @@ Feature: Create a new recipe
 
   Scenario: Create a new recipe with a specific image
     Given I am on the recipes page
+    Then I should see "Sign In"
+    When I follow "Sign In"
+    And I fill in the following:
+    |Login   |Totes   |
+    |Password|wowscool|
+    And I press "Log in"
+    Then I should be on the recipes page
+    And I should see "Totes"
+    Given I am on the recipes page
     Then I should see "Totes"
-    When I follow "Create New Recipe"
+    When I press "Create New Recipe"
     Given I am on the create new recipe page
     When I fill in the following:
     | Name            | Fried Burger Bacon        |
