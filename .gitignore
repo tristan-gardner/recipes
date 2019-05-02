@@ -3,4 +3,5 @@ log/
 Gemfile.lock
 db/*.sqlite3
 .byebug_history
+.byebug_history.save
 

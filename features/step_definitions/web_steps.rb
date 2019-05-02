@@ -118,6 +118,14 @@ When /^(?:|I )follow "([^"]*)"$/ do |link|
   click_link(link)
 end
 
+When "I click the {string} icon for recipe with id {string}" do |icon, id|
+  if icon == "edit"
+    page.click_link('', :href => "/recipes/#{id}/edit")
+  elsif icon == "delete"
+    page.click_link('', :href => "/recipes/#{id}")
+  end
+end
+
 When "I follow the {string} {string}" do |num, second|
   target = num.to_i
   count = 0

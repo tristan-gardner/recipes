@@ -15,4 +15,8 @@ class UsersController < ApplicationController
       end
     end
   end
+
+  def destroy
+    puts "here"
+  end
 end

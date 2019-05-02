@@ -32,15 +32,14 @@ Feature: Create a new recipe
     When I login with username "Totes" and password "wowscool"
     Then I should see "Totes"
     When I follow "Create New Recipe"
-    Given I am on the create new recipe page
-    When I fill in the following:
+    And I fill in the following:
     | Name            | Fried Burger Bacon        |
     | Cuisine         | Druggie Lunch             |
     | Directions      | Fry it up                 |
     | Calories        | 1000                      |
 
     When I attach the file "Burger.jpg" to "Image"
-    When I press "Create New Recipe"
+    When I press "Create Recipe"
     Then I should be on the recipes page
     And I should see that "Fried Burger Bacon" has a calorie count of "1000"
     And I should see that "Fried Burger Bacon" has an image "Burger.jpg"

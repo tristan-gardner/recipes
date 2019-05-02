@@ -12,8 +12,9 @@ Feature: Login Button
     And I press "Sign up"
     And I should see "TotesGOAT"
     And I should see "logout"
-    And I press "logout"
-    And I should see "Sign In"
+    And I follow "logout"
+    
+    Then I should see "Sign In"
     When I follow "Sign In"
     And I should be on the login page
     When I fill in the following:

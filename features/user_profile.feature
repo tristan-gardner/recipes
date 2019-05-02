@@ -45,9 +45,10 @@ Given these Recipes:
     Then I should see "Totes"
     When I follow "Totes"
     Then I should see "Burger"
-    And I should see "Edit Recipe"
-    And I should see "Delete Recipe"
-    When I press "Delete Recipe"
+    When I follow "Burger"
+    When I click the "delete" icon for recipe with id "1"
+    Then I should see "Burger succesfully destroyed"
+    When I reload the page
     Then I should not see "Burger"
   Scenario: A User visits a recipe and then visits their profile
     Given I am on the recipes page
