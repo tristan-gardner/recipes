@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   has_many :recipes
   has_many :reviews
-  has_many :votes
+  has_many :up_down_votes
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
    validates :username, presence: :true, uniqueness: { case_sensitive: false }
@@ -27,6 +27,10 @@ class User < ApplicationRecord
      if User.where(email: username).exists?
        errors.add(:username, :invalid)
      end
+   end
+
+   def upvotes
+     return self.up_down_votes
    end
 
 end

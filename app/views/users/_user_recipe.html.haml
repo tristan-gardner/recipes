@@ -1,0 +1,8 @@
+%div.recipe_container
+  %div.title= link_to "#{r.name}", recipe_path(r)
+  -r.images.each do |img|
+    %div.image= image_tag(img, width: '700')
+    -break
+  %div.ingredients= "Requires #{r.ingredients.size} ingredients"
+  %div.calories= "Calories: #{r.calories}"
+  %br
