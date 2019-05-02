@@ -11,6 +11,7 @@ gem 'octicons_helper'
 gem 'rails', '~> 5.2.2', '>= 5.2.2.1'
 gem "pg", "~> 0.18"
 gem "rails_12factor"
+gem "aws-sdk-s3"
 
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
