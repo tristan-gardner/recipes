@@ -55,7 +55,7 @@
             =f.label :rating
             =f.number_field :rating, :id => "rating"
 
-            =f.submit "Add comment", :remote => true, "data-type" => "json"
+            =f.submit "Add comment", :remote => true, "data-type" => "json", :class => "btn-info"
         -else
           %p Sign in to post a comment.
 
