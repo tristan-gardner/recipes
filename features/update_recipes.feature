@@ -1,5 +1,5 @@
 Feature: Update an existing recipe
-  Background: The following recipes already exists
+  Background: The following already exists
   Given these Users:
     | username | password | email             |
     | Totes    | wowscool | totes@example.com |

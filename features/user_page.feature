@@ -6,5 +6,5 @@ Feature: User Profile
 
   Given these Recipes:
     | name   | cuisine  | directions | calories | user_id|
-    | Burger | American | Infected   |  300     | 1 |
-    | Pizza  | Italian  | Infested   |  500     | 1|
+    | Burger | American | Infected   |  300     | 1      |
+    | Pizza  | Italian  | Infested   |  500     | 1      |
