@@ -2,6 +2,9 @@
 %br
 =review.description
 %br
-="#{review.rating}/5"
+-(0...review.rating).each do |i|
+  =image_tag "gold-star.png", width: 18
+-(review.rating...5).each do |i|
+  =octicon("star")
 %br
 %br
