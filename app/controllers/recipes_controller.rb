@@ -110,7 +110,7 @@ class RecipesController < ApplicationController
   def update_settings(parms, sess)
     preferences = sess[:preferences] || Hash.new
     if parms[:reset_filters] == "true"
-      session.clear
+      session[:preferences] = Hash.new
       return true, Hash.new
     end
     should_redirect = false
