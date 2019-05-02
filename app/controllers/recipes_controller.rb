@@ -62,12 +62,22 @@ class RecipesController < ApplicationController
   end
 
   def update
+    puts "updating"
     recipe = Recipe.find(params[:id])
     begin
       recipe.update(create_update_params)
-      recipe.ingredients = []
       recipe.ingredient_raw_text.split(",").each do |ingredient_name|
-        recipe.ingredients << Ingredient.create!(name: ingredient_name)
+        name = ingredient_name.gsub(/\s+/, "")
+        if Ingredient.where("name = ?", name).size > 0
+          puts "found existing ingredient"
+          ingredient = Ingredient.where("name = ?", name)[0]
+        else
+          puts "creating new ingredient"
+          ingredient = Ingredient.create!(name: name)
+        end
+        if !recipe.ingredients.include?(ingredient)
+          recipe.ingredients << ingredient
+        end
       end
       recipe.save
       flash[:notice] = "#{recipe.name} succesfully updated"
