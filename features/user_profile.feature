@@ -1,4 +1,4 @@
-Feature: Users have profiles with their recipes shown
+Feature: Users have profiles with recipes and history shown
 Background: The following already exist
 Given these Users:
   | username | password | email             |
@@ -41,3 +41,11 @@ Given these Recipes:
     And I should see "Delete Recipe"
     When I press "Delete Recipe"
     Then I should not see "Burger"
+  Scenario: A User visits a recipe and then visits their profile
+    Given that I am on the recipes page
+    Then I should see "Pizza"
+    When I follow "Pizza"
+    Then I should see "Totes"
+    When I follow "Totes"
+    Then I should see "Your History"
+    And I should see "Pizza"
