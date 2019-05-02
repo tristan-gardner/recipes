@@ -5,10 +5,10 @@ Feature: Filter Recipes by attribute
       | Totes    | wowscool | totes@example.com |
 
     Given these Recipes:
-      | name   | cuisine  | directions     | calories | users |
-      | Burger | American | Infected       |  300     | Totes |
-      | Pizza  | Italian  | Infested       |  500     | Totes |
-      | Cheese | American | Freshly Barfed |  200     | Totes |
+      | name   | cuisine  | directions     | calories | user_id |
+      | Burger | American | Infected       |  300     | 1       |
+      | Pizza  | Italian  | Infested       |  500     | 1       |
+      | Cheese | American | Freshly Barfed |  200     | 1       |
 
   Scenario: Filter on one Calories
     Given I am on the recipes page
