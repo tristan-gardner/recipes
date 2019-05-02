@@ -5,45 +5,43 @@ require 'simplecov'
 SimpleCov.start
 
 RSpec.describe "index page", type: :feature do
-  #let(:title_sort) {["abhorrent", "gorgeous", "lovely", "stinky"]}
-  let(:calories_sort) {["Latkas", "Chicken Adobo", "Pizza", "Lasagna"]}
-  let(:cuisine_sort) {["Filipino", "italian", "Italian", "Jewish"]}
-  #let(:distance_sort) {["abhorrent", "gorgeous", "stinky", "lovely"]}
+
 
   before :each do
-    user = User.create!(:username => "user1", :email => "user1@user.com", :password => "password")
+    user = User.create!(:username => "m1", :email => "m1@user.com", :password => "password")
     r1 = Recipe.create!(name: "Pizza", directions: "make a pizza", cuisine: "Italian", calories: 800, user_id: user.id)
     r2 = Recipe.create!(name: "Lasagna", directions: "Kind of like layered pasta", cuisine: "italian", calories: 1000, user_id: user.id)
     r3 = Recipe.create!(name: "Chicken Adobo", directions: "Saguil's famous dish", cuisine: "Filipino", calories: 400, user_id: user.id)
     r4 = Recipe.create!(name: "Latkas", directions: "Round hash browns", cuisine: "Jewish", calories: 200, user_id: user.id)
-    # ts = Ingredient.create!(name: "Tomato Sauce")
-    # chic = Ingredient.create!(name: "chicken")
-    # po = Ingredient.create!(name: "Potatos")
-    #
-    # r1.ingredients << ts
-    # r2.ingredients << ts
-    # r3.ingredients << chic
-    # r4.ingredients << po
+    ts = Ingredient.create!(name: "Tomato Sauce")
+    chic = Ingredient.create!(name: "chicken")
+    po = Ingredient.create!(name: "Potato")
+
+    r1.ingredients << ts
+    r2.ingredients << ts
+    r3.ingredients << chic
+    r4.ingredients << po
 
     visit "/recipes"
   end
 
 
   it "should do the correct filtering when filtering by calories" do
+
     fill_in "Maximum Calories", :with => "800"
     click_button "Filter"
     visit "/recipes"
     names = []
-    page.all(".title").each { |x| names << x.text }
+    page.all(".main_title").each { |x| names << x.text }
     expect(names.length).to eq(3)
     visit "/recipes"
     names = []
-    page.all(".title").each { |x| names << x.text }
+    page.all(".main_title").each { |x| names << x.text }
     expect(names.length).to eq(3)
     visit "/recipes"
     click_link "Clear filters"
     names = []
-    page.all(".title").each { |x| names << x.text }
+    page.all(".main_title").each { |x| names << x.text }
     expect(names.length).to eq(4)
   end
 
@@ -52,20 +50,20 @@ RSpec.describe "index page", type: :feature do
     click_button "Filter"
     visit "/recipes"
     names = []
-    page.all(".title").each { |x| names << x.text }
+    page.all(".main_title").each { |x| names << x.text }
     expect(names.length).to eq(2)
     visit "/recipes"
     names = []
-    page.all(".title").each { |x| names << x.text }
+    page.all(".main_title").each { |x| names << x.text }
     expect(names.length).to eq(2)
     fill_in "Cuisine Type", :with => "Filipino"
     click_button "Filter"
     names = []
-    page.all(".title").each { |x| names << x.text }
+    page.all(".main_title").each { |x| names << x.text }
     expect(names.length).to eq(1)
     click_link "Clear filter"
     names = []
-    page.all(".title").each { |x| names << x.text }
+    page.all(".main_title").each { |x| names << x.text }
     expect(names.length).to eq(4)
   end
 
@@ -74,20 +72,20 @@ RSpec.describe "index page", type: :feature do
     click_button "Filter"
     visit "/recipes"
     names = []
-    page.all(".title").each { |x| names << x.text }
+    page.all(".main_title").each { |x| names << x.text }
     expect(names.length).to eq(2)
     visit "/recipes"
     names = []
-    page.all(".title").each { |x| names << x.text }
+    page.all(".main_title").each { |x| names << x.text }
     expect(names.length).to eq(2)
     fill_in "Ingredient", :with => "Potato"
     click_button "Filter"
     names = []
-    page.all(".title").each { |x| names << x.text }
+    page.all(".main_title").each { |x| names << x.text }
     expect(names.length).to eq(1)
     click_link "Clear filter"
     names = []
-    page.all(".title").each { |x| names << x.text }
+    page.all(".main_title").each { |x| names << x.text }
     expect(names.length).to eq(4)
   end
 
@@ -97,15 +95,15 @@ RSpec.describe "index page", type: :feature do
     click_button "Filter"
     visit "/recipes"
     names = []
-    page.all(".title").each { |x| names << x.text }
+    page.all(".main_title").each { |x| names << x.text }
     expect(names.length).to eq(1)
     visit "/recipes"
     names = []
-    page.all(".title").each { |x| names << x.text }
+    page.all(".main_title").each { |x| names << x.text }
     expect(names.length).to eq(1)
     click_link "Clear filter"
     names = []
-    page.all(".title").each { |x| names << x.text }
+    page.all(".main_title").each { |x| names << x.text }
     expect(names.length).to eq(4)
   end
 

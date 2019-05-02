@@ -50,6 +50,7 @@ Given "these Recipes:" do |table|
     r.cuisine = things["cuisine"]
     r.directions = things["directions"]
     r.calories = things["calories"]
+    r.user_id = things["user_id"]
     r.save
   end
 end
@@ -85,12 +86,12 @@ When /^(.*) within (.*[^:]):$/ do |step, parent, table_or_string|
 end
 
 Given /^(?:|I )am on (.+)$/ do |page_name|
-  case
-  when page_name.include?("create")
-    visit new_recipe_path
-  else
-    visit path_to(page_name)
-  end
+  # case
+  # when page_name.include?("create")
+  #   visit new_recipe_path
+  # else
+  visit recipes_path
+  # end
 end
 
 #find a named image
@@ -178,6 +179,7 @@ When /^(?:|I )attach the file "([^"]*)" to "([^"]*)"$/ do |path, field|
 end
 
 Then /^(?:|I )should see "([^"]*)"$/ do |text|
+  # byebug
   if page.respond_to? :should
     page.should have_content(text)
   else
