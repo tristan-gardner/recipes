@@ -49,6 +49,6 @@ Feature: Filter Recipes by attribute
     Then I should see "Burger"
     And I should see "Cheese"
     And I should not see "Pizza"
-    And I follow "Clear Filters"
+    And I follow "Clear filters"
     And I should see "Cheese"
     And I should see "Pizza"

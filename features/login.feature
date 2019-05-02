@@ -9,10 +9,10 @@ Feature: Login Button
     | Email                 | GOATsim@example.com |
     | Password              | wowscool   |
     | Password confirmation | wowscool |
-    And I follow the "second" "Sign Up"
+    And I press "Sign up"
     And I should see "TotesGOAT"
-    And I should see "Sign Out"
-    And I follow "Sign Out"
+    And I should see "logout"
+    And I press "logout"
     And I should see "Sign In"
     When I follow "Sign In"
     And I should be on the login page
@@ -20,8 +20,8 @@ Feature: Login Button
     | Username | TotesGOAT |
     | Email    | GOATsim@example.com |
     | Password | wowscool   |
-    And I should see "Log in"
-    And I press "Log in"
+    And I should see "Login"
+    And I press "Login"
     Then I should be on the recipes page
     And I should see "TotesGOAT"
 

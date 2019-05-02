@@ -11,29 +11,37 @@ Given these Recipes:
   | Pizza  | Italian  | Infested   |  500     | 2      |
   Scenario: A user navigates to a profile that is not their own
     Given I am on the recipes page
+    When I follow "Sign In"
+    When I login with username "Totes" and password "wowscool"
     Then I should see "Pizza"
     When I follow "Pizza"
-    Then I Should see "Gotes"
+    Then I should see "Gotes"
     When I follow "Gotes"
     Then I should see "Pizza"
     And I should not see "Edit Recipe"
     And I should not see "Delete Recipe"
   Scenario: A user clicks on a recipe on a profile that is not their own
     Given I am on the recipes page
-    Then I should see "Pizza"
-    When I follow "Pizza"
-    Then I Should see "Totes"
+    When I follow "Sign In"
+    When I login with username "Gotes" and password "nopethat"
+    Then I should see "Burger"
+    When I follow "Burger"
+    Then I should see "Totes"
     When I follow "Gotes"
-    Then I should see "Pizza"
+    Then I should see "Burger"
   Scenario: A user navigates to their own profile and sees options to delete recipes
-    Given that I am on the recipes page
+    Given I am on the recipes page
+    When I follow "Sign In"
+    When I login with username "Totes" and password "wowscool"
     Then I should see "Totes"
     When I follow "Totes"
     Then I should see "Burger"
     And I should see "Edit Recipe"
     And I should see "Delete Recipe"
   Scenario: A user deletes a recipe from their profile
-    Given that I am on the recipes page
+    Given I am on the recipes page
+    When I follow "Sign In"
+    When I login with username "Totes" and password "wowscool"
     Then I should see "Totes"
     When I follow "Totes"
     Then I should see "Burger"
@@ -42,10 +50,12 @@ Given these Recipes:
     When I press "Delete Recipe"
     Then I should not see "Burger"
   Scenario: A User visits a recipe and then visits their profile
-    Given that I am on the recipes page
+    Given I am on the recipes page
+    When I follow "Sign In"
+    When I login with username "Gotes" and password "nopethat"
     Then I should see "Pizza"
     When I follow "Pizza"
-    Then I should see "Totes"
-    When I follow "Totes"
-    Then I should see "Your History"
+    Then I should see "Gotes"
+    When I follow "Gotes"
+    Then I should see "Your History:"
     And I should see "Pizza"

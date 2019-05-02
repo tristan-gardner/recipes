@@ -5,7 +5,8 @@
         %p=link_to octicon("chevron-left"), recipes_path
         %div.recipe_headers
           %div.main_title= "#{@recipe.name}"
-          %div.user= "by: #{User.find(@recipe.user_id).username}"
+          %div.user
+            = link_to "by: #{User.find(@recipe.user_id).username}", user_path(@recipe.user_id)
         %div.edit_buttons
           - if user_signed_in?
             - if current_user.id == @recipe.user_id

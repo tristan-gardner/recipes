@@ -179,7 +179,6 @@ When /^(?:|I )attach the file "([^"]*)" to "([^"]*)"$/ do |path, field|
 end
 
 Then /^(?:|I )should see "([^"]*)"$/ do |text|
-  # byebug
   if page.respond_to? :should
     page.should have_content(text)
   else
@@ -353,4 +352,17 @@ end
 
 Then /^show me the page$/ do
   save_and_open_page
+end
+
+When "I login with username {string} and password {string}" do |username, password|
+
+  visit '/users/sign_in'
+  fill_in "Login", :with => username
+  fill_in "Password", :with => password
+  click_button "Log in"
+
+end
+
+When /^I reload the page$/ do
+  visit [ current_path, page.driver.request.env['QUERY_STRING'] ].reject(&:blank?).join('?')
 end

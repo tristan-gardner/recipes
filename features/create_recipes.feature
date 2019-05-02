@@ -12,6 +12,8 @@ Feature: Create a new recipe
 
   Scenario: Create a new recipe with no image attached
     Given I am on the recipes page
+    When I follow "Sign In"
+    When I login with username "Totes" and password "wowscool"
     Then I should see "Totes"
     When I follow "Create New Recipe"
     And I fill in the following:
@@ -26,6 +28,8 @@ Feature: Create a new recipe
 
   Scenario: Create a new recipe with a specific image
     Given I am on the recipes page
+    When I follow "Sign In"
+    When I login with username "Totes" and password "wowscool"
     Then I should see "Totes"
     When I follow "Create New Recipe"
     Given I am on the create new recipe page
